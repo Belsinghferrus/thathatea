@@ -4,6 +4,7 @@ import Intro from "@/components/sections/Intro/Intro";
 import SpecialitiesSection from "../../components/sections/Hero/SpecialitiesSection";
 import JourneySection from "../../components/sections/Hero/JourneySection";
 
+
 function Home() {
   return (
     <>
@@ -13,6 +14,7 @@ function Home() {
         <Intro />
         <SpecialitiesSection />
         <JourneySection />
+ 
       </main>
     </>
   );
