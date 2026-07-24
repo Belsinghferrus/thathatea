@@ -1,3 +1,4 @@
+import { useEffect, useRef, useState } from "react";
 import { motion, useReducedMotion } from "framer-motion";
 import {
   ArrowRight,
@@ -12,6 +13,10 @@ import cha from "@/assets/images/cap.png";
 import cake from "@/assets/videos/cake.mp4";
 import coffeebeans from "@/assets/videos/coffeebeens.mp4";
 import cookies from "@/assets/videos/cookie.mp4";
+
+import cakeFallback from "@/assets/images/mascot.png";
+import beansFallback from "@/assets/images/mascot.png";
+import cookiesFallback from "@/assets/images/mascot.png";
 
 const reasons = [
   {
@@ -77,39 +82,124 @@ function SteamLines() {
 
 function MediaVideo({
   src,
+  fallback,
+  alt = "",
   className = "",
   poster = "",
   overlay = true,
   reduceMotion = false,
 }) {
+  const videoRef = useRef(null);
+  const [showFallback, setShowFallback] = useState(false);
+
+  useEffect(() => {
+    const video = videoRef.current;
+    if (!video) return;
+
+    let mounted = true;
+
+    const tryPlay = async () => {
+      try {
+        video.muted = true;
+        video.defaultMuted = true;
+        video.playsInline = true;
+        video.setAttribute("muted", "");
+        video.setAttribute("playsinline", "");
+        video.setAttribute("webkit-playsinline", "true");
+
+        const playPromise = video.play();
+
+        if (playPromise && typeof playPromise.then === "function") {
+          await playPromise;
+        }
+
+        if (mounted) {
+          setShowFallback(false);
+        }
+      } catch {
+        if (mounted) {
+          setShowFallback(true);
+        }
+      }
+    };
+
+    const handleError = () => {
+      if (mounted) {
+        setShowFallback(true);
+      }
+    };
+
+    video.addEventListener("error", handleError);
+
+    const handleLoadedData = () => {
+      tryPlay();
+    };
+
+    video.addEventListener("loadeddata", handleLoadedData);
+
+    tryPlay();
+
+    return () => {
+      mounted = false;
+      video.removeEventListener("error", handleError);
+      video.removeEventListener("loadeddata", handleLoadedData);
+    };
+  }, [src]);
+
   return (
     <motion.div
       className={className}
-      whileHover={reduceMotion ? {} : { y: -4, scale: 1.012 }}
+      whileHover={reduceMotion || showFallback ? {} : { y: -4, scale: 1.012 }}
       transition={{ duration: 0.35, ease: "easeOut" }}
     >
-      <div className="relative h-full w-full overflow-hidden rounded-[22px] border border-[#ddc8b2] bg-[#f1e4d3] shadow-[0_18px_40px_rgba(43,26,18,0.08)]">
-        <motion.video
-          src={src}
-          poster={poster}
-          autoPlay
-          loop
-          muted
-          playsInline
-          preload="metadata"
-          className="h-full w-full object-cover"
-          whileHover={reduceMotion ? {} : { scale: 1.04 }}
-          transition={{ duration: 0.45, ease: "easeOut" }}
-        />
-        {overlay && (
+      <div
+        className={[
+          "relative h-full w-full overflow-hidden rounded-[22px]",
+          showFallback
+            ? "border-0 bg-transparent shadow-none"
+            : "border border-[#ddc8b2] bg-[#f1e4d3] shadow-[0_18px_40px_rgba(43,26,18,0.08)]",
+        ].join(" ")}
+      >
+        {!showFallback ? (
           <>
-            <div className="absolute inset-0 bg-[linear-gradient(to_top,rgba(43,26,18,0.22)_0%,rgba(43,26,18,0.04)_40%,rgba(43,26,18,0.02)_100%)]" />
-            <motion.div
-              className="absolute inset-0 bg-[linear-gradient(115deg,transparent_0%,rgba(255,255,255,0.14)_48%,transparent_56%)]"
-              animate={reduceMotion ? { opacity: 0 } : { x: ["-30%", "120%"], opacity: [0, 1, 0] }}
-              transition={{ duration: 9, repeat: Infinity, ease: "easeInOut" }}
+            <motion.video
+              ref={videoRef}
+              src={src}
+              poster={poster || fallback}
+              autoPlay
+              loop
+              muted
+              playsInline
+              preload="metadata"
+              className="h-full w-full object-cover"
+              whileHover={reduceMotion ? {} : { scale: 1.04 }}
+              transition={{ duration: 0.45, ease: "easeOut" }}
             />
+
+            {overlay && (
+              <>
+                <div className="absolute inset-0 bg-[linear-gradient(to_top,rgba(43,26,18,0.22)_0%,rgba(43,26,18,0.04)_40%,rgba(43,26,18,0.02)_100%)]" />
+                <motion.div
+                  className="absolute inset-0 bg-[linear-gradient(115deg,transparent_0%,rgba(255,255,255,0.14)_48%,transparent_56%)]"
+                  animate={
+                    reduceMotion
+                      ? { opacity: 0 }
+                      : { x: ["-30%", "120%"], opacity: [0, 1, 0] }
+                  }
+                  transition={{ duration: 9, repeat: Infinity, ease: "easeInOut" }}
+                />
+              </>
+            )}
           </>
+        ) : (
+          <img
+            src={fallback}
+            alt={alt}
+            width={1200}
+            height={1200}
+            loading="lazy"
+            className="h-full w-full rounded-[22px] object-cover"
+          />
         )}
       </div>
     </motion.div>
@@ -146,7 +236,6 @@ function JourneySection() {
 
       <div className="relative mx-auto max-w-[1560px] px-4 py-12 sm:px-6 sm:py-14 lg:px-14 lg:py-20 xl:px-20">
         <div className="grid gap-10 lg:grid-cols-[0.82fr_1.18fr] lg:gap-14">
-          {/* left narrative */}
           <div className="relative max-w-[560px]">
             <div className="inline-flex items-center gap-2 rounded-full border border-[#e1d0bc] bg-[#fff8ef]/90 px-3 py-2 text-[#a76024]">
               <Sparkles className="h-[14px] w-[14px]" />
@@ -237,16 +326,17 @@ function JourneySection() {
             </motion.div>
           </div>
 
-          {/* right living collage */}
           <div className="relative">
             <SteamLines />
 
             <div className="relative mx-auto w-full max-w-[860px]">
-              {/* desktop collage */}
               <div className="hidden lg:grid lg:grid-cols-[1.05fr_0.62fr] lg:gap-5">
                 <div className="relative">
                   <MediaVideo
                     src={cake}
+                    fallback={cakeFallback}
+                    poster={cakeFallback}
+                    alt="Cake visual"
                     reduceMotion={reduceMotion}
                     className="aspect-[1.08/0.92]"
                   />
@@ -293,12 +383,18 @@ function JourneySection() {
                 <div className="relative flex flex-col gap-5 pt-10">
                   <MediaVideo
                     src={coffeebeans}
+                    fallback={beansFallback}
+                    poster={beansFallback}
+                    alt="Coffee beans visual"
                     reduceMotion={reduceMotion}
                     className="aspect-[0.82/1.06]"
                   />
                   <div className="ml-8 w-[82%]">
                     <MediaVideo
                       src={cookies}
+                      fallback={cookiesFallback}
+                      poster={cookiesFallback}
+                      alt="Cookies visual"
                       reduceMotion={reduceMotion}
                       className="aspect-[1/0.76]"
                     />
@@ -306,11 +402,12 @@ function JourneySection() {
                 </div>
               </div>
 
-              {/* mobile/tablet collage */}
-              {/* mobile/tablet collage */}
               <div className="grid gap-4 lg:hidden">
                 <MediaVideo
                   src={cake}
+                  fallback={cakeFallback}
+                  poster={cakeFallback}
+                  alt="Cake visual"
                   reduceMotion={reduceMotion}
                   className="aspect-[1.08/0.92]"
                 />
@@ -353,12 +450,15 @@ function JourneySection() {
                     <div className="relative">
                       <MediaVideo
                         src={coffeebeans}
+                        fallback={beansFallback}
+                        poster={beansFallback}
+                        alt="Coffee beans visual"
                         reduceMotion={reduceMotion}
                         className="aspect-[1/1.08]"
                       />
 
                       <motion.div
-                        className="absolute -bottom-8 left-0 z-10 w-[66%] max-w-[220px]"
+                        className="absolute -bottom-8 left-0 z-10 w-[66%] max-w-[220px] max-[430px]:-bottom-6 max-[430px]:w-[58%]"
                         animate={reduceMotion ? {} : { y: [0, -6, 0] }}
                         transition={{ duration: 6, repeat: Infinity, ease: "easeInOut" }}
                       >
@@ -377,6 +477,9 @@ function JourneySection() {
                   <div className="flex flex-col gap-4">
                     <MediaVideo
                       src={cookies}
+                      fallback={cookiesFallback}
+                      poster={cookiesFallback}
+                      alt="Cookies visual"
                       reduceMotion={reduceMotion}
                       className="aspect-[1/1.02]"
                     />
@@ -406,7 +509,6 @@ function JourneySection() {
               </div>
             </div>
 
-            {/* reasons */}
             <div className="mt-14 grid gap-5 sm:grid-cols-2 lg:mt-20">
               {reasons.map((item, index) => {
                 const Icon = item.icon;
