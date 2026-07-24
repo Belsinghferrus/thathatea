@@ -88,6 +88,7 @@ function MediaVideo({
   poster = "",
   overlay = true,
   reduceMotion = false,
+  heightClass = "h-[320px] sm:h-[380px]",
 }) {
   const videoRef = useRef(null);
   const [showFallback, setShowFallback] = useState(false);
@@ -102,13 +103,18 @@ function MediaVideo({
       try {
         video.muted = true;
         video.defaultMuted = true;
+        video.autoplay = true;
+        video.loop = true;
         video.playsInline = true;
+
         video.setAttribute("muted", "");
+        video.setAttribute("defaultMuted", "");
+        video.setAttribute("autoplay", "");
+        video.setAttribute("loop", "");
         video.setAttribute("playsinline", "");
         video.setAttribute("webkit-playsinline", "true");
 
         const playPromise = video.play();
-
         if (playPromise && typeof playPromise.then === "function") {
           await playPromise;
         }
@@ -124,17 +130,14 @@ function MediaVideo({
     };
 
     const handleError = () => {
-      if (mounted) {
-        setShowFallback(true);
-      }
+      if (mounted) setShowFallback(true);
     };
-
-    video.addEventListener("error", handleError);
 
     const handleLoadedData = () => {
       tryPlay();
     };
 
+    video.addEventListener("error", handleError);
     video.addEventListener("loadeddata", handleLoadedData);
 
     tryPlay();
@@ -149,57 +152,74 @@ function MediaVideo({
   return (
     <motion.div
       className={className}
-      whileHover={reduceMotion || showFallback ? {} : { y: -4, scale: 1.012 }}
-      transition={{ duration: 0.35, ease: "easeOut" }}
+      whileHover={reduceMotion ? {} : { y: -4 }}
+      transition={{ duration: 0.3, ease: "easeOut" }}
     >
       <div
         className={[
-          "relative h-full w-full overflow-hidden rounded-[22px]",
+          "relative w-full overflow-hidden rounded-[22px]",
+          heightClass,
           showFallback
             ? "border-0 bg-transparent shadow-none"
             : "border border-[#ddc8b2] bg-[#f1e4d3] shadow-[0_18px_40px_rgba(43,26,18,0.08)]",
         ].join(" ")}
+        style={{
+          transform: "translateZ(0)",
+          WebkitTransform: "translateZ(0)",
+          backfaceVisibility: "hidden",
+          WebkitBackfaceVisibility: "hidden",
+        }}
       >
         {!showFallback ? (
           <>
-            <motion.video
-              ref={videoRef}
-              src={src}
-              poster={poster || fallback}
-              autoPlay
-              loop
-              muted
-              playsInline
-              preload="metadata"
-              className="h-full w-full object-cover"
-              whileHover={reduceMotion ? {} : { scale: 1.04 }}
-              transition={{ duration: 0.45, ease: "easeOut" }}
-            />
+            <div className="absolute inset-0 overflow-hidden rounded-[22px]">
+              <video
+                ref={videoRef}
+                src={src}
+                poster={poster || fallback}
+                autoPlay
+                loop
+                muted
+                playsInline
+                preload="metadata"
+                className="absolute inset-0 h-full w-full object-cover"
+                style={{
+                  transform: "translateZ(0)",
+                  WebkitTransform: "translateZ(0)",
+                  objectFit: "cover",
+                }}
+              />
+            </div>
 
             {overlay && (
               <>
-                <div className="absolute inset-0 bg-[linear-gradient(to_top,rgba(43,26,18,0.22)_0%,rgba(43,26,18,0.04)_40%,rgba(43,26,18,0.02)_100%)]" />
-                <motion.div
-                  className="absolute inset-0 bg-[linear-gradient(115deg,transparent_0%,rgba(255,255,255,0.14)_48%,transparent_56%)]"
-                  animate={
-                    reduceMotion
-                      ? { opacity: 0 }
-                      : { x: ["-30%", "120%"], opacity: [0, 1, 0] }
-                  }
-                  transition={{ duration: 9, repeat: Infinity, ease: "easeInOut" }}
-                />
+                <div className="pointer-events-none absolute inset-0 bg-[linear-gradient(to_top,rgba(43,26,18,0.18)_0%,rgba(43,26,18,0.04)_42%,rgba(43,26,18,0.02)_100%)]" />
+                {!reduceMotion && (
+                  <motion.div
+                    className="pointer-events-none absolute inset-0 bg-[linear-gradient(115deg,transparent_0%,rgba(255,255,255,0.14)_48%,transparent_56%)]"
+                    animate={{ x: ["-30%", "120%"], opacity: [0, 1, 0] }}
+                    transition={{ duration: 9, repeat: Infinity, ease: "easeInOut" }}
+                  />
+                )}
               </>
             )}
           </>
         ) : (
-          <img
-            src={fallback}
-            alt={alt}
-            width={1200}
-            height={1200}
-            loading="lazy"
-            className="h-full w-full rounded-[22px] object-cover"
-          />
+          <div className="absolute inset-0 overflow-hidden rounded-[22px]">
+            <img
+              src={fallback}
+              alt={alt}
+              width={1200}
+              height={1200}
+              loading="lazy"
+              className="h-full w-full object-cover"
+              style={{
+                transform: "translateZ(0)",
+                WebkitTransform: "translateZ(0)",
+                objectFit: "cover",
+              }}
+            />
+          </div>
         )}
       </div>
     </motion.div>
@@ -338,7 +358,8 @@ function JourneySection() {
                     poster={cakeFallback}
                     alt="Cake visual"
                     reduceMotion={reduceMotion}
-                    className="aspect-[1.08/0.92]"
+                    className="w-full"
+                    heightClass="h-[560px]"
                   />
 
                   <motion.div
@@ -387,7 +408,8 @@ function JourneySection() {
                     poster={beansFallback}
                     alt="Coffee beans visual"
                     reduceMotion={reduceMotion}
-                    className="aspect-[0.82/1.06]"
+                    className="w-full"
+                    heightClass="h-[380px]"
                   />
                   <div className="ml-8 w-[82%]">
                     <MediaVideo
@@ -396,7 +418,8 @@ function JourneySection() {
                       poster={cookiesFallback}
                       alt="Cookies visual"
                       reduceMotion={reduceMotion}
-                      className="aspect-[1/0.76]"
+                      className="w-full"
+                      heightClass="h-[260px]"
                     />
                   </div>
                 </div>
@@ -409,7 +432,8 @@ function JourneySection() {
                   poster={cakeFallback}
                   alt="Cake visual"
                   reduceMotion={reduceMotion}
-                  className="aspect-[1.08/0.92]"
+                  className="w-full"
+                  heightClass="h-[300px] sm:h-[360px]"
                 />
 
                 <div className="grid grid-cols-[0.92fr_1fr] items-end gap-4">
@@ -454,7 +478,8 @@ function JourneySection() {
                         poster={beansFallback}
                         alt="Coffee beans visual"
                         reduceMotion={reduceMotion}
-                        className="aspect-[1/1.08]"
+                        className="w-full"
+                        heightClass="h-[250px] sm:h-[300px]"
                       />
 
                       <motion.div
@@ -481,7 +506,8 @@ function JourneySection() {
                       poster={cookiesFallback}
                       alt="Cookies visual"
                       reduceMotion={reduceMotion}
-                      className="aspect-[1/1.02]"
+                      className="w-full"
+                      heightClass="h-[340px] sm:h-[400px]"
                     />
 
                     <motion.div
