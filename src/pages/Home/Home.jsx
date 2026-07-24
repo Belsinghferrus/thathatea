@@ -3,6 +3,9 @@ import Hero from "@/components/sections/Hero/Hero";
 import Intro from "@/components/sections/Intro/Intro";
 import SpecialitiesSection from "../../components/sections/Hero/SpecialitiesSection";
 import JourneySection from "../../components/sections/Hero/JourneySection";
+import TeaBreakSection from "../../components/sections/Hero/TeabreakSection";
+import ExploreMenuSection from "../../components/sections/Hero/ExploreMenuSection";
+import ContactPopup from "../../components/common/ContactPopup";
 
 
 function Home() {
@@ -14,8 +17,10 @@ function Home() {
         <Intro />
         <SpecialitiesSection />
         <JourneySection />
- 
+        <TeaBreakSection />
+        <ExploreMenuSection/>
       </main>
+      <ContactPopup />
     </>
   );
 }

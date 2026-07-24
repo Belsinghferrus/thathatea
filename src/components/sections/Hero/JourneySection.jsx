@@ -169,7 +169,7 @@ function JourneySection() {
               className="mt-2 max-w-[8ch] text-[3rem] uppercase leading-[0.9] tracking-[-0.05em] text-[#2b1a12] sm:text-[3.6rem] lg:text-[4.8rem]"
               style={{ fontFamily: "'Bebas Neue', sans-serif" }}
             >
-              Brewing memories since 2015
+              Brewing memories since 1991
             </h2>
 
             <div className="mt-5 h-px w-24 bg-[#c98a46]" />
@@ -209,7 +209,7 @@ function JourneySection() {
                 className="rounded-full border border-[#e1d0bc] px-4 py-2 text-[0.78rem] font-semibold text-[#7b6657]"
                 style={{ fontFamily: "'Manrope', sans-serif" }}
               >
-                Since 2015
+                Since 1991
               </span>
             </div>
 
@@ -346,7 +346,7 @@ function JourneySection() {
                         className="mt-3 text-[0.76rem] font-semibold uppercase tracking-[0.12em] text-[#8b735f]"
                         style={{ fontFamily: "'Manrope', sans-serif" }}
                       >
-                        Since 2015
+                        Since 1991
                       </p>
                     </motion.div>
 
@@ -354,7 +354,7 @@ function JourneySection() {
                       <MediaVideo
                         src={coffeebeans}
                         reduceMotion={reduceMotion}
-                        className="aspect-[0.95/1.08]"
+                        className="aspect-[1/1.08]"
                       />
 
                       <motion.div
@@ -378,7 +378,7 @@ function JourneySection() {
                     <MediaVideo
                       src={cookies}
                       reduceMotion={reduceMotion}
-                      className="aspect-[1/1.42]"
+                      className="aspect-[1/1.02]"
                     />
 
                     <motion.div

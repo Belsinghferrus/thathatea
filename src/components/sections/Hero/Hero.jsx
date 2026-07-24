@@ -254,7 +254,7 @@ function Hero() {
                 style={{ fontFamily: "'Manrope', sans-serif" }}
               >
                 <Sparkles className="h-[14px] w-[14px]" />
-                Freshly brewed legacy since 2015
+                Freshly brewed legacy since 1991
               </div>
 
               <div className="hero-actions mt-7 flex flex-col items-center gap-3 sm:flex-row sm:justify-center sm:gap-4 lg:mt-8 lg:justify-start">
