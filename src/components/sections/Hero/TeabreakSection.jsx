@@ -135,7 +135,7 @@ export default function LoopBreakSection() {
   ];
 
   return (
-    <section className="relative overflow-hidden border-y border-[#4b3428] bg-[#2b1a12] text-white">
+    <section className="relative overflow-hidden border-y border-[#4b3428] bg-[#361003] text-white">
       <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_left,rgba(201,138,70,0.16),transparent_28%),radial-gradient(circle_at_bottom_right,rgba(255,255,255,0.03),transparent_24%)]" />
       <div className="absolute inset-0 opacity-[0.05] [background-image:linear-gradient(rgba(255,255,255,0.12)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.12)_1px,transparent_1px)] [background-size:72px_72px]" />
 

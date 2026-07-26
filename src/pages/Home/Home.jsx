@@ -4,7 +4,7 @@ import Intro from "@/components/sections/Intro/Intro";
 import SpecialitiesSection from "../../components/sections/Hero/SpecialitiesSection";
 import JourneySection from "../../components/sections/Hero/JourneySection";
 import TeaBreakSection from "../../components/sections/Hero/TeabreakSection";
-import ExploreMenuSection from "../../components/sections/Hero/ExploreMenuSection";
+import ExploreMenuSection from "../../components/sections/Hero/IngredientsSection";
 import ContactPopup from "../../components/common/ContactPopup";
 
 
