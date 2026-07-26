@@ -2,10 +2,7 @@ import { motion, useReducedMotion } from "framer-motion";
 import { Leaf, Droplet, Sparkles } from "lucide-react";
 
 import topEdge from "@/assets/images/beans-heade.png";
-import bottomEdge from "@/assets/images/coffeesplash.png";
-import teaLeaves from "@/assets/images/cake.png";
-import spiceBowl from "@/assets/images/cake.png";
-import milkPour from "@/assets/images/cake.png";
+import coffeSplash from "@/assets/images/coffee-splash.png";
 import cakeProjected from "@/assets/images/cake.png";
 
 function IngredientsSection() {
@@ -120,7 +117,7 @@ function IngredientsSection() {
       </div>
 
       <img
-        src={spiceBowl}
+        src={coffeSplash}
         alt=""
         aria-hidden="true"
         width={260}

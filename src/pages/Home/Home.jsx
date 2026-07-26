@@ -6,6 +6,7 @@ import JourneySection from "../../components/sections/Hero/JourneySection";
 import TeaBreakSection from "../../components/sections/Hero/TeabreakSection";
 import ExploreMenuSection from "../../components/sections/Hero/IngredientsSection";
 import ContactPopup from "../../components/common/ContactPopup";
+import PaperJournalSection from "../../components/sections/Hero/PaperJournalSection";
 
 
 function Home() {
@@ -19,6 +20,7 @@ function Home() {
         <JourneySection />
         <TeaBreakSection />
         <ExploreMenuSection/>
+        <PaperJournalSection />
       </main>
       <ContactPopup />
     </>
