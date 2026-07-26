@@ -1,6 +1,6 @@
 import { motion } from "framer-motion";
 import paperBg from "@/assets/images/paper-bg.webp";
-import tornEdge from "@/assets/images/tornedge.png";
+import tornEdge from "@/assets/images/tornEdge.png";
 import journalPolaroid from "@/assets/images/ingredient.png";
 
 function PaperclipIcon({ className = "" }) {
@@ -97,7 +97,7 @@ export default function PaperJournalSection({ reduceMotion = false }) {
     <section className="relative overflow-hidden px-4 pb-20 pt-[114px] text-[#3b2a1a] sm:px-8 sm:py-12 lg:pb-28 lg:pt-[120px]">
       {/* top seam matching previous section */}
       <div
-        aria-hidden="true"x
+        aria-hidden="true"
         className="pointer-events-none absolute inset-x-0 top-0 z-10 h-[20px] bg-[#f6eedf]"
       />
 
