@@ -7,6 +7,7 @@ import TeaBreakSection from "../../components/sections/Hero/TeabreakSection";
 import ExploreMenuSection from "../../components/sections/Hero/IngredientsSection";
 import ContactPopup from "../../components/common/ContactPopup";
 import PaperJournalSection from "../../components/sections/Hero/PaperJournalSection";
+import FranchiseSection from "../../components/sections/Hero/FranchiseSection";
 
 
 function Home() {
@@ -21,6 +22,7 @@ function Home() {
         <TeaBreakSection />
         <ExploreMenuSection/>
         <PaperJournalSection />
+        <FranchiseSection />
       </main>
       <ContactPopup />
     </>
