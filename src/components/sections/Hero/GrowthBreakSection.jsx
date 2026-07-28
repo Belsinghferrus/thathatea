@@ -39,6 +39,22 @@ function BellIcon() {
   );
 }
 
+function PlayStoreIcon() {
+  return (
+    <svg viewBox="0 0 24 24" aria-hidden="true" className="h-5 w-5" fill="currentColor">
+      <path d="M3 2.8v18.4c0 .5.5.8.9.5l10.7-9.2L3.9 2.3A.63.63 0 0 0 3 2.8Zm13.1 8.8 2.5-2.1-3-1.7-2.2 1.9 2.7 1.9Zm2.5 3-2.5-2.1-2.7 1.9 2.2 1.9 3-1.7ZM4.7 22l10.7-6.2-2.8-2L3.9 21.5c-.4.3-.1.8.4.5Zm10.7-12L4.7 3.8l7.9 7.2 2.8-2Z" />
+    </svg>
+  );
+}
+
+function AppleIcon() {
+  return (
+    <svg viewBox="0 0 24 24" aria-hidden="true" className="h-5 w-5" fill="currentColor">
+      <path d="M15.2 2.5c.1 1-.3 2-1 2.8-.8.8-1.8 1.3-2.9 1.2-.1-1 .3-2 1-2.7.8-.8 1.9-1.3 2.9-1.3ZM18.5 12.6c0-2.5 2-3.7 2.1-3.8-1.1-1.7-2.9-1.9-3.5-1.9-1.5-.2-2.8.8-3.6.8s-2-.8-3.2-.8c-1.7 0-3.2 1-4 2.4-1.7 2.9-.4 7.1 1.2 9.4.8 1.1 1.7 2.4 2.9 2.3 1.1 0 1.6-.7 3-.7s1.8.7 3 .7c1.2 0 2-1.1 2.8-2.3.9-1.3 1.3-2.6 1.3-2.7-.1 0-2-.8-2-3.4Z" />
+    </svg>
+  );
+}
+
 function formatNumber(value) {
   return new Intl.NumberFormat("en-IN").format(value);
 }
@@ -68,12 +84,9 @@ function CountUpStat({ value, suffix, label, reduceMotion = false }) {
   }, [inView, value, reduceMotion]);
 
   return (
-    <div
-      ref={ref}
-      className="text-center lg:text-left"
-    >
+    <div className="text-center lg:text-left" ref={ref}>
       <p
-        className="text-[2.4rem] leading-none tracking-[-0.05em] text-[#fff4e8] sm:text-[3rem] lg:text-[3.7rem]"
+        className="text-[2.45rem] leading-none tracking-[-0.05em] text-[#fff4e8] sm:text-[3rem] lg:text-[3.7rem]"
         style={{ fontFamily: "'Bebas Neue', sans-serif" }}
       >
         {formatNumber(display)}
@@ -86,6 +99,30 @@ function CountUpStat({ value, suffix, label, reduceMotion = false }) {
         {label}
       </p>
     </div>
+  );
+}
+
+function StoreButton({ icon, label, sublabel, onClick }) {
+  return (
+    <button
+      type="button"
+      onClick={onClick}
+      className="group inline-flex min-h-[62px] items-center gap-3 rounded-2xl border border-[#eadbcd]/20 bg-[#f4e7d8] px-4 py-3 text-left text-[#2b1a12] shadow-[0_10px_22px_rgba(0,0,0,0.16)] transition duration-300 hover:-translate-y-0.5 hover:bg-[#fff0e2]"
+      style={{ fontFamily: "'Manrope', sans-serif" }}
+    >
+      <span className="inline-flex h-11 w-11 items-center justify-center rounded-xl bg-[#2b1a12] text-[#fff4e8] transition duration-300 group-hover:rotate-6">
+        {icon}
+      </span>
+
+      <span className="flex flex-col">
+        <span className="text-[0.62rem] font-bold uppercase tracking-[0.14em] text-[#8a6d59]">
+          {sublabel}
+        </span>
+        <span className="text-[0.94rem] font-bold tracking-[0.01em]">
+          {label}
+        </span>
+      </span>
+    </button>
   );
 }
 
@@ -111,7 +148,7 @@ function NotifyButton() {
         {notified ? <BellIcon /> : <ArrowUpRightIcon />}
       </span>
 
-      <span>{notified ? "We are notified — launching soon" : "Android & iOS app soon"}</span>
+      <span>{notified ? "We are notified — launching soon" : "Notify me for launch"}</span>
     </button>
   );
 }
@@ -129,9 +166,10 @@ export default function GrowthBreakSection({ reduceMotion = false }) {
         }}
       />
 
-      {/* soft amber glow */}
+      {/* glows */}
       <div className="pointer-events-none absolute left-[-80px] top-[10%] h-[240px] w-[240px] rounded-full bg-[#b8743d]/12 blur-3xl" />
       <div className="pointer-events-none absolute right-[-80px] bottom-[8%] h-[260px] w-[260px] rounded-full bg-[#d89a51]/10 blur-3xl" />
+      <div className="pointer-events-none absolute left-1/2 top-[42%] h-[280px] w-[280px] -translate-x-1/2 rounded-full bg-[#8c5737]/10 blur-3xl" />
 
       <div className="relative mx-auto max-w-[1320px]">
         <motion.div
@@ -139,7 +177,7 @@ export default function GrowthBreakSection({ reduceMotion = false }) {
           whileInView={reduceMotion ? {} : { opacity: 1, y: 0 }}
           viewport={{ once: true, amount: 0.2 }}
           transition={{ duration: 0.55 }}
-          className="mb-10 flex flex-col items-center text-center"
+          className="mb-12 flex flex-col items-center text-center"
         >
           <p
             className="text-[0.75rem] font-bold uppercase tracking-[0.18em] text-[#d7b89e]"
@@ -156,10 +194,11 @@ export default function GrowthBreakSection({ reduceMotion = false }) {
           </h2>
 
           <p
-            className="mt-4 max-w-[700px] text-[1rem] leading-[1.78] text-[#e6d2c1] sm:text-[1.08rem]"
-            style={{ fontFamily: "'Cormorant Garamond', serif" }}
+            className="mt-4 max-w-[760px] text-[0.9rem] leading-[1.82] text-[#e6d2c1] sm:text-[1.08rem]"
+            style={{ fontFamily: "'Manrope', self-serif" }}
           >
-            From everyday cups to growing outlets, these numbers reflect how far the brand has travelled — and how much further it is ready to go.
+            Every cup served, every returning guest, and every new outlet adds to the story Thatha Tea has been building for years.
+            This is not short-term noise - it is steady local trust, familiar taste, and a brand people continue to choose.
           </p>
         </motion.div>
 
@@ -172,8 +211,18 @@ export default function GrowthBreakSection({ reduceMotion = false }) {
             transition={{ duration: 0.55 }}
             className="grid grid-cols-2 gap-8 lg:grid-cols-1 lg:gap-10"
           >
-            <CountUpStat value={150000} suffix="+" label="Happy Customers Daily" reduceMotion={reduceMotion} />
-            <CountUpStat value={10} suffix="+" label="Years experience" reduceMotion={reduceMotion} />
+            <CountUpStat
+              value={STATS[0].value}
+              suffix={STATS[0].suffix}
+              label={STATS[0].label}
+              reduceMotion={reduceMotion}
+            />
+            <CountUpStat
+              value={STATS[1].value}
+              suffix={STATS[1].suffix}
+              label={STATS[1].label}
+              reduceMotion={reduceMotion}
+            />
           </motion.div>
 
           {/* center visual stage */}
@@ -182,12 +231,16 @@ export default function GrowthBreakSection({ reduceMotion = false }) {
             whileInView={reduceMotion ? {} : { opacity: 1, y: 0 }}
             viewport={{ once: true, amount: 0.2 }}
             transition={{ duration: 0.6, delay: 0.04 }}
-            className="relative mx-auto min-h-[360px] w-full max-w-[620px] sm:min-h-[420px] lg:min-h-[520px]"
+            className="relative mx-auto min-h-[390px] w-full max-w-[620px] sm:min-h-[450px] lg:min-h-[540px]"
           >
-            {/* brown stage */}
-            <div className="absolute left-1/2 top-[9%] h-[240px] w-[92%] -translate-x-1/2 rounded-[36px] bg-[#5a3220] shadow-[0_24px_46px_rgba(0,0,0,0.24)] sm:h-[280px] lg:h-[340px]" />
+            <div className="absolute left-1/2 top-[10%] h-[250px] w-[92%] -translate-x-1/2 rounded-[38px] bg-[#5a3220] shadow-[0_24px_46px_rgba(0,0,0,0.24)] sm:h-[300px] lg:h-[355px]" />
 
-            {/* main cafe png */}
+            <div className="absolute left-1/2 top-[5%] z-10 -translate-x-1/2 rounded-full border border-[#e8d7c6]/12 bg-[#f4e7d8]/10 px-4 py-2 text-[0.68rem] font-bold uppercase tracking-[0.16em] text-[#f1ddca] backdrop-blur-sm"
+              style={{ fontFamily: "'Manrope', sans-serif" }}
+            >
+              Trusted across growing cities
+            </div>
+
             <div className="absolute bottom-[10px] left-1/2 z-20 w-[92%] max-w-[520px] -translate-x-1/2">
               <img
                 src={cafePng}
@@ -199,11 +252,10 @@ export default function GrowthBreakSection({ reduceMotion = false }) {
               />
             </div>
 
-            {/* floating cup */}
             <motion.div
               animate={reduceMotion ? {} : { y: [0, -10, 0], rotate: [0, 2, 0] }}
               transition={{ duration: 5.5, repeat: Infinity, ease: "easeInOut" }}
-              className="absolute right-[2%] top-[2%] z-30 w-[110px] sm:w-[130px] lg:right-[4%] lg:top-[8%] lg:w-[150px]"
+              className="absolute right-[2%] top-[4%] z-30 w-[110px] sm:w-[130px] lg:right-[4%] lg:top-[8%] lg:w-[150px]"
             >
               <img
                 src={teaCupPng}
@@ -215,7 +267,6 @@ export default function GrowthBreakSection({ reduceMotion = false }) {
               />
             </motion.div>
 
-            {/* mascot accent */}
             <motion.div
               animate={reduceMotion ? {} : { y: [0, 8, 0] }}
               transition={{ duration: 6.2, repeat: Infinity, ease: "easeInOut" }}
@@ -230,6 +281,17 @@ export default function GrowthBreakSection({ reduceMotion = false }) {
                 className="h-auto w-full object-contain drop-shadow-[0_12px_18px_rgba(0,0,0,0.22)]"
               />
             </motion.div>
+
+            <div
+              className="absolute bottom-[0] left-1/2 z-10 flex -translate-x-1/2 flex-wrap items-center justify-center gap-2 rounded-full border border-[#eadac7]/10 bg-[#f4e7d8]/8 px-4 py-2 text-[0.62rem] font-bold uppercase tracking-[0.14em] text-[#e7d4c3] backdrop-blur-sm"
+              style={{ fontFamily: "'Manrope', sans-serif" }}
+            >
+              <span>Daily tea moments</span>
+              <span className="h-1.5 w-1.5 rounded-full bg-[#c88a3d]" />
+              <span>Warm service</span>
+              <span className="h-1.5 w-1.5 rounded-full bg-[#c88a3d]" />
+              <span>Return visits</span>
+            </div>
           </motion.div>
 
           {/* right stats + app CTA */}
@@ -241,8 +303,18 @@ export default function GrowthBreakSection({ reduceMotion = false }) {
             className="grid gap-8 lg:justify-items-start"
           >
             <div className="grid grid-cols-2 gap-8 lg:grid-cols-1 lg:gap-10">
-              <CountUpStat value={50} suffix="+" label="Franchise" reduceMotion={reduceMotion} />
-              <CountUpStat value={250} suffix="+" label="Team Member" reduceMotion={reduceMotion} />
+              <CountUpStat
+                value={STATS[2].value}
+                suffix={STATS[2].suffix}
+                label={STATS[2].label}
+                reduceMotion={reduceMotion}
+              />
+              <CountUpStat
+                value={STATS[3].value}
+                suffix={STATS[3].suffix}
+                label={STATS[3].label}
+                reduceMotion={reduceMotion}
+              />
             </div>
 
             <div className="pt-2">
@@ -253,7 +325,40 @@ export default function GrowthBreakSection({ reduceMotion = false }) {
                 Coming next
               </p>
 
-              <NotifyButton />
+              <h3
+                className="text-[2rem] leading-[0.96] tracking-[-0.04em] text-[#fff4e8] sm:text-[2.4rem]"
+                style={{ fontFamily: "'Bebas Neue', sans-serif" }}
+              >
+                OUR APP IS
+                <br />
+                ON THE WAY
+              </h3>
+
+              <p
+                className="mt-3 max-w-[380px] text-[0.96rem] leading-[1.76] text-[#dcc6b7]"
+                style={{ fontFamily: "'Cormorant Garamond', serif" }}
+              >
+                We’re building a smoother way to discover outlets, browse what’s available, and stay connected to Thatha Tea on the go.
+              </p>
+
+              <div className="mt-5 flex flex-col gap-3 sm:flex-row sm:flex-wrap lg:flex-col lg:items-start">
+                <StoreButton
+                  icon={<PlayStoreIcon />}
+                  label="Google Play"
+                  sublabel="Launching on"
+                  onClick={() => {}}
+                />
+                <StoreButton
+                  icon={<AppleIcon />}
+                  label="App Store"
+                  sublabel="Launching on"
+                  onClick={() => {}}
+                />
+              </div>
+
+              <div className="mt-5">
+                <NotifyButton />
+              </div>
             </div>
           </motion.div>
         </div>
