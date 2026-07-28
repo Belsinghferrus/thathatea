@@ -9,6 +9,10 @@ import ContactPopup from "../../components/common/ContactPopup";
 import PaperJournalSection from "../../components/sections/Hero/PaperJournalSection";
 import FranchiseSection from "../../components/sections/Hero/FranchiseSection";
 import FranchiseeMemoryWallSection from "../../components/sections/Hero/FranchiseeMemoryWallSection";
+import FranchiseToFeedbackStrip from "@/components/sections/Hero/FranchiseToFeedbackStrip";
+import ContactSection from "../../components/sections/Hero/ContactSection";
+import GrowthBreakSection from "../../components/sections/Hero/GrowthBreakSection";
+
 
 function Home() {
   return (
@@ -23,7 +27,10 @@ function Home() {
         <ExploreMenuSection/>
         <PaperJournalSection />
         <FranchiseSection />
+        <FranchiseToFeedbackStrip />
         <FranchiseeMemoryWallSection />
+        <GrowthBreakSection />
+        <ContactSection />
       </main>
       <ContactPopup />
     </>

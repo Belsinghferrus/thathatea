@@ -116,15 +116,7 @@ function IngredientsSection() {
         </motion.div>
       </div>
 
-      <img
-        src={coffeSplash}
-        alt=""
-        aria-hidden="true"
-        width={260}
-        height={260}
-        loading="lazy"
-        className="pointer-events-none absolute bottom-16 right-[2rem] hidden w-[140px] select-none opacity-90 lg:block"
-      />
+    
     </section>
   );
 }
