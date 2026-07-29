@@ -1,6 +1,6 @@
 import { useEffect, useRef, useState } from "react";
 import { motion, useInView, animate } from "framer-motion";
-import cafePng from "@/assets/images/cafe.png";
+import cafePng from "@/assets/images/cafe2.png";
 import mascotPng from "@/assets/images/mascot.png";
 import teaCupPng from "@/assets/images/cap.png";
 
@@ -233,15 +233,15 @@ export default function GrowthBreakSection({ reduceMotion = false }) {
             transition={{ duration: 0.6, delay: 0.04 }}
             className="relative mx-auto min-h-[390px] w-full max-w-[620px] sm:min-h-[450px] lg:min-h-[540px]"
           >
-            <div className="absolute left-1/2 top-[10%] h-[250px] w-[92%] -translate-x-1/2 rounded-[38px] bg-[#5a3220] shadow-[0_24px_46px_rgba(0,0,0,0.24)] sm:h-[300px] lg:h-[355px]" />
+            <div className="absolute left-1/2 top-[3%] h-[350px] w-[100%] -translate-x-1/2 rounded-[38px] bg-[#5a3220] shadow-[0_24px_46px_rgba(0,0,0,0.24)] sm:h-[300px] lg:h-[355px]" />
 
-            <div className="absolute left-1/2 top-[5%] z-10 -translate-x-1/2 rounded-full border border-[#e8d7c6]/12 bg-[#f4e7d8]/10 px-4 py-2 text-[0.68rem] font-bold uppercase tracking-[0.16em] text-[#f1ddca] backdrop-blur-sm"
+            {/* <div className="absolute left-1/2 top-[5%] z-10 -translate-x-1/2 rounded-full border border-[#e8d7c6]/12 bg-[#f4e7d8]/10 px-4 py-2 text-[0.68rem] font-bold uppercase tracking-[0.16em] text-[#f1ddca] backdrop-blur-sm"
               style={{ fontFamily: "'Manrope', sans-serif" }}
             >
               Trusted across growing cities
-            </div>
+            </div> */}
 
-            <div className="absolute bottom-[10px] left-1/2 z-20 w-[92%] max-w-[520px] -translate-x-1/2">
+            <div className="absolute left-1/2 z-20 w-[100%] max-w-[520px] -translate-x-1/2">
               <img
                 src={cafePng}
                 alt="Thatha Tea growth visual"
@@ -257,14 +257,14 @@ export default function GrowthBreakSection({ reduceMotion = false }) {
               transition={{ duration: 5.5, repeat: Infinity, ease: "easeInOut" }}
               className="absolute right-[2%] top-[4%] z-30 w-[110px] sm:w-[130px] lg:right-[4%] lg:top-[8%] lg:w-[150px]"
             >
-              <img
+              {/* <img
                 src={teaCupPng}
                 alt="Tea cup accent"
                 width={500}
                 height={500}
                 loading="lazy"
                 className="h-auto w-full object-contain drop-shadow-[0_16px_22px_rgba(0,0,0,0.22)]"
-              />
+              /> */}
             </motion.div>
 
             <motion.div
@@ -272,17 +272,17 @@ export default function GrowthBreakSection({ reduceMotion = false }) {
               transition={{ duration: 6.2, repeat: Infinity, ease: "easeInOut" }}
               className="absolute bottom-[8%] left-[1%] z-30 w-[84px] sm:w-[96px] lg:bottom-[12%] lg:left-[2%] lg:w-[110px]"
             >
-              <img
+              {/* <img
                 src={mascotPng}
                 alt="Thatha Tea mascot accent"
                 width={420}
                 height={420}
                 loading="lazy"
                 className="h-auto w-full object-contain drop-shadow-[0_12px_18px_rgba(0,0,0,0.22)]"
-              />
+              /> */}
             </motion.div>
 
-            <div
+            {/* <div
               className="absolute bottom-[0] left-1/2 z-10 flex -translate-x-1/2 flex-wrap items-center justify-center gap-2 rounded-full border border-[#eadac7]/10 bg-[#f4e7d8]/8 px-4 py-2 text-[0.62rem] font-bold uppercase tracking-[0.14em] text-[#e7d4c3] backdrop-blur-sm"
               style={{ fontFamily: "'Manrope', sans-serif" }}
             >
@@ -291,7 +291,7 @@ export default function GrowthBreakSection({ reduceMotion = false }) {
               <span>Warm service</span>
               <span className="h-1.5 w-1.5 rounded-full bg-[#c88a3d]" />
               <span>Return visits</span>
-            </div>
+            </div> */}
           </motion.div>
 
           {/* right stats + app CTA */}
