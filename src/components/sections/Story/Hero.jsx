@@ -1,7 +1,7 @@
 import { motion } from "framer-motion";
 import oldmanteaPng from "@/assets/images/story/oldman-tea.png";
 import vintageLetter from "@/assets/images/story/vintage-letter.png";
-import teaCupPng from "@/assets/images/story/tea-hero3.png";
+import teaCupPng from "@/assets/images/story/tea-hero4.png";
 import bgimage from "@/assets/images/paper-bg.webp";
 
 const ACCENT = "#b56322";
@@ -88,20 +88,20 @@ function VintageNoteCard() {
 export default function StoryHeroSection({ reduceMotion = false }) {
   return (
     <section
-      className="relative mt-10 w-full overflow-hidden bg-[#f9efe2]"
+      className="relative w-full overflow-hidden bg-[#f9efe2] py-10"
       style={{
         minHeight: "100vh",
-        // backgroundImage: `url(${bgimage})`,
+        backgroundImage: `url(${bgimage})`,
         backgroundSize: "cover",
         backgroundPosition: "center",
         backgroundRepeat: "no-repeat",
       }}
     >
-      <div className="absolute inset-0 bg-[#f9efe2] lg:bg-[#f9efe2]" />
+      <div className="absolute inset-0 bg-[#f9efe2]/95 lg:bg-[#f9efe2]" />
 
-      <div className="relative mx-auto w-full max-w-[1600px] px-4 pt-10 pb-12 sm:px-6 sm:pt-14 sm:pb-16 md:px-8 lg:min-h-screen lg:px-14 lg:pt-0 lg:pb-0">
+      <div className="relative mx-auto w-full max-w-[1600px] px-4 pt-6 pb-10 sm:px-6 sm:pt-10 sm:pb-14 md:px-8 lg:min-h-screen lg:px-14 lg:pt-0 lg:pb-0">
         <div className="flex flex-col lg:block">
-          {/* 1. TITLE BLOCK */}
+          {/* 1. HEAD + SUBHEAD */}
           <motion.div
             initial={reduceMotion ? false : { opacity: 0, x: -24 }}
             whileInView={reduceMotion ? {} : { opacity: 1, x: 0 }}
@@ -109,7 +109,7 @@ export default function StoryHeroSection({ reduceMotion = false }) {
             transition={{ duration: 0.55 }}
             className="order-1 relative z-30 w-full lg:flex lg:min-h-screen lg:items-start"
           >
-            <div className="mx-auto w-full max-w-[520px] lg:mx-0 lg:max-w-[500px] lg:pt-[120px]">
+            <div className="mx-auto w-full max-w-[520px] text-left lg:mx-0 lg:max-w-[500px] lg:pt-[120px]">
               <p
                 className="flex items-center gap-2 text-[0.76rem] font-bold uppercase tracking-[0.18em] text-[#ab6230] sm:text-[0.82rem] lg:text-[0.85rem]"
                 style={{ fontFamily: "'Manrope', sans-serif" }}
@@ -156,22 +156,21 @@ export default function StoryHeroSection({ reduceMotion = false }) {
             </div>
           </motion.div>
 
-          {/* 2. OLDMAN IMAGE */}
+          {/* 2. TEACUP - mobile after heading, desktop unchanged */}
           <motion.div
-            initial={reduceMotion ? false : { opacity: 0, x: 24 }}
-            whileInView={reduceMotion ? {} : { opacity: 1, x: 0 }}
+            initial={reduceMotion ? false : { opacity: 0, y: 24 }}
+            whileInView={reduceMotion ? {} : { opacity: 1, y: 0 }}
             viewport={{ once: true, amount: 0.2 }}
-            transition={{ duration: 0.55 }}
-            className="order-2 relative z-20 mx-auto mt-8 w-full max-w-[640px] sm:mt-10 sm:max-w-[720px] lg:absolute lg:right-[1.5%] lg:top-[2.5%] lg:mt-0 lg:w-[47%] lg:max-w-none"
+            transition={{ duration: 0.6 }}
+            className="order-2 relative z-40 mx-auto mt-6 flex w-full justify-center sm:mt-8 lg:absolute lg:left-1/2 lg:bottom-[3%] lg:mt-0 lg:-translate-x-1/2"
           >
             <img
-              src={oldmanteaPng}
-              alt="Founder pouring tea and tea stall sketch"
-              width={1600}
-              height={900}
+              src={teaCupPng}
+              alt="Thatha Tea signature clay cup"
+              width={900}
+              height={1200}
               loading="lazy"
-              className="h-auto w-full object-contain opacity-[0.88] lg:opacity-[0.9]"
-            />
+              className="h-[42vh] w-auto max-w-[100vw] object-cover sm:h-[48vh] md:h-[44vh] lg:h-[60vh] lg:max-w-none"            />
           </motion.div>
 
           {/* 3. PARAGRAPH */}
@@ -192,31 +191,31 @@ export default function StoryHeroSection({ reduceMotion = false }) {
             </p>
           </motion.div>
 
-          {/* 4. TEACUP */}
+          {/* 4. OLDMAN IMAGE */}
           <motion.div
-            initial={reduceMotion ? false : { opacity: 0, y: 24 }}
-            whileInView={reduceMotion ? {} : { opacity: 1, y: 0 }}
+            initial={reduceMotion ? false : { opacity: 0, x: 24 }}
+            whileInView={reduceMotion ? {} : { opacity: 1, x: 0 }}
             viewport={{ once: true, amount: 0.2 }}
-            transition={{ duration: 0.6 }}
-            className="order-4 relative z-40 mx-auto mt-4 flex w-full justify-center sm:mt-6 lg:absolute lg:left-1/2 lg:bottom-[3%] lg:mt-0 lg:-translate-x-1/2"
+            transition={{ duration: 0.55 }}
+            className="order-4 relative z-20 mx-auto mt-8 w-full max-w-[640px] sm:mt-10 sm:max-w-[720px] lg:absolute lg:right-[1.5%] lg:top-[2.5%] lg:mt-0 lg:w-[47%] lg:max-w-none"
           >
             <img
-              src={teaCupPng}
-              alt="Thatha Tea signature clay cup"
-              width={900}
-              height={1200}
+              src={oldmanteaPng}
+              alt="Founder pouring tea and tea stall sketch"
+              width={1600}
+              height={900}
               loading="lazy"
-              className="h-[34vh] w-auto max-w-[92vw] object-contain sm:h-[40vh] md:h-[46vh] lg:h-[60vh] lg:max-w-none "
+              className="h-auto w-full object-contain opacity-[0.88] lg:opacity-[0.9]"
             />
           </motion.div>
 
-          {/* 5. VINTAGE NOTE */}
+          {/* 5. VINTAGE NOTE - desktop only */}
           <motion.div
             initial={reduceMotion ? false : { opacity: 0, y: 18, rotate: -3 }}
             whileInView={reduceMotion ? {} : { opacity: 1, y: 0, rotate: -2 }}
             viewport={{ once: true, amount: 0.1 }}
             transition={{ duration: 0.55 }}
-            className="order-5 relative z-50 mx-auto mt-6 w-full max-w-[220px] sm:mt-8 sm:max-w-[260px] md:max-w-[290px] lg:absolute lg:right-[3.5%] lg:bottom-[4%] lg:mt-0 lg:w-[20.5%] lg:max-w-[320px]"
+            className="hidden lg:absolute lg:right-[3.5%] lg:bottom-[4%] lg:z-50 lg:block lg:w-[20.5%] lg:max-w-[320px]"
           >
             <div className="aspect-[0.78/1] w-full">
               <VintageNoteCard />
