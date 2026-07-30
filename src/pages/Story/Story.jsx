@@ -4,6 +4,7 @@ import Hero from '../../components/sections/Story/Hero'
 import StoryTimelineSection from '../../components/sections/Story/StoryTimelineSection'
 import StorySectionBreak from '../../components/sections/Story/StorySectionBreak'
 import MissionVisionSection from '../../components/sections/Story/MissionVisionSection'
+import WhatMakesUsSpecialStrip from '../../components/sections/Story/WhatMakesUsSpecialStrip'
 
 const Story = () => {
     return (
@@ -13,6 +14,7 @@ const Story = () => {
             <StoryTimelineSection />
             <StorySectionBreak />
             <MissionVisionSection />
+            <WhatMakesUsSpecialStrip />
         </>
     )
 }
