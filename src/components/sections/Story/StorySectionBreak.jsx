@@ -1,4 +1,4 @@
-import leftLeafPng from "@/assets/images/story/leaf.png";
+import leftLeafPng from "@/assets/images/story/tea.png";
 import rightSpicePng from "@/assets/images/story/tea.png";
 import centerSealPng from "@/assets/images/story/tea-hero.png";
 
