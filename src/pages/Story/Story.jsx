@@ -12,9 +12,10 @@ const Story = () => {
         <>
             <Navbar />
             <Hero />
+            <WhatMakesUsSpecialStrip />
             <StoryTimelineSection />
       
-            <WhatMakesUsSpecialStrip />
+            
             <MissionVisionSection />
             <StorySectionBreak />
             <GrowthMapSection />
