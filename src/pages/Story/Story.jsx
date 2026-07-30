@@ -5,6 +5,7 @@ import StoryTimelineSection from '../../components/sections/Story/StoryTimelineS
 import StorySectionBreak from '../../components/sections/Story/StorySectionBreak'
 import MissionVisionSection from '../../components/sections/Story/MissionVisionSection'
 import WhatMakesUsSpecialStrip from '../../components/sections/Story/WhatMakesUsSpecialStrip'
+import GrowthMapSection from '../../components/sections/Story/GrowthMapSection'
 
 const Story = () => {
     return (
@@ -12,9 +13,12 @@ const Story = () => {
             <Navbar />
             <Hero />
             <StoryTimelineSection />
-            <StorySectionBreak />
-            <MissionVisionSection />
+      
             <WhatMakesUsSpecialStrip />
+            <MissionVisionSection />
+            <StorySectionBreak />
+            <GrowthMapSection />
+
         </>
     )
 }
