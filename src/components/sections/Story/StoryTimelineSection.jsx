@@ -9,6 +9,7 @@ import {
 
 import paperCardBg from "@/assets/images/story/papercard.jpg";
 import spicePng from "@/assets/images/story/coffee-abstract.png"; // decorative outside PNG
+import muffin from "@/assets/images/story/muffin.png"
 
 const milestones = [
   {
@@ -74,18 +75,18 @@ export default function StoryTimelineSection({ reduceMotion = false }) {
 
       {/* Decorative PNG outside */}
       <img
-        src={spicePng}
+        src={muffin}
         alt=""
         aria-hidden="true"
-        className="pointer-events-none absolute bottom-8 left-[-20px] z-10 hidden w-[220px] rotate-[-10deg] opacity-90 lg:block"
+        className="pointer-events-none absolute bottom-8 left-[-10px] z-10 hidden w-[220px] rotate-[-10deg] opacity-90 lg:block"
       />
 
       <img
         src={spicePng}
         alt=""
         aria-hidden="true"
-        className="pointer-events-none absolute right-[-10px] top-16 z-10 hidden lg:w-[120px]  rotate-[18deg] opacity-50 lg:block"
-      />
+        className="pointer-events-none absolute right-[-10px] top-5 z-10 hidden  w-[200px]  rotate-[18deg] opacity-50 lg:block"
+        />
 
       <div className="relative z-20 mx-auto max-w-[1450px]">
         <motion.div
