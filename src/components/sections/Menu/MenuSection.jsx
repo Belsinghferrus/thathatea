@@ -1,4 +1,4 @@
-import { useMemo, useState } from "react";
+import { useMemo, useRef, useState } from "react";
 
 import MENU_CATEGORIES from "../../../constants/menu/menu-categories"
 import MENU_PRODUCTS from "../../../constants/menu/menu-products";
@@ -8,103 +8,13 @@ import getVisibleProducts from "../../../utils/menu/get-visible-products";
 import getCategoryBySlug from "../../../utils/menu/get-category-by-slug";
 import getSubcategoriesByCategory from "../../../utils/menu/get-subcategories-by-category";
 
+import coffeeSketch from "../../../assets/images/Menu/coffee-sketch.png"
+import MenuCategoryTabs from "../../sections/Menu/MenuCategoryTabs"
+import MenuToolbar from '../../sections/Menu/MenuToolbar'
+import MenuSidebar from "../../sections/Menu/MenuSidebar"
 
-import MenuCategoryTabs from "../../../components/sections/Menu/MenuCategoryTabs"
 
 
-
-
-function MenuSidebar({
-  activeCategory,
-  subcategories,
-  activeSubcategorySlug,
-  onSubcategoryChange,
-}) {
-  return (
-    <aside className="rounded-[24px] border border-[#eadccf] bg-white/80 p-5">
-      <h2
-        className="text-[2rem] leading-none text-[#21130d]"
-        style={{ fontFamily: "'Bebas Neue', sans-serif" }}
-      >
-        {activeCategory?.name || "Menu"}
-      </h2>
-
-      <div className="mt-5 space-y-2">
-        {subcategories.map((subcategory) => {
-          const isActive = subcategory.slug === activeSubcategorySlug;
-
-          return (
-            <button
-              key={subcategory.id}
-              type="button"
-              onClick={() => onSubcategoryChange(subcategory.slug)}
-              className={`flex w-full items-center justify-between rounded-xl px-4 py-3 text-left text-[0.98rem] transition ${
-                isActive
-                  ? "bg-[#b56322] text-white"
-                  : "text-[#4e3e35] hover:bg-[#f7efe7]"
-              }`}
-            >
-              <span>{subcategory.name}</span>
-              {isActive ? <span>→</span> : null}
-            </button>
-          );
-        })}
-      </div>
-    </aside>
-  );
-}
-
-function MenuToolbar({
-  sortBy,
-  onSortChange,
-  viewMode,
-  onViewModeChange,
-  sortOptions,
-  viewOptions,
-}) {
-  return (
-    <div className="flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
-      <div>
-        <p className="text-sm text-[#7b685b]">Browse and filter menu items</p>
-      </div>
-
-      <div className="flex items-center gap-3">
-        <select
-          value={sortBy}
-          onChange={(event) => onSortChange(event.target.value)}
-          className="h-11 rounded-xl border border-[#e2d2c2] bg-white px-4 text-sm text-[#4e3c31] outline-none"
-        >
-          {sortOptions.map((option) => (
-            <option key={option.value} value={option.value}>
-              Sort by: {option.label}
-            </option>
-          ))}
-        </select>
-
-        <div className="flex rounded-xl border border-[#e2d2c2] bg-white p-1">
-          {viewOptions.map((option) => {
-            const isActive = option.value === viewMode;
-
-            return (
-              <button
-                key={option.value}
-                type="button"
-                onClick={() => onViewModeChange(option.value)}
-                className={`rounded-lg px-3 py-2 text-sm font-medium transition ${
-                  isActive
-                    ? "bg-[#f0dfd0] text-[#7c461f]"
-                    : "text-[#7b685b]"
-                }`}
-              >
-                {option.label}
-              </button>
-            );
-          })}
-        </div>
-      </div>
-    </div>
-  );
-}
 
 function MenuProductCard({ product, viewMode = "grid" }) {
   return (
@@ -193,6 +103,15 @@ export default function MenuBrowserSection() {
   const [sortBy, setSortBy] = useState("popular");
   const [viewMode, setViewMode] = useState("grid");
   const [searchText, setSearchText] = useState("");
+  const productGridRef = useRef(null);
+
+  const scrollToProductGrid = () => {
+    productGridRef.current?.scrollIntoView({
+      behavior: "smooth",
+      block: "start",
+    });
+  };
+
 
   const activeCategory = useMemo(() => {
     return getCategoryBySlug(MENU_CATEGORIES, activeCategorySlug);
@@ -233,6 +152,8 @@ export default function MenuBrowserSection() {
             subcategories={subcategories}
             activeSubcategorySlug={activeSubcategorySlug}
             onSubcategoryChange={setActiveSubcategorySlug}
+            decorativeImage={coffeeSketch}
+            onAfterSelectMobile={scrollToProductGrid}
           />
 
           <div className="min-w-0">
@@ -245,7 +166,7 @@ export default function MenuBrowserSection() {
               viewOptions={MENU_VIEW_OPTIONS}
             />
 
-            <div className="mt-6">
+            <div ref={productGridRef}  className="mt-6">
               <MenuProductGrid
                 products={visibleProducts}
                 viewMode={viewMode}
