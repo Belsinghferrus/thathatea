@@ -1,6 +1,6 @@
 import { motion } from "framer-motion";
-import heroMainPng from "../../../assets/images/menu/menu-hero.png";
-import bakerySketchPng from "@/assets/images/menu/sketch.png";
+import heroMainPng from "../../../assets/images/Menu/menu-hero.png";
+import bakerySketchPng from "@/assets/images/Menu/sketch.png";
 
 
 const ACCENT = "#b56322";

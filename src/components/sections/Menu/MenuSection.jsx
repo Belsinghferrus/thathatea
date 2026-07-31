@@ -8,7 +8,7 @@ import getVisibleProducts from "../../../utils/menu/get-visible-products";
 import getCategoryBySlug from "../../../utils/menu/get-category-by-slug";
 import getSubcategoriesByCategory from "../../../utils/menu/get-subcategories-by-category";
 
-import coffeeSketch from "../../../assets/images/menu/coffee-sketch.png"
+import coffeeSketch from "../../../assets/images/Menu/coffee-sketch.png"
 import MenuCategoryTabs from "../../sections/Menu/MenuCategoryTabs"
 import MenuToolbar from '../../sections/Menu/MenuToolbar'
 import MenuSidebar from "../../sections/Menu/MenuSidebar"
