@@ -1,4 +1,4 @@
-export const MENU_PRODUCTS = [
+ const MENU_PRODUCTS = [
     {
       id: "prod-cardamom-tea",
       slug: "cardamom-tea",
@@ -217,3 +217,6 @@ export const MENU_PRODUCTS = [
       tags: ["brownie", "bakery", "chocolate"],
     },
   ];
+
+
+  export default MENU_PRODUCTS;

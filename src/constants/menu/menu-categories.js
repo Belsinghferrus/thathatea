@@ -1,4 +1,4 @@
-export const MENU_CATEGORIES = [
+ const MENU_CATEGORIES = [
     {
       id: "cat-hot-beverages",
       slug: "hot-beverages",
@@ -91,3 +91,6 @@ export const MENU_CATEGORIES = [
       ],
     },
   ];
+
+
+  export default MENU_CATEGORIES;
