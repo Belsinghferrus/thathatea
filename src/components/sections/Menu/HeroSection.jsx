@@ -1,8 +1,7 @@
 import { motion } from "framer-motion";
 import heroMainPng from "@/assets/images/menu/menu-hero.png"; // main bakery board / tea / cookie image
-import bakerySketchPng from "@/assets/images/Menu/sketch.png"; // faint drawing behind hero
-import paperTexturePng from "@/assets/images/paper-bg.webp"; // full bg texture
-import madeWithLoveStampPng from "@/assets/images/cake.png"; // optional stamp png
+import bakerySketchPng from "@/assets/images/menu/sketch.png"; // faint drawing behind hero
+
 
 const ACCENT = "#b56322";
 const INK = "#24150e";
