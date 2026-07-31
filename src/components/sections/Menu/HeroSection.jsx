@@ -1,6 +1,6 @@
 import { motion } from "framer-motion";
-import heroMainPng from "@/assets/images/menu/menu-hero.png"; // main bakery board / tea / cookie image
-import bakerySketchPng from "@/assets/images/menu/sketch.png"; // faint drawing behind hero
+import heroMainPng from "../../../assets/images/menu/menu-hero.png";
+import bakerySketchPng from "@/assets/images/menu/sketch.png";
 
 
 const ACCENT = "#b56322";
