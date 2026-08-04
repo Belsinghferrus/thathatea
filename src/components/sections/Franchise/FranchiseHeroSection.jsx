@@ -1,138 +1,10 @@
-// import { motion } from "framer-motion";
-// import paperBG from '../../../assets/images/franchise/coffee-bg.jpg';
-// import franchiseOutletFront from '../../../assets/images/franchise/outlet-bg.png';
-// import tea from '../../../assets/images/franchise/tea-hero.png';
-
-// const CARD_BROWN = "#3a2418";
-// const ACCENT = "#c9752f";
-
-// export default function FranchiseHeroSection({ reduceMotion = false }) {
-//     return (
-//         <section className="relative flex min-h-screen w-full items-center justify-center overflow-hidden">
-//             {/* Background image, full-bleed */}
-//             <img
-//                 src={paperBG}
-//                 alt=""
-//                 className="absolute inset-0 h-full w-full object-cover"
-//             />
-//             <div className="absolute inset-0  " />
-
-//             {/* CENTER PIECE — 70% of the page height, brown card 60% width, PNG 80% width */}
-//             <div className="relative z-10 flex h-[40vh] py-10 w-full flex-col items-center justify-center">
-
-//                 {/* Brown torn card — 60% width */}
-               
-//               <motion.div
-//               initial={reduceMotion ? false : { opacity: 0, scale: 0.94 }}
-//               whileInView={reduceMotion ? {} : { opacity: 1, scale: 1 }}
-//               viewport={{ once: true, amount: 0.3 }}
-//               transition={{ duration: 0.6 }}
-//               className="relative z-10 mt-50 w-[60%] max-w-[760px]"
-//               style={{ aspectRatio: "6 / 3" }}
-//             >
-//               {/* Irregular brown shape */}
-//               <svg
-//                 viewBox="0 0 1000 600"
-//                 className="absolute inset-0 h-full w-full"
-//                 preserveAspectRatio="none"
-//                 aria-hidden="true"
-//               >
-//                 <path
-//                   d="
-//                     M90,70
-//                     C130,45 185,65 235,55
-//                     C270,48 285,18 320,18
-//                     H470
-//                     C505,18 520,38 530,92
-//                     C540,42 555,18 590,18
-//                     H715
-//                     C760,18 800,38 845,30
-//                     C900,22 935,35 940,55
-//                     L940,430
-//                     C920,438 915,455 922,485
-//                     C928,510 918,535 895,545
-//                     H125
-//                     C96,545 72,530 70,500
-//                     L70,392
-//                     C98,390 108,374 108,350
-//                     C108,324 98,306 70,302
-//                     V120
-//                     C70,92 76,79 90,70
-//                     Z
-//                   "
-//                   fill={CARD_BROWN}
-//                 />
-//               </svg>
-            
-//               {/* Content */}
-//               <div className="relative z-10 flex h-full w-full flex-col items-center justify-center px-8 py-10 text-center sm:px-12 lg:px-16">
-//                 <p
-//                   className="text-[0.8rem] font-bold uppercase tracking-[0.2em] text-[#f0d6b8] sm:text-[0.92rem]"
-//                   style={{ fontFamily: "'Manrope', sans-serif" }}
-//                 >
-//                   Brewing Happiness
-//                 </p>
-            
-//                 <p
-//                   className="mt-2 text-[1rem] italic text-[#ead8c6] sm:text-[1.15rem]"
-//                   style={{ fontFamily: "'Cormorant Garamond', serif" }}
-//                 >
-//                   Every outlet carries the warmth of our first cup.
-//                 </p>
-            
-//                 <h1
-//                   className="mt-5 text-[3.4rem] leading-[0.86] tracking-[-0.03em] text-white sm:text-[4.8rem] lg:text-[6.2rem]"
-//                   style={{ fontFamily: "'Bebas Neue', sans-serif" }}
-//                 >
-//                   OUR OUTLETS
-//                 </h1>
-            
-//                 <p
-//                   className="mt-5 w-full max-w-[580px] text-[0.95rem] leading-[1.75] text-[#f3e6d8] sm:text-[1.02rem] lg:text-[1.08rem]"
-//                   style={{ fontFamily: "'Manrope', sans-serif" }}
-//                 >
-//                   From one small tea stall in 1991 to 50+ outlets across Bangalore and growing,
-//                   our journey has always been powered by consistency, comfort, and community.
-//                   Thank you for being a part of every cup we serve.
-//                 </p>
-            
-               
-              
-//               </div>
-//             </motion.div>
-//                 {/* PNG image — 80% width, overlapping the brown card */}
-//                 <motion.div
-//                     initial={reduceMotion ? false : { opacity: 0, y: 30 }}
-//                     whileInView={reduceMotion ? {} : { opacity: 1, y: 0 }}
-//                     viewport={{ once: true, amount: 0.2 }}
-//                     transition={{ duration: 0.6, delay: 0.15 }}
-//                     className="relative z-20 -mt-24 w-[100%] max-w-[1320px] sm:-mt-32 lg:-mt-60"
-//                 >
-//                     <img
-//                         src={franchiseOutletFront}
-//                         alt="Thatha Tea outlet storefront"
-//                         width={1800}
-//                         height={700}
-//                         loading="lazy"
-//                         className="h-auto w-full object-contain"
-//                     />
-//                 </motion.div>
-              
-//             </div>
-
-
-//         </section>
-//     );
-// }
-
-
-
 
 
 import { motion } from "framer-motion";
 import paperBG from "../../../assets/images/franchise/coffee-bg.jpg";
 import franchiseOutletFront from "../../../assets/images/franchise/outlet-bg.png";
 import tea from "../../../assets/images/franchise/tea-hero.png";
+import FranchiseStatsMarquee from "./FranchiseStatsMarquee";
 
 const CARD_BROWN = "#3a2418";
 const ACCENT = "#c9752f";
@@ -241,7 +113,7 @@ export default function FranchiseHeroSection({ reduceMotion = false }) {
       <div className="absolute inset-0 bg-[#f7ecd9]/10" />
 
       <div className="relative z-10 flex min-h-screen w-full flex-col items-center justify-center px-4 pt-8 pb-0 sm:px-6 lg:px-10">
-        <div className="relative flex h-[92vh] w-full max-w-[1500px] flex-col items-center justify-start sm:h-[94vh] lg:h-[100vh]">
+        <div className="relative flex h-[72vh] w-full max-w-[1500px] flex-col items-center justify-start sm:h-[94vh] lg:h-[100vh]">
           {/* BROWN BOARD */}
           <motion.div
             initial={reduceMotion ? false : { opacity: 0, scale: 0.94 }}
@@ -349,6 +221,7 @@ export default function FranchiseHeroSection({ reduceMotion = false }) {
             />
           </motion.div>
 
+
           {/* OPTIONAL TEA IMAGE ACCENT - MOBILE HIDDEN FOR NOW */}
           {/* <img
             src={tea}
@@ -356,8 +229,12 @@ export default function FranchiseHeroSection({ reduceMotion = false }) {
             aria-hidden="true"
             className="pointer-events-none absolute bottom-[10%] right-[2%] z-30  lg:w-[4%] sm:w-[14%] object-contain lg:block"
           /> */}
+          
         </div>
+        <FranchiseStatsMarquee />
       </div>
+      
+
     </section>
   );
 }
