@@ -5,6 +5,8 @@ import FranchiseStatsMarquee from '../../components/sections/Franchise/Franchise
 import FranchiseSupportJourneySection from '../../components/sections/Franchise/FranchiseSupportJourneySection'
 import WhyPartnerSection from '../../components/sections/Franchise/WhyPartnerSection'
 import BrewSuccessSection from '../../components/sections/Franchise/BrewSuccessSection'
+import BrewMomentsSection from '../../components/sections/Franchise/BrewMomentsSection'
+import WhatMakesUsSpecialStrip from '../../components/sections/Story/WhatMakesUsSpecialStrip'
 
 const Franchise = () => {
   return (
@@ -13,7 +15,9 @@ const Franchise = () => {
    <FranchiseHeroSection />
    <WhyPartnerSection />
    <BrewSuccessSection />
-   {/* <FranchiseSupportJourneySection /> */}
+   <BrewMomentsSection  />
+   <WhatMakesUsSpecialStrip />
+   <FranchiseSupportJourneySection />
   
    </>
   )
