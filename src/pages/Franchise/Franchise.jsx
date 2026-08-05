@@ -7,6 +7,7 @@ import WhyPartnerSection from '../../components/sections/Franchise/WhyPartnerSec
 import BrewSuccessSection from '../../components/sections/Franchise/BrewSuccessSection'
 import BrewMomentsSection from '../../components/sections/Franchise/BrewMomentsSection'
 import WhatMakesUsSpecialStrip from '../../components/sections/Story/WhatMakesUsSpecialStrip'
+import FranchiseStickyBanner from '../../components/sections/Franchise/FranchiseStickyBanner'
 
 const Franchise = () => {
   return (
@@ -18,7 +19,7 @@ const Franchise = () => {
    <BrewMomentsSection  />
    <WhatMakesUsSpecialStrip />
    <FranchiseSupportJourneySection />
-  
+  <FranchiseStickyBanner />
    </>
   )
 }
