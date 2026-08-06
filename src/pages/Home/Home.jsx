@@ -4,7 +4,7 @@ import Intro from "@/components/sections/Intro/Intro";
 import SpecialitiesSection from "../../components/sections/Hero/SpecialitiesSection";
 import JourneySection from "../../components/sections/Hero/JourneySection";
 import TeaBreakSection from "../../components/sections/Hero/TeabreakSection";
-import ExploreMenuSection from "../../components/sections/Hero/IngredientsSection";
+import IngredientsSection from "../../components/sections/Hero/IngredientsSection";
 import ContactPopup from "../../components/common/ContactPopup";
 import PaperJournalSection from "../../components/sections/Hero/PaperJournalSection";
 import FranchiseSection from "../../components/sections/Hero/FranchiseSection";
@@ -24,7 +24,7 @@ function Home() {
         <SpecialitiesSection />
         <JourneySection />
         <TeaBreakSection />
-        <ExploreMenuSection/>
+        <IngredientsSection/>
         <PaperJournalSection />
         <FranchiseSection />
         <FranchiseToFeedbackStrip />
