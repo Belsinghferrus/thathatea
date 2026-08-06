@@ -12,6 +12,7 @@ import FeaturedOutletsSection from '../../components/sections/Franchise/Featured
 import FranchiseDesignBreakSection from '../../components/sections/Franchise/FranchiseDesignBreakSection'
 import FranchiseEnquirySection from '../../components/sections/Franchise/FranchiseEnquirySection'
 import FranchiseFaqSection from '../../components/sections/Franchise/FranchiseFaqSection'
+import FranchiseMarqueeStrip from '../../components/sections/Franchise/FranchiseMarqueeStrip'
 
 const Franchise = () => {
   return (
@@ -26,7 +27,9 @@ const Franchise = () => {
   {/* <FranchiseStickyBanner /> */}
   <FeaturedOutletsSection />
   <FranchiseDesignBreakSection />
+  
   <FranchiseFaqSection />
+  <FranchiseMarqueeStrip />
   <FranchiseEnquirySection />
    </>
   )

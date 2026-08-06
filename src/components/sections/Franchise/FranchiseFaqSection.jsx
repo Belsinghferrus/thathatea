@@ -1,9 +1,9 @@
 import { useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
-import { ArrowUpRight, ChevronDown, Play } from "lucide-react";
+import { ArrowDownRight, ArrowUpRight, ChevronDown, Play } from "lucide-react";
 import paperbg from "@/assets/images/paper-bg.webp";
 import faqPoster from "@/assets/images/mascot.png"; 
-import franchiseVideo from "@/assets/images/franchise/franchise1.mp4";
+import franchiseVideo from "@/assets/images/franchise/franchise.mp4";
 
 const faqVideo = true;
 
@@ -101,6 +101,9 @@ export default function FranchiseFaqSection() {
                   poster={faqPoster}
                   controls
                   muted
+                  autoPlay  
+                  loop  
+                  
                   playsInline
                   preload="metadata"
                   className="h-full w-full object-cover"
@@ -206,11 +209,11 @@ export default function FranchiseFaqSection() {
                 format, and franchise plans.
               </p>
               <a
-                href="#contact"
+                href="#enquire"
                 className="group inline-flex items-center gap-2 self-start rounded-full bg-[#2D1A10] px-5 py-3 text-[0.78rem] font-semibold uppercase tracking-[0.1em] text-[#FFF7EF] transition-all hover:-translate-y-0.5 hover:bg-[#4A2C17]"
               >
                 Enquire now
-                <ArrowUpRight className="h-4 w-4 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
+                <ArrowDownRight className="h-4 w-4 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
               </a>
             </div>
           </motion.div>

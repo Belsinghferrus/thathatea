@@ -11,7 +11,6 @@ import {
     ArrowUpRight,
 } from "lucide-react";
 import coffeevideo from "@/assets/images/franchise/cofee-video.mp4";
-
 import outlet1  from "@/assets/images/outlet/Indra-nager.png";
 import design from "@/assets/images/franchise/design.jpg";
 import training from "@/assets/images/franchise/taining.jpg";
