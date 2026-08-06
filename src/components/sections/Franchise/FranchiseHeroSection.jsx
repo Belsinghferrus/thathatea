@@ -1,240 +1,153 @@
-
-
 import { motion } from "framer-motion";
+import { ArrowUpRight, MapPin } from "lucide-react";
 import paperBG from "../../../assets/images/franchise/coffee-bg.jpg";
 import franchiseOutletFront from "../../../assets/images/franchise/outlet-bg.png";
-import tea from "../../../assets/images/franchise/tea-hero.png";
 import FranchiseStatsMarquee from "./FranchiseStatsMarquee";
 
-const CARD_BROWN = "#3a2418";
-const ACCENT = "#c9752f";
+const heroImage = franchiseOutletFront;
 
-function FranchiseStamp({ reduceMotion = false }) {
+export default function FranchiseHeroCenterStage({ reduceMotion = false }) {
   return (
-    <motion.div
-      animate={reduceMotion ? {} : { rotate: [0, 6, 0, -6, 0] }}
-      transition={{ duration: 8, repeat: Infinity, ease: "easeInOut" }}
-      className="absolute right-3 top-3 z-30 sm:right-5 sm:top-5 lg:right-6 lg:top-6"
-    >
-      <div className="relative flex h-[74px] w-[74px] items-center justify-center rounded-full border-2 border-[#d7b08b] bg-[#f8eee2]/95 shadow-[0_10px_20px_rgba(34,20,12,0.18)] sm:h-[86px] sm:w-[86px] lg:h-[96px] lg:w-[96px]">
-        <svg viewBox="0 0 100 100" className="absolute inset-0 h-full w-full">
-          <defs>
-            <path
-              id="franchiseStampPath"
-              d="M50,50 m-36,0 a36,36 0 1,1 72,0 a36,36 0 1,1 -72,0"
-            />
-          </defs>
-          <circle
-            cx="50"
-            cy="50"
-            r="42"
-            fill="none"
-            stroke="#8a5a32"
-            strokeWidth="1.5"
-            strokeDasharray="2.5 4"
-          />
-          <text
-            fontSize="7.6"
-            fill="#6e4527"
-            fontFamily="Manrope, sans-serif"
-            fontWeight="700"
-            letterSpacing="1.4"
-          >
-            <textPath href="#franchiseStampPath" startOffset="0%">
-              THATHA TEA • EST. 1991 • THATHA TEA •
-            </textPath>
-          </text>
-        </svg>
-
-        <div className="relative z-10 text-center">
-          <p
-            className="text-[0.72rem] font-extrabold leading-none text-[#6e4527] sm:text-[0.8rem]"
-            style={{ fontFamily: "'Manrope', sans-serif" }}
-          >
-            50+
-          </p>
-          <p
-            className="mt-1 text-[0.5rem] font-bold uppercase tracking-[0.08em] text-[#8a5a32] sm:text-[0.55rem]"
-            style={{ fontFamily: "'Manrope', sans-serif" }}
-          >
-            Outlets
-          </p>
-        </div>
-      </div>
-    </motion.div>
-  );
-}
-
-function BrownBoardShape() {
-  return (
-    <svg
-      viewBox="0 0 1000 600"
-      className="absolute inset-0 h-full w-full"
-      preserveAspectRatio="none"
-      aria-hidden="true"
-    >
-      <path
-        d="
-          M88,74
-          C124,46 186,66 238,54
-          C282,44 306,18 338,18
-          H462
-          C504,18 523,34 536,92
-          C548,38 571,18 608,18
-          H770
-          C826,18 882,24 932,46
-          L932,424
-          C908,438 900,462 910,492
-          C918,516 910,535 888,546
-          H138
-          C98,546 70,522 70,482
-          L70,398
-          C102,395 114,374 114,346
-          C114,320 104,302 70,296
-          V126
-          C70,98 74,82 88,74
-          Z
-        "
-        fill={CARD_BROWN}
-      />
-    </svg>
-  );
-}
-
-export default function FranchiseHeroSection({ reduceMotion = false }) {
-  return (
-    <section className="relative flex min-h-screen w-full items-center justify-center overflow-hidden">
-      <img
+    <section className="relative min-h-screen w-full overflow-hidden  bg-[#f6ede3] text-[#2D1A10]">
+      {/* Soft paper background */}
+      {/* <img
         src={paperBG}
         alt=""
-        className="absolute inset-0 h-full w-full object-cover"
-      />
+        aria-hidden="true"
+        className="absolute inset-0 h-full w-full object-cover opacity-35 mix-blend-multiply"
+      /> */}
+      <div className="absolute inset-0 bg-[linear-gradient(to_bottom,rgba(245,235,221,0.82),rgba(245,235,221,0.64)_48%,rgba(245,235,221,0.9))]" />
 
-      <div className="absolute inset-0 bg-[#f7ecd9]/10" />
+      {/* Quiet decorative details */}
+      <div className="pointer-events-none absolute left-[-10rem] top-[18%] h-[28rem] w-[28rem] rounded-full border border-[#C9752F]/15" />
+      <div className="pointer-events-none absolute right-[-12rem] bottom-[8%] h-[34rem] w-[34rem] rounded-full border border-[#C9752F]/15" />
+      <div className="pointer-events-none absolute inset-x-0 top-1/2 h-px bg-[#2D1A10]/[0.06]" />
 
-      <div className="relative z-10 flex min-h-screen w-full flex-col items-center justify-center px-4 pt-8 pb-0 sm:px-6 lg:px-10">
-        <div className="relative flex h-[72vh] w-full max-w-[1500px] flex-col items-center justify-start sm:h-[94vh] lg:h-[100vh]">
-          {/* BROWN BOARD */}
+      <div className="relative z-10 mx-auto flex min-h-screen max-w-[1600px] flex-col px-5 py-5 sm:px-8 sm:py-7 lg:px-12 lg:py-8">
+        {/* Header */}
+        <header className="flex items-center justify-between border-b border-[#2D1A10]/15 pb-4 sm:pb-5">
+          <div className="flex items-center gap-3">
+            <span className="h-2 w-2 rounded-full bg-[#C9752F]" />
+            {/* <p className="text-[0.62rem] uppercase tracking-[0.3em] text-[#8B5A35] sm:text-[0.7rem]">
+              Thatha Tea / Our outlets
+            </p> */}
+          </div>
+
+          <p className="hidden text-[0.65rem] uppercase tracking-[0.24em] text-[#2D1A10]/45 sm:block">
+            A place worth returning to
+          </p>
+        </header>
+
+        {/* Center-stage composition */}
+        <div className="relative flex flex-1 flex-col items-center justify-center py-9 sm:py-12 lg:py-7">
+          {/* Heading above the image */}
           <motion.div
-            initial={reduceMotion ? false : { opacity: 0, scale: 0.94 }}
-            whileInView={reduceMotion ? {} : { opacity: 1, scale: 1 }}
-            viewport={{ once: true, amount: 0.3 }}
+            initial={reduceMotion ? false : { opacity: 0, y: -16 }}
+            animate={reduceMotion ? {} : { opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
-            className="
-              relative z-10
-              mt-6
-              h-[60vh] w-[92%]
-              sm:h-[56vh] sm:w-[82%]
-              lg:mt-20 lg:h-auto lg:w-[60%] lg:max-w-[820px]
-            "
-            style={{
-              aspectRatio: window?.innerWidth >= 1024 ? "6 / 3.4" : undefined,
-            }}
+            className="relative z-20 text-center"
           >
-            <div className="relative h-full w-full lg:aspect-[6/3.4]">
-              <BrownBoardShape />
-              <FranchiseStamp reduceMotion={reduceMotion} />
+            <p className="text-[0.64rem] uppercase tracking-[0.32em] text-[#A36331] sm:text-[0.72rem]">
+              Brewing happiness since 1991
+            </p>
 
-              <div className="relative z-10 flex h-full w-full flex-col items-center justify-center px-5 py-8 text-center sm:px-8 sm:py-10 lg:px-14 lg:py-12">
-                <p
-                  className="text-[0.68rem] font-bold uppercase tracking-[0.22em] text-[#f0d6b8] sm:text-[0.8rem] lg:text-[0.9rem]"
-                  style={{ fontFamily: "'Manrope', sans-serif" }}
-                >
-                  BREWING HAPPINESS
-                </p>
-
-                <p
-                  className="mt-2 text-[0.92rem] italic leading-[1.35] text-[#ead8c6] sm:text-[1rem] lg:text-[1.2rem]"
-                  style={{ fontFamily: "'Cormorant Garamond', serif" }}
-                >
-                  Every outlet carries the warmth of our first cup.
-                </p>
-
-                <h1
-                  className="mt-4 text-[2.6rem] leading-[0.88] tracking-[-0.03em] text-white sm:text-[3.7rem] lg:mt-5 lg:text-[6rem]"
-                  style={{ fontFamily: "'Bebas Neue', sans-serif" }}
-                >
-                  OUR OUTLETS
-                </h1>
-
-                <p
-                  className="mt-4 w-full max-w-[620px] text-[0.92rem] leading-[1.75] text-[#f3e6d8] sm:text-[1rem] lg:mt-5 lg:text-[1.08rem]"
-                  style={{ fontFamily: "'Manrope', sans-serif" }}
-                >
-                  From one small tea stall in 1991 to 50+ outlets across
-                  Bangalore and growing, our journey has always been powered by
-                  consistency, comfort, and community. Thank you for being a
-                  part of every cup we serve.
-                </p>
-
-                <div className="mt-4 flex flex-wrap items-center justify-center gap-2 sm:gap-3 lg:mt-5">
-                  <span
-                    className="rounded-full border border-[#6c4a30] px-3 py-1 text-[0.58rem] font-semibold uppercase tracking-[0.08em] text-[#f0d6b8] sm:px-4 sm:text-[0.64rem] lg:text-[0.7rem]"
-                    style={{ fontFamily: "'Manrope', sans-serif" }}
-                  >
-                    Since 1991
-                  </span>
-                  <span
-                    className="rounded-full border border-[#6c4a30] px-3 py-1 text-[0.58rem] font-semibold uppercase tracking-[0.08em] text-[#f0d6b8] sm:px-4 sm:text-[0.64rem] lg:text-[0.7rem]"
-                    style={{ fontFamily: "'Manrope', sans-serif" }}
-                  >
-                    50+ outlets
-                  </span>
-                  <span
-                    className="rounded-full border border-[#6c4a30] px-3 py-1 text-[0.58rem] font-semibold uppercase tracking-[0.08em] text-[#f0d6b8] sm:px-4 sm:text-[0.64rem] lg:text-[0.7rem]"
-                    style={{ fontFamily: "'Manrope', sans-serif" }}
-                  >
-                    Bangalore & beyond
-                  </span>
-                </div>
-
-                <p
-                  className="mt-4 max-w-[420px] text-[0.76rem] italic leading-[1.5] text-[#e2c6a7] sm:text-[0.84rem] lg:mt-5 lg:text-[0.95rem]"
-                  style={{ fontFamily: "'Cormorant Garamond', serif" }}
-                >
-                  “From one stall to a citywide ritual.”
-                </p>
-              </div>
-            </div>
+            <h1
+              className="mt-3 text-[3.6rem] leading-[0.78] sm:text-[5.4rem] lg:text-[7.5rem]"
+              style={{
+                fontFamily: "'Bebas Neue', sans-serif",
+                letterSpacing: "0.01em",
+              }}
+            >
+              <span className="text-[#2D1A10]">OUR </span>
+              <span className="text-[#C9752F]">OUTLETS</span>
+            </h1>
           </motion.div>
 
-          {/* FRONT OUTLET IMAGE */}
+          {/* Main image stage */}
           <motion.div
-            initial={reduceMotion ? false : { opacity: 0, y: 30 }}
-            whileInView={reduceMotion ? {} : { opacity: 1, y: 0 }}
-            viewport={{ once: true, amount: 0.2 }}
-            transition={{ duration: 0.6, delay: 0.15 }}
-            className="
-              relative z-20
-              -mt-[14vh] w-[118%]
-              sm:-mt-[16vh] sm:w-[108%]
-              lg:-mt-70 lg:w-[100%] lg:max-w-[1320px]
-            "
+            initial={reduceMotion ? false : { opacity: 0, y: 25, scale: 0.96 }}
+            animate={reduceMotion ? {} : { opacity: 1, y: 0, scale: 1 }}
+            transition={{ duration: 0.8, delay: 0.12, ease: "easeOut" }}
+            className="relative mt-5 w-full max-w-[1180px] sm:mt-7 lg:mt-3"
           >
+            {/* Main warm shape */}
+            <div className="absolute left-1/2 top-[12%] h-[70%] w-[68%] -translate-x-1/2 rounded-[48%_48%_14%_14%] bg-[#3A2418] sm:w-[60%] lg:w-[53%]" />
+
+            {/* Fine frame behind the storefront */}
+            <div className="absolute left-1/2 top-[7%] h-[77%] w-[72%] -translate-x-1/2 rounded-[50%_50%_16%_16%] border border-[#C9752F]/35 sm:w-[64%] lg:w-[57%]" />
+
             <img
-              src={franchiseOutletFront}
+              src={heroImage}
               alt="Thatha Tea outlet storefront"
               width={1800}
               height={700}
-              loading="lazy"
-              className="h-auto w-full object-contain"
+              className="relative z-10 mx-auto h-auto w-[118%] max-w-none object-contain sm:w-[108%] lg:w-[100%]"
             />
+
+            {/* Floating location detail */}
+            <motion.div
+              animate={reduceMotion ? {} : { y: [0, -7, 0] }}
+              transition={{ duration: 5, repeat: Infinity, ease: "easeInOut" }}
+              className="absolute left-[3%] top-[24%] z-20 rounded-[18px] border border-[#D7B08B] bg-[#F9F0E5]/95 px-4 py-3 shadow-[0_14px_28px_rgba(45,26,16,0.1)] backdrop-blur-sm sm:left-[7%] sm:px-5 sm:py-4 lg:left-[10%]"
+            >
+              <div className="flex items-center gap-2 text-[#A36331]">
+                <MapPin className="h-3.5 w-3.5" />
+                <span className="text-[0.58rem] uppercase tracking-[0.22em]">
+                  Find us nearby
+                </span>
+              </div>
+              <p
+                className="mt-1 text-[1.55rem] leading-none text-[#3A2418] sm:text-[1.8rem]"
+                style={{ fontFamily: "'Bebas Neue', sans-serif" }}
+              >
+                50+ LOCATIONS
+              </p>
+            </motion.div>
+
+            {/* Floating year detail */}
+            <div className="absolute right-[3%] top-[21%] z-20 text-right sm:right-[7%] lg:right-[10%]">
+              <p className="text-[0.58rem] uppercase tracking-[0.24em] text-[#8B5A35]">
+                Our first pour
+              </p>
+              <p
+                className="mt-1 text-[2.5rem] leading-none text-[#C9752F] sm:text-[3.2rem]"
+                style={{ fontFamily: "'Bebas Neue', sans-serif" }}
+              >
+                1991
+              </p>
+            </div>
+
+            <p className="relative z-20 mt-[-1rem] text-center text-[0.68rem] uppercase tracking-[0.25em] text-[#8B5A35] sm:mt-[-1.5rem]">
+              Bangalore &amp; beyond
+            </p>
           </motion.div>
 
+          {/* Supporting line below image */}
+          <motion.div
+            initial={reduceMotion ? false : { opacity: 0, y: 12 }}
+            animate={reduceMotion ? {} : { opacity: 1, y: 0 }}
+            transition={{ duration: 0.5, delay: 0.45 }}
+            className="mt-3 flex flex-col items-center gap-4 text-center sm:mt-4 sm:flex-row sm:gap-6"
+          >
+            <p className="max-w-[34ch] text-[0.82rem] leading-6 text-[#5D4635] sm:text-[0.9rem]">
+              Familiar flavours, thoughtful spaces, and a reason to come back.
+            </p>
 
-          {/* OPTIONAL TEA IMAGE ACCENT - MOBILE HIDDEN FOR NOW */}
-          {/* <img
-            src={tea}
-            alt=""
-            aria-hidden="true"
-            className="pointer-events-none absolute bottom-[10%] right-[2%] z-30  lg:w-[4%] sm:w-[14%] object-contain lg:block"
-          /> */}
-          
+            <a
+              href="#outlets"
+              className="group inline-flex items-center gap-2 rounded-full bg-[#3A2418] px-5 py-3 text-[0.75rem] font-semibold uppercase tracking-[0.1em] text-[#FFF7EF] transition-all hover:-translate-y-1 hover:bg-[#51311F]"
+            >
+              Explore outlets
+              <ArrowUpRight className="h-4 w-4 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
+            </a>
+          </motion.div>
         </div>
-        <FranchiseStatsMarquee />
-      </div>
-      
 
+        {/* Stats footer */}
+        <div className="border-t border-[#2D1A10]/15 pt-4 sm:pt-5">
+          <FranchiseStatsMarquee />
+        </div>
+      </div>
     </section>
   );
 }

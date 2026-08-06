@@ -33,15 +33,15 @@ const benefits = [
 
 export default function WhyPartnerSection() {
   return (
-    <section className="relative overflow-hidden bg-[#F7ECDC] py-16 sm:py-20 lg:py-24">
+    <section className="relative overflow-hidden bg-[#f6ede3] py-16 sm:py-20 lg:py-24">
       <div className="absolute inset-0">
-        <img
+        {/* <img
           src="https://images.unsplash.com/photo-1509042239860-f550ce710b93?auto=format&fit=crop&w=1800&q=80"
           alt=""
           className="h-full w-full object-cover opacity-20"
-        />
-        <div className="absolute inset-0 bg-[#F7ECDC]/88" />
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_top,rgba(200,138,61,0.12),transparent_35%),radial-gradient(circle_at_bottom_right,rgba(139,94,60,0.10),transparent_38%)]" />
+        /> */}
+        {/* <div className="absolute inset-0 bg-[#F7ECDC]/88" />
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_top,rgba(200,138,61,0.12),transparent_35%),radial-gradient(circle_at_bottom_right,rgba(139,94,60,0.10),transparent_38%)]" /> */}
       </div>
 
       <div className="relative mx-auto max-w-[1600px] px-4 sm:px-6 lg:px-10">

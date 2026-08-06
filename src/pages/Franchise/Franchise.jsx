@@ -24,10 +24,9 @@ const Franchise = () => {
    <BrewMomentsSection  />
    <WhatMakesUsSpecialStrip />
    <FranchiseSupportJourneySection />
-  {/* <FranchiseStickyBanner /> */}
+  <FranchiseStickyBanner />
   <FeaturedOutletsSection />
   <FranchiseDesignBreakSection />
-  
   <FranchiseFaqSection />
   <FranchiseMarqueeStrip />
   <FranchiseEnquirySection />

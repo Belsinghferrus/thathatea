@@ -1,201 +1,158 @@
 import { motion } from "framer-motion";
-import { ArrowRight, Store, Users, BadgeIndianRupee, MapPinned, Coffee, Sparkles } from "lucide-react";
-import coffeewater from "@/assets/images/franchise/franchise1.jpg";
-// TEMP PLACEHOLDER — replace with your actual brand / franchise background image
-const sectionBg = coffeewater;
+import { ArrowDownRight, ArrowUpRight, MapPin, Sparkles, Users } from "lucide-react";
+import paperbg from "@/assets/images/franchise/paper-BG.jpg";
+import cafe from "@/assets/images/franchise/cafe-fg.png"; 
 
-const benefits = [
+const sectionBg = paperbg;
+const cafeImage = cafe;
+
+const supportPoints = [
   {
-    icon: Store,
-    title: "Proven Store Model",
-    desc: "Launch with a layout, menu flow, and customer journey already optimized for real-world operations.",
+    icon: MapPin,
+    text: "Choose the right location",
+  },
+  {
+    icon: Sparkles,
+    text: "Launch with a loved brand",
   },
   {
     icon: Users,
-    title: "Brand Support",
-    desc: "Get guidance on setup, hiring, training, opening day planning, and ongoing store performance.",
-  },
-  {
-    icon: BadgeIndianRupee,
-    title: "Revenue Opportunity",
-    desc: "Build a business with a recognized brand, repeat customers, and a tested sales engine.",
-  },
-  {
-    icon: MapPinned,
-    title: "Location Assistance",
-    desc: "Choose the right area with better visibility, demand, and customer access for your outlet.",
+    text: "Grow with continued support",
   },
 ];
 
-const quickStats = [
-  { icon: Coffee, value: "50+", label: "Outlets Ready" },
-  { icon: Sparkles, value: "1M+", label: "Brand Touchpoints" },
-  { icon: MapPinned, value: "30+", label: "Cities Covered" },
-];
-
-export default function FranchiseBreakSection() {
+function OrbitMark() {
   return (
-    <section className="relative min-h-screen  rounded-[20px] w-full overflow-hidden bg-[#FBF6EF]">
-      {/* Background */}
-      <div className="absolute inset-0">
-        <img
-          src={sectionBg}
-          alt="Franchise background"
-          className="h-full  w-full object-contain object-center"
-        />
-        <div className="absolute inset-0 bg-[linear-gradient(to_right,rgba(251,246,239,0.95)_0%,rgba(251,246,239,0.88)_14%,rgba(251,246,239,0.72)_26%,rgba(251,246,239,0.55)_40%)]" /> 
-         <div className="absolute inset-0 bg-[radial-gradient(circle_at_75%_98%,rgba(194,154,99,0.18),transparent_26%),radial-gradient(circle_at_82%_78%,rgba(90,54,25,0.10),transparent_94%)]" />
-      </div>
+    <svg
+      viewBox="0 0 180 180"
+      className="h-28 w-28 text-[#B77A2A]/35 sm:h-36 sm:w-36"
+      fill="none"
+      aria-hidden="true"
+    >
+      <circle cx="90" cy="90" r="68" stroke="currentColor" strokeWidth="1" />
+      <circle cx="90" cy="90" r="48" stroke="currentColor" strokeWidth="1" strokeDasharray="3 8" />
+      <path
+        d="M90 8C132 8 166 40 171 81"
+        stroke="currentColor"
+        strokeWidth="2"
+        strokeLinecap="round"
+      />
+      <circle cx="171" cy="81" r="4" fill="currentColor" />
+    </svg>
+  );
+}
 
-      <div className="relative z-10 flex min-h-screen items-center px-4 py-12 sm:px-6 sm:py-16 lg:px-10 lg:py-20">
-        <div className="mx-auto grid w-full max-w-[1500px] items-center gap-10 lg:grid-cols-[1.05fr_0.95fr] lg:gap-14">
-          {/* Left content */}
+export default function FranchiseMinimalLightSection() {
+  return (
+    <section
+      className="relative flex min-h-screen w-full items-center overflow-hidden bg-[#f6ede3] text-[#2D1A10]"
+      
+    >
+      {/* Fine paper texture */}
+      <div className="pointer-events-none absolute inset-0 opacity-25 [background-image:radial-gradient(rgba(45,26,16,0.35)_0.6px,transparent_0.6px)] [background-size:12px_12px]" />
+
+     
+
+      <div className="relative z-10 mx-auto grid min-h-screen w-full max-w-[1400px] items-center px-5 py-10 sm:px-8 sm:py-14 lg:grid-cols-[0.9fr_1.1fr] lg:gap-4 lg:px-12 lg:py-16">
+        {/* Image composition */}
+        <motion.div
+          initial={{ opacity: 0, x: -30, y: 12 }}
+          whileInView={{ opacity: 1, x: 0, y: 0 }}
+          viewport={{ once: true, amount: 0.25 }}
+          transition={{ duration: 0.7, ease: "easeOut" }}
+          className="relative flex min-h-[430px] items-center justify-center sm:min-h-[480px] lg:min-h-[680px]"
+        >
           <motion.div
-            initial={{ opacity: 0, y: 24 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, amount: 0.3 }}
-            transition={{ duration: 0.55 }}
-            className="max-w-2xl"
+            animate={{ rotate: [0, 4, 0] }}
+            transition={{ duration: 9, repeat: Infinity, ease: "easeInOut" }}
+            className="absolute left-[8%] top-[13%]"
           >
-            <p
-              className="mb-3 text-[0.7rem] uppercase tracking-[0.3em] text-[#9A6B32] sm:mb-4 sm:text-[0.75rem]"
-              style={{ fontFamily: "'Manrope', sans-serif" }}
-            >
-              Franchise Opportunity
-            </p>
-
-            <h1
-              className="max-w-[11ch] text-[2.6rem] leading-[0.92] text-[#2D1A10] sm:text-[3.8rem] lg:text-[5.2rem]"
-              style={{ fontFamily: "'Bebas Neue', sans-serif", letterSpacing: "0.03em" }}
-            >
-              OWN A
-              <span className="block text-[#B77A2A]">THATHA TEA</span>
-              OUTLET
-            </h1>
-
-            <p className="mt-4 max-w-[42ch] text-[0.95rem] leading-7 text-[#4E3A2A] sm:mt-5 sm:text-[1.02rem]">
-              Join a brand built on familiarity, fast service, and strong repeat
-              demand. We help you launch a franchise that feels premium, runs
-              efficiently, and speaks to customers from day one.
-            </p>
-
-            <div className="mt-6 flex flex-wrap gap-3 sm:mt-7">
-              <motion.a
-                href="#contact"
-                whileHover={{ y: -2 }}
-                whileTap={{ scale: 0.98 }}
-                className="inline-flex items-center gap-2 rounded-full bg-[#2D1A10] px-5 py-3 text-[0.88rem] font-semibold text-[#FFF7EF] shadow-[0_12px_28px_rgba(45,26,16,0.16)] transition-colors hover:bg-[#442713] sm:px-6 sm:py-3.5"
-              >
-                Enquire About Franchise
-                <ArrowRight className="h-4 w-4" />
-              </motion.a>
-
-              <a
-                href="#benefits"
-                className="inline-flex items-center gap-2 rounded-full border border-[#C9A26D] bg-white/40 px-5 py-3 text-[0.88rem] font-semibold text-[#2D1A10] backdrop-blur-sm transition-colors hover:bg-white/70 sm:px-6 sm:py-3.5"
-              >
-                Learn More
-              </a>
-            </div>
-
-            {/* Quick stats */}
-            <div className="mt-8 grid grid-cols-1 gap-3 sm:grid-cols-3 sm:gap-4">
-              {quickStats.map((item, index) => {
-                const Icon = item.icon;
-                return (
-                  <motion.div
-                    key={item.label}
-                    initial={{ opacity: 0, y: 18 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    viewport={{ once: true, amount: 0.3 }}
-                    transition={{ duration: 0.4, delay: index * 0.06 }}
-                    className="rounded-[20px] border border-[#D9C1A1] bg-white/55 p-4 shadow-[0_12px_30px_rgba(45,26,16,0.06)] backdrop-blur-sm"
-                  >
-                    <div className="flex items-center gap-3">
-                      <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-[#F1DDC2] text-[#9A6B32]">
-                        <Icon className="h-5 w-5" strokeWidth={1.8} />
-                      </span>
-                      <div>
-                        <div
-                          className="text-[1.7rem] leading-none text-[#2D1A10]"
-                          style={{ fontFamily: "'Bebas Neue', sans-serif" }}
-                        >
-                          {item.value}
-                        </div>
-                        <p className="mt-1 text-[0.7rem] uppercase tracking-[0.16em] text-[#7A5A41]">
-                          {item.label}
-                        </p>
-                      </div>
-                    </div>
-                  </motion.div>
-                );
-              })}
-            </div>
+            <OrbitMark />
           </motion.div>
 
-          {/* Right benefits panel */}
-          <motion.div
-            initial={{ opacity: 0, x: 30 }}
-            whileInView={{ opacity: 1, x: 0 }}
+          <div className="absolute bottom-[12%] left-[12%] h-px w-28 bg-[#B77A2A]/45 sm:w-40" />
+          <div className="absolute bottom-[12%] left-[12%] h-2 w-2 rounded-full bg-[#B77A2A]" />
+
+          <motion.img
+            src={cafeImage}
+            alt="Thatha Tea cafe experience"
+            initial={{ scale: 0.92, rotate: -4 }}
+            whileInView={{ scale: 1, rotate: 0 }}
             viewport={{ once: true, amount: 0.25 }}
-            transition={{ duration: 0.55 }}
-            className="rounded-[28px] border border-[#D9C1A1] bg-white/70 p-5 shadow-[0_20px_60px_rgba(45,26,16,0.08)] backdrop-blur-md sm:p-6 lg:p-7"
+            transition={{ duration: 0.8, delay: 0.1, ease: "easeOut" }}
+            className="relative z-10 max-h-[460px]  max-w-[100%] object-cover sm:max-h-[600px] lg:max-h-[780px]"
+          />
+
+          <span className="absolute bottom-[8%] right-[5%] rotate-[-90deg] text-[0.58rem] uppercase tracking-[0.3em] text-[#9A6B32]/75 sm:right-[10%]">
+            THATHA TEA / FRANCHISE
+          </span>
+        </motion.div>
+
+        {/* Minimal copy */}
+        <motion.div
+          initial={{ opacity: 0, x: 30 }}
+          whileInView={{ opacity: 1, x: 0 }}
+          viewport={{ once: true, amount: 0.25 }}
+          transition={{ duration: 0.65, delay: 0.1 }}
+          className="max-w-xl lg:ml-auto"
+        >
+          <div className="flex items-center gap-3">
+            <span className="h-px w-10 bg-[#B77A2A]" />
+            <p className="text-[0.64rem] uppercase tracking-[0.3em] text-[#9A6B32] sm:text-[0.7rem]">
+              Franchise opportunity
+            </p>
+          </div>
+
+          <h1
+            className="mt-6 max-w-[7ch] text-[4.3rem] leading-[0.78] sm:mt-8 sm:text-[6.2rem] lg:text-[8.6rem]"
+            style={{
+              fontFamily: "'Bebas Neue', sans-serif",
+              letterSpacing: "0.01em",
+            }}
           >
-            <div className="flex items-end justify-between gap-4 border-b border-[#E7D7C0] pb-4">
-              <div>
-                <p className="text-[0.65rem] uppercase tracking-[0.28em] text-[#9A6B32]">
-                  Why Franchise With Us
-                </p>
-                <h2
-                  className="mt-1 text-[1.7rem] leading-[0.95] text-[#2D1A10] sm:text-[2.2rem]"
-                  style={{ fontFamily: "'Bebas Neue', sans-serif", letterSpacing: "0.03em" }}
+            MAKE
+            <span className="block text-[#B77A2A]">IT</span>
+            YOURS.
+          </h1>
+
+          <p className="mt-6 max-w-[34ch] text-[0.94rem] leading-7 text-[#5E4735] sm:mt-8 sm:text-[1.02rem]">
+            A trusted tea brand, a thoughtful store model, and the space to
+            build something of your own.
+          </p>
+
+          {/* Minimal support points */}
+          <div className="mt-7 border-y border-[#CDB99E] sm:mt-9">
+            {supportPoints.map((item, index) => {
+              const Icon = item.icon;
+
+              return (
+                <motion.div
+                  key={item.text}
+                  initial={{ opacity: 0, x: 12 }}
+                  whileInView={{ opacity: 1, x: 0 }}
+                  viewport={{ once: true, amount: 0.3 }}
+                  transition={{ duration: 0.4, delay: index * 0.08 }}
+                  className="flex items-center gap-3 border-b border-[#CDB99E]/70 py-3.5 last:border-b-0 sm:py-4"
                 >
-                  BUILT FOR GROWTH
-                </h2>
-              </div>
-              <span className="hidden rounded-full bg-[#F1DDC2] px-3 py-1 text-[0.7rem] font-semibold text-[#7B5220] sm:inline-flex">
-                Franchise Model
-              </span>
-            </div>
+                  <Icon className="h-4 w-4 shrink-0 text-[#B77A2A]" strokeWidth={1.7} />
+                  <span className="text-[0.86rem] text-[#5E4735] sm:text-[0.92rem]">
+                    {item.text}
+                  </span>
+                </motion.div>
+              );
+            })}
+          </div>
 
-            <div id="benefits" className="mt-5 grid gap-4 sm:grid-cols-2">
-              {benefits.map((item, index) => {
-                const Icon = item.icon;
-                return (
-                  <motion.div
-                    key={item.title}
-                    initial={{ opacity: 0, y: 18 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    viewport={{ once: true, amount: 0.25 }}
-                    transition={{ duration: 0.4, delay: index * 0.07 }}
-                    className="rounded-[22px] border border-[#E7D7C0] bg-[#FFF9F3] p-4 shadow-[0_10px_26px_rgba(45,26,16,0.05)]"
-                  >
-                    <div className="mb-3 flex h-11 w-11 items-center justify-center rounded-full bg-[#F1DDC2] text-[#9A6B32]">
-                      <Icon className="h-5 w-5" strokeWidth={1.8} />
-                    </div>
-                    <h3 className="text-[1rem] font-semibold text-[#2D1A10]">
-                      {item.title}
-                    </h3>
-                    <p className="mt-2 text-[0.84rem] leading-6 text-[#5E4735]">
-                      {item.desc}
-                    </p>
-                  </motion.div>
-                );
-              })}
-            </div>
-
-            <div className="mt-5 rounded-[22px] bg-[linear-gradient(135deg,#2D1A10_0%,#4A2C17_100%)] p-5 text-[#FFF7EF] sm:p-6">
-              <p className="text-[0.65rem] uppercase tracking-[0.25em] text-[#F1DDC2]/85">
-                Franchise Support
-              </p>
-              <p className="mt-2 text-[0.95rem] leading-7 text-[#F7EBDC]/88">
-                From store design to opening day execution, we support you with a
-                framework that makes franchise ownership simpler, faster, and
-                more confident.
-              </p>
-            </div>
-          </motion.div>
-        </div>
+          <motion.a
+            href="#contact"
+            whileHover={{ y: -3 }}
+            whileTap={{ scale: 0.98 }}
+            className="group mt-7 inline-flex items-center gap-3 rounded-full bg-[#2D1A10] px-6 py-3.5 text-[0.78rem] font-semibold uppercase tracking-[0.1em] text-[#FFF7EF] transition-colors hover:bg-[#4A2C17] sm:mt-9"
+          >
+            Enquire franchise
+            <ArrowDownRight className="h-4 w-4 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
+          </motion.a>
+        </motion.div>
       </div>
     </section>
   );
