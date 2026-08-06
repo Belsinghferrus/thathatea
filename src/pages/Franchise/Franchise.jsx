@@ -10,6 +10,8 @@ import WhatMakesUsSpecialStrip from '../../components/sections/Story/WhatMakesUs
 import FranchiseStickyBanner from '../../components/sections/Franchise/FranchiseStickyBanner'
 import FeaturedOutletsSection from '../../components/sections/Franchise/FeaturedOutletsSection'
 import FranchiseDesignBreakSection from '../../components/sections/Franchise/FranchiseDesignBreakSection'
+import FranchiseEnquirySection from '../../components/sections/Franchise/FranchiseEnquirySection'
+import FranchiseFaqSection from '../../components/sections/Franchise/FranchiseFaqSection'
 
 const Franchise = () => {
   return (
@@ -21,9 +23,11 @@ const Franchise = () => {
    <BrewMomentsSection  />
    <WhatMakesUsSpecialStrip />
    <FranchiseSupportJourneySection />
-  <FranchiseStickyBanner />
+  {/* <FranchiseStickyBanner /> */}
   <FeaturedOutletsSection />
   <FranchiseDesignBreakSection />
+  <FranchiseFaqSection />
+  <FranchiseEnquirySection />
    </>
   )
 }

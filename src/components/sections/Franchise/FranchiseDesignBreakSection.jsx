@@ -8,7 +8,7 @@ export default function FranchiseSimpleBreakSection() {
     <section
       className="relative flex min-h-screen w-full items-center justify-center overflow-hidden bg-[#F4E9D8] px-4 py-8 sm:px-6 lg:px-10"
       style={{
-        backgroundImage: `linear-gradient(rgba(244,233,216,0.72), rgba(244,233,216,0.72)), url(${paperbg})`,
+        backgroundImage: `linear-gradient(rgba(244,233,216,0.72), rgba(244,233,216,0.18)), url(${paperbg})`,
         backgroundSize: "cover",
         backgroundPosition: "center",
       }}
@@ -75,7 +75,7 @@ export default function FranchiseSimpleBreakSection() {
             </p>
 
             <motion.a
-              href="#contact"
+              href="#enquire"
               whileHover={{ y: -3 }}
               whileTap={{ scale: 0.98 }}
               className="mt-8 inline-flex items-center gap-3 rounded-full bg-[#F2C785] px-6 py-3.5 text-[0.8rem] font-semibold uppercase tracking-[0.1em] text-[#2D1A10] shadow-[0_12px_28px_rgba(0,0,0,0.2)] transition-colors hover:bg-[#f0bc6e] sm:mt-10"
