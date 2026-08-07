@@ -10,12 +10,7 @@ export default function FranchiseHeroCenterStage({ reduceMotion = false }) {
   return (
     <section className="relative min-h-screen w-full overflow-hidden  bg-[#f6ede3] text-[#2D1A10]">
       {/* Soft paper background */}
-      {/* <img
-        src={paperBG}
-        alt=""
-        aria-hidden="true"
-        className="absolute inset-0 h-full w-full object-cover opacity-35 mix-blend-multiply"
-      /> */}
+
       <div className="absolute inset-0 bg-[linear-gradient(to_bottom,rgba(245,235,221,0.82),rgba(245,235,221,0.64)_48%,rgba(245,235,221,0.9))]" />
 
       {/* Quiet decorative details */}

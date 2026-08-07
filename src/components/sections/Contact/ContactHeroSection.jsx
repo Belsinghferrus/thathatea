@@ -44,7 +44,10 @@ export default function ContactHeroIllustratedSection() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.55, delay: 0.05 }}
             className="max-w-[10ch] text-[2.6rem] leading-[0.95] tracking-tight text-[#3D2413] sm:text-[3.6rem] lg:text-[5rem]"
-            style={{ fontFamily: "'Baloo 2', sans-serif", fontWeight: 800 }}
+            style={{
+              fontFamily: "'Bebas Neue', sans-serif",
+              letterSpacing: "0.01em",
+            }}
           >
             Let&apos;s Brew
           </motion.h1>
