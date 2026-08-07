@@ -3,15 +3,17 @@ import ContactHeroSection from '../../components/sections/Contact/ContactHeroSec
 import Navbar from '../../components/layout/Navbar'
 import ReachUsSection from '../../components/sections/Contact/ReachUsSection'
 import TeaJourneyMapSection from '../../components/sections/Contact/TeaJourneyMapSection'
-import WhatMakesUsSpecialStrip from '@/components/common/WhatMakesUsSpecialStrip'
+import StatsMarqueeStrip from '@/components/common/StatsMarqueeStrip'
+import ContactFormArtSection from '../../components/sections/Contact/ContactFormSection'
 const Contact = () => {
   return (
     <>
     <Navbar />
     <ContactHeroSection />
-    <WhatMakesUsSpecialStrip />
+    <StatsMarqueeStrip />
     <TeaJourneyMapSection />
     <ReachUsSection   />
+    <ContactFormArtSection />
     </>
   )
 }
