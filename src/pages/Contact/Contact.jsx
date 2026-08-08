@@ -6,16 +6,22 @@ import TeaJourneyMapSection from '../../components/sections/Contact/TeaJourneyMa
 import StatsMarqueeStrip from '@/components/common/StatsMarqueeStrip'
 import ContactFormArtSection from '../../components/sections/Contact/ContactFormSection'
 import TeaQuoteStrip from '../../components/sections/Contact/TeaQuoteStrip'
+import ThankYouTeaSection from '../../components/sections/Contact/ThankYouTeaSection'
+import ConnectBeyondTeaSection from '../../components/sections/Contact/ConnectBeyondTeaSection'
 const Contact = () => {
   return (
     <>
     <Navbar />
     <ContactHeroSection />
-    <StatsMarqueeStrip />
+    
     <TeaJourneyMapSection />
-    <ReachUsSection   />
+   
     <TeaQuoteStrip />
     <ContactFormArtSection />
+    <ThankYouTeaSection />
+    <ReachUsSection   />
+    <StatsMarqueeStrip />
+    <ConnectBeyondTeaSection   />
     </>
   )
 }
