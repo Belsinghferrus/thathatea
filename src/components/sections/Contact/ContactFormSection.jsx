@@ -9,11 +9,12 @@ import {
     SendHorizonal,
 } from "lucide-react";
 
-import leftIllustration from "@/assets/images/contact/cafe4.png"; // bottom-left big image
-import rightIllustration from "@/assets/images/contact/oldman2.png"; // bottom-right big image
+import leftIllustration from "@/assets/images/contact/sketch2.png"; // bottom-left big image
+import righttopIllustration from "@/assets/images/contact/oldman2.png"; // bottom-right big image
+import rightIllustration from "@/assets/images/contact/sketch1.png"; //
 import vintageLetter from "@/assets/images/contact/vintage-letter1.png"; // parchment
 // using cafe4 as the small corner accent too
-import leafCorner from "@/assets/images/contact/cafe4.png";
+import leafCorner from "@/assets/images/contact/sketch1.png";
 
 export default function ContactLetterSection() {
     return (
@@ -32,34 +33,34 @@ export default function ContactLetterSection() {
             </div>
 
             {/* corner accent */}
-            <img
+            {/* <img
                 src={leafCorner}
                 alt=""
                 aria-hidden="true"
-                className="pointer-events-none absolute left-0 top-0 h-20 w-auto opacity-60 sm:h-28 lg:h-32"
+                className="pointer-events-none absolute left-0 top-0 h-20 w-auto sm:h-28 lg:h-162"
             />
-             <img
+
+            <img
                 src={rightIllustration}
                 alt=""
                 aria-hidden="true"
-                className="pointer-events-none absolute right-30 top-10 h-20 w-auto opacity-60 sm:h-28 lg:h-32"
-            />
+                className="pointer-events-none absolute z-30 lg:right-30 sm:right-10 top-0 h-60 w-auto sm:h-62 lg:h-186"
+            /> */}
 
             {/* big bottom illustrations */}
             <img
                 src={leftIllustration}
                 alt=""
                 aria-hidden="true"
-                className="pointer-events-none absolute bottom-[-6%] left-[-10%] h-40 w-auto opacity-70 sm:left-[-6%] sm:h-52 lg:bottom-0 lg:h-64 lg:opacity-95"
+                className="pointer-events-none absolute bottom-[-20%] left-[-20%] h-40 w-auto opacity-70 sm:left-[-6%] sm:h-52 lg:bottom-10 lg:h-144 lg:opacity-95"
             />
 
             <img
-                src={rightIllustration}
+                src={righttopIllustration}
                 alt=""
                 aria-hidden="true"
-                className="pointer-events-none absolute bottom-[-8%] right-[-18%] h-40 w-auto opacity-70 sm:right-[-10%] sm:h-54 lg:bottom-0 lg:right-[0%] lg:h-[720px] lg:opacity-95"
+                className="pointer-events-none absolute bottom-[-8%] z-50 right-[-18%] h-40 w-auto opacity-70 sm:right-[-10%] sm:h-54 lg:bottom-0 lg:right-[0%] lg:h-[720px] lg:opacity-95"
             />
-
             <div className="relative mx-auto max-w-6xl px-5 sm:px-8 lg:px-10">
                 {/* heading block – LEFT aligned */}
                 <motion.div
@@ -70,7 +71,7 @@ export default function ContactLetterSection() {
                     className="mx-auto max-w-3xl text-center"
                 >
                     <p className="text-xs font-semibold uppercase tracking-[0.28em] text-[#A16635] sm:text-[0.7rem]">
-                        We’d love to hear from you
+                        Write us a letter
                     </p>
 
                     <h2
@@ -93,9 +94,7 @@ export default function ContactLetterSection() {
                         Hear From You!
                     </h3>
 
-                    {/* <p className="mt-4 max-w-[30ch] text-[0.95rem] leading-7 text-[#5E4637] sm:text-[1rem]">
-            Fill out the form and our team will get back to you soon.
-          </p> */}
+
                 </motion.div>
 
                 {/* main layout: letter centered, images at bottom */}

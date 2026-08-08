@@ -5,6 +5,7 @@ import ReachUsSection from '../../components/sections/Contact/ReachUsSection'
 import TeaJourneyMapSection from '../../components/sections/Contact/TeaJourneyMapSection'
 import StatsMarqueeStrip from '@/components/common/StatsMarqueeStrip'
 import ContactFormArtSection from '../../components/sections/Contact/ContactFormSection'
+import TeaQuoteStrip from '../../components/sections/Contact/TeaQuoteStrip'
 const Contact = () => {
   return (
     <>
@@ -13,6 +14,7 @@ const Contact = () => {
     <StatsMarqueeStrip />
     <TeaJourneyMapSection />
     <ReachUsSection   />
+    <TeaQuoteStrip />
     <ContactFormArtSection />
     </>
   )
