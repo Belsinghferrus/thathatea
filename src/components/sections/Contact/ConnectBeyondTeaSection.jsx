@@ -100,7 +100,7 @@ const socials = [
 
 export default function ConnectBeyondTeaFullSection() {
     return (
-        <section className="relative h-[100vh] min-h-[560px] w-full overflow-hidden bg-[#FBEEDC] text-[#4B2A16]">
+        <section className="relative h-[100vh] min-h-[560px] w-full overflow-x-hidden overflow-y-hidden bg-[#FBEEDC] text-[#4B2A16]">
             {/* top parchment gradient */}
             <div className="absolute inset-0 bg-[radial-gradient(circle_at_20%_0%,rgba(181,103,49,0.08),transparent_24%),radial-gradient(circle_at_80%_0%,rgba(181,103,49,0.06),transparent_22%)]" />
             {/* texture */}
@@ -115,16 +115,19 @@ export default function ConnectBeyondTeaFullSection() {
                 />
             </div>
 
-            {/* bottom landscape image */}
-
-            <div className="pointer-events-none absolute inset-x-0 bottom-0 h-[45vh] sm:h-[55vh] lg:h-[60vh]">                <img
-                src={bottomLandscape}
-                alt=""
-                aria-hidden="true"
-                className="h-full w-full object-cover"
-            />
-                <div className="absolute inset-0 bg-gradient-to-t from-[#FBEEDC] via-[#FBEEDC]/35 to-transparent sm:bg-gradient-to-t sm:from-[#FBEEDC]/75 sm:via-[#FBEEDC]/55 sm:to-transparent" />
+            {/* bottom landscape image - FIXED HEIGHT */}
+            <div className="pointer-events-none absolute inset-x-0 bottom-0 h-[50vh] lg:h-[100vh]">               
+                <img
+                    src={bottomLandscape}
+                    alt=""
+                    aria-hidden="true"
+                    className="h-full w-full object-cover"
+                    style={{ objectPosition: 'center bottom' }}
+                />
+                {/* Gradient overlay - adjusted for new heights */}
+                <div className="absolute inset-0 bg-gradient-to-t from-[#FBEEDC] via-[#FBEEDC]/35 to-transparent sm:bg-gradient-to-t sm:from-[#FBEEDC]/75 sm:via-[#FBEEDC]/25 sm:to-transparent" />
             </div>
+
             {/* right leaf sketch */}
             <img
                 src={leafRight}
@@ -133,18 +136,17 @@ export default function ConnectBeyondTeaFullSection() {
                 className="pointer-events-none absolute right-0 top-[18%] h-40 w-auto opacity-40 sm:h-52 lg:h-64"
             />
 
-            <div className="relative mx-auto flex h-full max-w-6xl flex-col justify-between px-5 pt-10 pb-8 sm:px-8 sm:pt-14 sm:pb-10 lg:px-10">        {/* top spacing glue */}
+            <div className="relative mx-auto flex h-full max-w-6xl flex-col justify-between px-5 pt-10 pb-8 sm:px-8 sm:pt-14 sm:pb-10 lg:px-10">
                 <div />
 
-                {/* asymmetric main content */}
                 <div className="flex flex-col gap-10 lg:flex-row lg:items-start lg:justify-between">
                     {/* LEFT COLUMN: text + socials */}
                     <div className="w-full max-w-xl lg:w-[55%]">
                         <motion.div
                             initial={{ opacity: 0, y: 14 }}
                             whileInView={{ opacity: 1, y: 0 }}
-                            viewport={{ once: true }}
-                         
+                            viewport={{ once: true, amount: 0.1 }}
+                            transition={{ duration: 0.5 }}
                         >
                             <p
                                 className="text-[1.7rem] tracking-[0.18em] text-[#3D2413] sm:text-[2rem]"
@@ -152,7 +154,8 @@ export default function ConnectBeyondTeaFullSection() {
                             >
                                 LET&apos;S CONNECT BEYOND TEA
                             </p>
-                            <p className="mt-2 text-[0.95rem] leading-7 text-[#6B4B3B] sm:text-[1rem] sm:text-[#5A3D2B]">                Follow us for new brews, behind-the-counter stories, offers, and a little
+                            <p className="mt-2 text-[0.95rem] leading-7 text-[#6B4B3B] sm:text-[1rem] sm:text-[#5A3D2B]">
+                                Follow us for new brews, behind-the-counter stories, offers, and a little
                                 bit of everyday warmth in your feed.
                             </p>
                         </motion.div>
@@ -161,8 +164,8 @@ export default function ConnectBeyondTeaFullSection() {
                         <motion.div
                             initial={{ opacity: 0, y: 16 }}
                             whileInView={{ opacity: 1, y: 0 }}
-                            viewport={{ once: true }}
-
+                            viewport={{ once: true, amount: 0.1 }}
+                            transition={{ duration: 0.5, delay: 0.1 }}
                             className="mt-6 grid gap-4 sm:grid-cols-2 lg:grid-cols-1"
                         >
                             {socials.map((s) => (
@@ -171,15 +174,16 @@ export default function ConnectBeyondTeaFullSection() {
                         </motion.div>
                     </div>
 
-                    {/* RIGHT COLUMN: hero message */}
+                    {/* RIGHT COLUMN: hero message - HIDE ON MOBILE */}
                     <motion.div
                         initial={{ opacity: 0, x: 20, y: 10 }}
                         whileInView={{ opacity: 1, x: 0, y: 0 }}
-                        viewport={{ once: true }}
-                        className="mt-4 max-w-md text-right lg:mt-0 lg:w-[40%] sm:hidden lg:block"
+                        viewport={{ once: true, amount: 0.1 }}
+                        transition={{ duration: 0.5 }}
+                        className="hidden lg:block mt-4 max-w-md text-right lg:mt-0 lg:w-[40%]"
                     >
                         <p
-                            className="text-[1.8rem] text-[#C46F2C] sm:text-[2.1rem]  lg:text-[2.4rem]"
+                            className="text-[1.8rem] text-[#C46F2C] sm:text-[2.1rem] lg:text-[2.4rem]"
                             style={{ fontFamily: "'Dancing Script', cursive", fontWeight: 600 }}
                         >
                             Good Tea,
@@ -196,7 +200,7 @@ export default function ConnectBeyondTeaFullSection() {
                 </div>
 
                 {/* bottom small note */}
-                <div className="mt-6 flex flex-col uppercase items-center justify-between gap-2 text-[0.8rem] text-[#8A6546] sm:flex-row">
+                <div className=" flex flex-col uppercase items-center justify-between gap-2 text-[0.8rem] text-[#8A6546] sm:flex-row">
                     <p>Thatha Tea.</p>
                     <p className="text-[0.75rem]">
                         Crafted with care - one cup, one story, one connection at a time.
@@ -217,13 +221,15 @@ function SocialButton({ social }) {
             rel="noreferrer"
             whileHover={{ y: -3, scale: 1.02 }}
             whileTap={{ scale: 0.97 }}
+           
             className="
                 flex items-center justify-between gap-3
                 rounded-[999px] border border-[#E3C8A9]/70 bg-[#FFF8EF]/90
                 px-4 py-2 shadow-[0_6px_14px_rgba(83,46,27,0.08)]
                 backdrop-blur-sm
                 sm:py-2.5 sm:shadow-[0_8px_18px_rgba(83,46,27,0.08)]
-                "    >
+            "
+        >
             <div className="flex items-center gap-3">
                 <div
                     className="flex h-9 w-9 items-center justify-center rounded-full text-white shadow-[0_6px_14px_rgba(0,0,0,0.25)] sm:h-10 sm:w-10"
@@ -244,3 +250,4 @@ function SocialButton({ social }) {
         </motion.a>
     );
 }
+
