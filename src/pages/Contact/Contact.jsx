@@ -20,7 +20,7 @@ const Contact = () => {
     <ContactFormArtSection />
     <ThankYouTeaSection />
     <ReachUsSection   />
-    <StatsMarqueeStrip />
+    {/* <StatsMarqueeStrip /> */}
     <ConnectBeyondTeaSection   />
     </>
   )
