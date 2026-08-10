@@ -1,5 +1,6 @@
 import mascotPng from "../../assets/images/Menu/products/mascot.png";
- 
+import cake from "@/assets/images/cake.png"
+
  const MENU_PRODUCTS = [
     {
       id: "prod-cardamom-tea",
@@ -8,7 +9,7 @@ import mascotPng from "../../assets/images/Menu/products/mascot.png";
       description: "Aromatic blend of tea & cardamom.",
       shortDescription: "Warm and fragrant.",
       price: 20,
-      image: mascotPng,
+      image: cake,
       categorySlug: "hot-beverages",
       subcategorySlug: "milk-tea",
       isPopular: true,
