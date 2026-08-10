@@ -306,7 +306,7 @@ function JourneySection() {
 
             <div className="mt-7 flex flex-wrap items-center gap-3">
               <a
-                href="/our-story"
+                href="/story"
                 className="inline-flex min-h-[52px] items-center justify-center gap-2 rounded-full border border-[#d9c3af] bg-[#fff8ef] px-6 text-[0.88rem] font-extrabold uppercase tracking-[0.08em] text-[#2b1a12] transition-colors duration-300 hover:bg-[#f4e7d8]"
                 style={{ fontFamily: "'Manrope', sans-serif" }}
               >

@@ -12,6 +12,7 @@ import FranchiseeMemoryWallSection from "../../components/sections/Hero/Franchis
 import FranchiseToFeedbackStrip from "@/components/sections/Hero/FranchiseToFeedbackStrip";
 import ContactSection from "../../components/sections/Hero/ContactSection";
 import GrowthBreakSection from "../../components/sections/Hero/GrowthBreakSection";
+import Footer from "../../components/layout/Footer";
 
 
 function Home() {
@@ -20,17 +21,17 @@ function Home() {
       <Navbar />
       <main className="overflow-x-clip bg-[#f7f2ea] text-[#2c1810] ">
         <Hero />
-        <Intro />
         <SpecialitiesSection />
         <JourneySection />
         <TeaBreakSection />
         <IngredientsSection/>
         <PaperJournalSection />
-        <FranchiseSection />
+        <FranchiseSection  />
         <FranchiseToFeedbackStrip />
         <FranchiseeMemoryWallSection />
         <GrowthBreakSection />
         <ContactSection />
+        <Footer />
       </main>
       <ContactPopup />
     </>

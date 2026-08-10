@@ -13,24 +13,29 @@ import FranchiseDesignBreakSection from '../../components/sections/Franchise/Fra
 import FranchiseEnquirySection from '../../components/sections/Franchise/FranchiseEnquirySection'
 import FranchiseFaqSection from '../../components/sections/Franchise/FranchiseFaqSection'
 import FranchiseMarqueeStrip from '../../components/sections/Franchise/FranchiseMarqueeStrip'
+import Footer from '../../components/layout/Footer'
 
 const Franchise = () => {
   return (
-   <>
-   <Navbar  />
-   <FranchiseHeroSection />
-   <WhyPartnerSection />
-   <BrewSuccessSection />
-   <BrewMomentsSection  />
-   <WhatMakesUsSpecialStrip />
-   <FranchiseSupportJourneySection />
-  <FranchiseStickyBanner />
-  <FeaturedOutletsSection />
-  <FranchiseDesignBreakSection />
-  <FranchiseFaqSection />
-  <FranchiseMarqueeStrip />
-  <FranchiseEnquirySection />
-   </>
+    <>
+      <Navbar />
+      <main>
+        <FranchiseHeroSection />
+        <WhyPartnerSection />
+        <BrewSuccessSection />
+        <BrewMomentsSection />
+        <WhatMakesUsSpecialStrip />
+        <FranchiseSupportJourneySection />
+
+        <FeaturedOutletsSection />
+        <FranchiseDesignBreakSection />
+        <FranchiseFaqSection />
+        <FranchiseMarqueeStrip />
+        <FranchiseEnquirySection />
+      </main>
+      <Footer />
+      <FranchiseStickyBanner />
+    </>
   )
 }
 

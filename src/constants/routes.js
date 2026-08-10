@@ -4,7 +4,7 @@ export const ROUTES = {
   MENU: "/menu",
   // CAREER: "/career",
   FRANCHISE: "/franchise",
-  GALLERY: "/gallery",
+  // GALLERY: "/gallery",
   CONTACT: "/contact",
 };
 
@@ -14,6 +14,6 @@ export const NAV_LINKS = [
   { label: "Menu", path: ROUTES.MENU },
   // { label: "career", path: ROUTES.CAREER },
   { label: "Franchise", path: ROUTES.FRANCHISE },
-  { label: "Gallery", path: ROUTES.GALLERY },
+  // { label: "Gallery", path: ROUTES.GALLERY },
   { label: "Contact", path: ROUTES.CONTACT },
 ];

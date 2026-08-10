@@ -6,12 +6,18 @@ import Menu from "@/pages/Menu/Menu";
 import Franchise from "@/pages/Franchise/Franchise"
 import Gallery from "@/pages/Gallery/Gallery"
 import Contact from "@/pages/Contact/Contact"
+import ScrollToTop from "../components/common/ScrollToTop";
+import Intro from "@/components/sections/Intro/Intro";
 
 
 
 function AppRouter() {
     return (
-        <Routes>
+
+        <>
+         <ScrollToTop />
+         <Intro />
+         <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/story" element={<Story />} />
             <Route path="/menu" element={<Menu />} />
@@ -19,6 +25,8 @@ function AppRouter() {
             {/* <Route path="/gallery" element={<Gallery />} /> */}
             <Route path="/contact" element={<Contact />} />
         </Routes>
+        </>
+       
     );
 }
 

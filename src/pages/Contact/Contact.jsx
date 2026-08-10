@@ -8,6 +8,7 @@ import ContactFormArtSection from '../../components/sections/Contact/ContactForm
 import TeaQuoteStrip from '../../components/sections/Contact/TeaQuoteStrip'
 import ThankYouTeaSection from '../../components/sections/Contact/ThankYouTeaSection'
 import ConnectBeyondTeaSection from '../../components/sections/Contact/ConnectBeyondTeaSection'
+import Footer from '../../components/layout/Footer'
 const Contact = () => {
   return (
     <>
@@ -20,6 +21,7 @@ const Contact = () => {
     <ReachUsSection   />
     <StatsMarqueeStrip />
     <ConnectBeyondTeaSection   />
+    <Footer />
     </>
   )
 }

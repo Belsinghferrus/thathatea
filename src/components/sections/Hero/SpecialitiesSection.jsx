@@ -7,13 +7,18 @@ import {
     Leaf,
     Sparkles,
   } from "lucide-react";
-  
+  import premiumTea from "@/assets/images/preTea.jpg";
+  import bakes from "@/assets/images/bakes.jpeg";
+  import cookies from "@/assets/images/cookies5.png";
+  import cooldrinks from "@/assets/images/cool-drink.png";
+
+
   const items = [
     {
       title: "Premium Tea",
       subtitle: "Rich • Aromatic • Familiar",
       desc: "Slow-brewed warmth with the depth, comfort, and fragrance people remember.",
-      image: "https://picsum.photos/seed/thatha-tea/900/1100",
+      image: premiumTea,
       icon: Coffee,
       note: "Signature pours, classic taste",
     },
@@ -21,7 +26,7 @@ import {
       title: "Fresh Bakes",
       subtitle: "Soft • Buttery • Fresh",
       desc: "Tea-time staples that feel simple, warm, and freshly served every day.",
-      image: "https://picsum.photos/seed/thatha-bakes/900/1100",
+      image:bakes,
       icon: Croissant,
       note: "Best paired with evening chai",
     },
@@ -29,7 +34,7 @@ import {
       title: "Cookies",
       subtitle: "Crisp • Sweet • Comforting",
       desc: "A familiar bite that rounds out the cup and makes the visit feel complete.",
-      image: "https://picsum.photos/seed/thatha-cookies/900/1100",
+      image: cookies,
       icon: Cookie,
       note: "Small comforts, done right",
     },
@@ -37,7 +42,7 @@ import {
       title: "Cool Drinks",
       subtitle: "Chilled • Smooth • Refreshing",
       desc: "For lighter moods, warmer afternoons, and customers who want more than chai.",
-      image: "https://picsum.photos/seed/thatha-cooldrinks/900/1100",
+      image: cooldrinks,
       icon: GlassWater,
       note: "For younger crowds and warm days",
     },

@@ -10,7 +10,7 @@ import {
 } from "lucide-react";
 import logo from "@/assets/images/mascot.png"; // adjust path to your logo
 import footerBottomImg from "@/assets/images/footer-bottom.png"; 
-
+import tornEdge from "@/assets/images/tornEdge.png";
 const navItems = [
     { label: "HOME", to: "/" },
     { label: "STORY", to: "/story" },
@@ -26,6 +26,18 @@ export default function Footer() {
 
     return (
         <footer className="relative overflow-hidden overflow-x-hidden bg-[#4D2F1C] py-20 text-[#FBF1E5]">
+
+              <div className="pointer-events-none absolute left-0 top-0 z-20 flex w-full overflow-hidden">
+                    {Array.from({ length: 10 }).map((_, index) => (
+                      <img
+                        key={index}
+                        src={tornEdge}
+                        alt=""
+                        aria-hidden="true"
+                        className="h-[32px] w-full max-w-[12.5%] object-cover"
+                      />
+                    ))}
+                  </div>
             {/* background illustration - full width, sits behind everything */}
             <div className="pointer-events-none absolute overflow-x-hidden inset-x-0 bottom-0 z-[10] w-full">
                 <img
@@ -37,7 +49,7 @@ export default function Footer() {
             </div>
 
             {/* content wrapper - above the image */}
-            <div className="relative z-10 mx-auto max-w-7xl px-5 pt-16 sm:pb-10 lg:pb-60 sm:px-8 lg:px-12">
+            <div className="relative z-10 mx-auto max-w-7xl px-5 pt-5 sm:pb-10 lg:pb-60 sm:px-8 lg:px-12">
                 {/* quote */}
                 <motion.div
                     initial={{ opacity: 0, y: 12 }}
