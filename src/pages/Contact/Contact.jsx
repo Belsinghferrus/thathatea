@@ -13,9 +13,7 @@ const Contact = () => {
     <>
     <Navbar />
     <ContactHeroSection />
-    
-    <TeaJourneyMapSection />
-   
+    <TeaJourneyMapSection /> 
     <TeaQuoteStrip />
     <ContactFormArtSection />
     <ThankYouTeaSection />

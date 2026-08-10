@@ -6,6 +6,8 @@ import StorySectionBreak from '../../components/sections/Story/StorySectionBreak
 import MissionVisionSection from '../../components/sections/Story/MissionVisionSection'
 import WhatMakesUsSpecialStrip from '../../components/sections/Story/WhatMakesUsSpecialStrip'
 import GrowthMapSection from '../../components/sections/Story/GrowthMapSection'
+import FoundersNoteSection from '../../components/sections/Story/FoundersNoteSection'
+import TeaQuoteStrip20vh from '../../components/sections/Contact/TeaQuoteStrip'
 
 const Story = () => {
     return (
@@ -14,11 +16,11 @@ const Story = () => {
             <Hero />
             <WhatMakesUsSpecialStrip />
             <StoryTimelineSection />
-      
-            
             <MissionVisionSection />
-            <StorySectionBreak />
+            {/* <StorySectionBreak /> */}
+            <TeaQuoteStrip20vh />
             <GrowthMapSection />
+            <FoundersNoteSection    />
 
         </>
     )
