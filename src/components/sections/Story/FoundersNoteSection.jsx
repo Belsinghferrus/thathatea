@@ -32,7 +32,7 @@ export default function FoundersNoteSection() {
           whileInView={{ opacity: 1, y: 0, scale: 1 }}
           viewport={{ once: true }}
           transition={{ duration: 0.65 }}
-          className="relative w-full max-w-[700px] lg:w-[62%]"
+          className="relative w-full max-w-[700px] lg:left-120 lg:w-[62%]"
         >
           {/* letter background image */}
           <img
