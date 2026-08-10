@@ -8,7 +8,7 @@ import Gallery from "@/pages/Gallery/Gallery"
 import Contact from "@/pages/Contact/Contact"
 import ScrollToTop from "../components/common/ScrollToTop";
 import Intro from "@/components/sections/Intro/Intro";
-
+import Privacy from "@/pages/Privacy/Privacy"
 
 
 function AppRouter() {
@@ -24,6 +24,11 @@ function AppRouter() {
             <Route path="/franchise" element={<Franchise />} />
             {/* <Route path="/gallery" element={<Gallery />} /> */}
             <Route path="/contact" element={<Contact />} />
+            
+            <Route path="/privacy-policy" element={<Privacy />} />
+            <Route path="/terms-and-condition" element={<Privacy />} />
+
+
         </Routes>
         </>
        
