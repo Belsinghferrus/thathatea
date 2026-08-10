@@ -8,6 +8,8 @@ import WhatMakesUsSpecialStrip from '../../components/sections/Story/WhatMakesUs
 import GrowthMapSection from '../../components/sections/Story/GrowthMapSection'
 import FoundersNoteSection from '../../components/sections/Story/FoundersNoteSection'
 import TeaQuoteStrip20vh from '../../components/sections/Contact/TeaQuoteStrip'
+import StoryInNumbersSection from '../../components/sections/Story/StoryInNumbersSection'
+import Footer from '../../components/layout/Footer'
 
 const Story = () => {
     return (
@@ -21,7 +23,8 @@ const Story = () => {
             <TeaQuoteStrip20vh />
             <GrowthMapSection />
             <FoundersNoteSection    />
-
+            <StoryInNumbersSection />
+            <Footer />
         </>
     )
 }

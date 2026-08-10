@@ -8,14 +8,7 @@ export default function TeaQuoteStrip20vh() {
       {/* subtle texture + moving highlight */}
       <motion.div
         className="absolute inset-0"
-        initial={{ x: "-40%" }}
-        animate={{ x: "140%" }}
-        transition={{
-          duration: 18,
-          repeat: Infinity,
-          repeatType: "mirror",
-          ease: "linear",
-        }}
+      
         style={{
           background:
             "linear-gradient(90deg, transparent 0%, rgba(255,214,170,0.08) 40%, transparent 80%)",
@@ -31,12 +24,7 @@ export default function TeaQuoteStrip20vh() {
           }}
         />
       </div>
-      {/* <img
-        src={spicesTop}
-        alt=""
-        aria-hidden="true"
-        className="pointer-events-none absolute right-0 top-0 h-16 w-auto opacity-80 sm:h-20 lg:h-22"
-      /> */}
+     
 
       <div className="relative mx-auto flex h-full max-w-6xl items-center px-5 sm:px-8 lg:px-10">
         {/* LEFT: escalated image with subtle bob */}
@@ -50,7 +38,7 @@ export default function TeaQuoteStrip20vh() {
           <motion.img
             src={barista}
             alt="Thatha pouring tea"
-            className="h-[180%] w-auto max-w-[260px] translate-y-[10%]  object-contain"
+            className="h-[180%] w-auto max-w-[260px] translate-y-[10%] sm:hidden object-contain"
             animate={{ y: [0, -4, 0] }}
             transition={{
               duration: 4.5,

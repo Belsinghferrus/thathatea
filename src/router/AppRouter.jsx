@@ -16,7 +16,7 @@ function AppRouter() {
             <Route path="/story" element={<Story />} />
             <Route path="/menu" element={<Menu />} />
             <Route path="/franchise" element={<Franchise />} />
-            <Route path="/gallery" element={<Gallery />} />
+            {/* <Route path="/gallery" element={<Gallery />} /> */}
             <Route path="/contact" element={<Contact />} />
         </Routes>
     );

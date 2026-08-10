@@ -7,7 +7,7 @@ import dtoryBG from "@/assets/images/story/story-bg.png";
 
 export default function FoundersNoteSection() {
   return (
-    <section className="relative overflow-hidden bg-[#FBF1E5] py-14 text-[#4B2A16] sm:py-18 lg:py-20">
+    <section className="relative overflow-x-hidden bg-[#FBF1E5] py-14 text-[#4B2A16] sm:py-18 lg:py-20">
       {/* subtle background texture */}
       <div className="absolute inset-0">
         <div
@@ -23,7 +23,7 @@ export default function FoundersNoteSection() {
 
     
       <div className="relative mx-auto flex max-w-6xl flex-col items-center gap-10 px-5 sm:px-8 lg:flex-row lg:items-stretch lg:justify-between lg:px-10">
-        {/* LEFT: founder illustration */}
+      
       
 
         {/* RIGHT: letter with founder note */}
