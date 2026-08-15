@@ -25,11 +25,11 @@ function Home() {
         <JourneySection />
         <TeaBreakSection />
         <IngredientsSection/>
-        <PaperJournalSection />
+        {/* <PaperJournalSection />
         <FranchiseSection  />
         <FranchiseToFeedbackStrip />
         <FranchiseeMemoryWallSection />
-        <GrowthBreakSection />
+        <GrowthBreakSection /> */}
         <ContactSection />
         <Footer />
       </main>
