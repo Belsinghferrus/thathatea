@@ -75,13 +75,13 @@ export default function FranchiseSimpleBreakSection() {
             </p>
 
             <motion.a
-              href="#enquire"
+              href="/contact"
               whileHover={{ y: -3 }}
               whileTap={{ scale: 0.98 }}
               className="mt-8 inline-flex items-center gap-3 rounded-full bg-[#F2C785] px-6 py-3.5 text-[0.8rem] font-semibold uppercase tracking-[0.1em] text-[#2D1A10] shadow-[0_12px_28px_rgba(0,0,0,0.2)] transition-colors hover:bg-[#f0bc6e] sm:mt-10"
             >
               Enquire Franchise
-              <ArrowDownRight className="h-4 w-4" />
+              <ArrowUpRight className="h-4 w-4" />
             </motion.a>
           </div>
 

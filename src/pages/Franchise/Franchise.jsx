@@ -31,7 +31,7 @@ const Franchise = () => {
         <FranchiseDesignBreakSection />
         <FranchiseFaqSection />
         <FranchiseMarqueeStrip />
-        <FranchiseEnquirySection />
+        {/* <FranchiseEnquirySection /> */}
       </main>
       <Footer />
       <FranchiseStickyBanner />
