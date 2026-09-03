@@ -16,9 +16,9 @@ const Story = () => {
         <>
             <Navbar />
             <Hero />
-            <WhatMakesUsSpecialStrip />
+            {/* <WhatMakesUsSpecialStrip />
             <StoryTimelineSection />
-            <MissionVisionSection />
+            <MissionVisionSection /> */}
             {/* <StorySectionBreak /> */}
             <TeaQuoteStrip20vh />
             <GrowthMapSection />
