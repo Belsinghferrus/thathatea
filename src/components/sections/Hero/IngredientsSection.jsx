@@ -1,7 +1,7 @@
 import { motion, useReducedMotion } from "framer-motion";
 import { Leaf, Droplet, Sparkles } from "lucide-react";
 
-import topEdge from "@/assets/images/beans-heade.png";
+import topEdge from "@/assets/images/beans-toper.webp";
 import coffeSplash from "@/assets/images/coffee-splash.png";
 import cakeProjected from "@/assets/images/cake.png";
 

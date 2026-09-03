@@ -27,17 +27,6 @@ export default function Footer() {
     return (
         <footer className="relative overflow-hidden overflow-x-hidden bg-[#4D2F1C] py-20 text-[#FBF1E5]">
 
-              <div className="pointer-events-none absolute left-0 top-0 z-20 flex w-full overflow-hidden">
-                    {Array.from({ length: 10 }).map((_, index) => (
-                      <img
-                        key={index}
-                        src={tornEdge}
-                        alt=""
-                        aria-hidden="true"
-                        className="h-[32px] w-full max-w-[12.5%] object-cover"
-                      />
-                    ))}
-                  </div>
             {/* background illustration - full width, sits behind everything */}
             <div className="pointer-events-none absolute overflow-x-hidden inset-x-0 bottom-0 z-[10] w-full">
                 <img
