@@ -455,13 +455,7 @@ export default function StoryHeroSection({ reduceMotion = false }) {
               }}
               className="absolute inset-x-[-5%] top-[15%] z-0"
             >
-              {/* Keeping your existing commented image exactly as provided */}
-
-              {/* <img
-                src={PLACEHOLDERS.background}
-                alt=""
-                className="h-auto w-full object-contain mix-blend-multiply"
-              /> */}
+            
             </motion.div>
 
             {/* small year stamp */}
@@ -509,16 +503,16 @@ export default function StoryHeroSection({ reduceMotion = false }) {
               }}
               className="
                 absolute
-                bottom-[105px]
-                left-1/2
+                bottom-[100px]
+                left-2/3
                 z-20
-                w-[90%]
+                w-[100%]
                 max-w-[710px]
                 -translate-x-1/2
 
-                sm:w-[82%]
+                sm:w-[100%]
 
-                lg:bottom-[155px]
+                lg:bottom-[150px]
               "
             >
               <img
@@ -565,7 +559,7 @@ export default function StoryHeroSection({ reduceMotion = false }) {
                 lg:bottom-[20px]
                 left-1/2
                 z-30
-                -translate-x-1/6
+                -translate-x-1/4
                 lg:-translate-x-1/2
                 w-max
                 overflow-visible
@@ -576,11 +570,11 @@ export default function StoryHeroSection({ reduceMotion = false }) {
                 alt="Vintage tea heritage"
                 className="
                   h-auto
-                  w-[105vw]
+                  w-[155vw]
                   max-w-none
                   object-contain
 
-                  sm:w-[105vw]
+                  sm:w-[155vw]
 
                   lg:w-[70vw]
                   xl:w-[62vw]
@@ -590,179 +584,304 @@ export default function StoryHeroSection({ reduceMotion = false }) {
             </motion.div>
           </div>
 
-          {/* ============================================================
-              RIGHT — DATA / ANALYTICS
-          ============================================================ */}
+      {/* ============================================================
+    RIGHT — DATA / ANALYTICS
+============================================================ */}
 
-          <motion.div
-            initial={
-              reduceMotion
-                ? false
-                : {
-                    opacity: 0,
-                    x: 30,
-                  }
-            }
-            whileInView={
-              reduceMotion
-                ? {}
-                : {
-                    opacity: 1,
-                    x: 0,
-                  }
-            }
-            viewport={{
-              once: true,
-              amount: 0.15,
-            }}
-            transition={{
-              duration: 0.7,
-            }}
-            className="
-              order-4
-              relative
-              z-30
+<motion.div
+  initial={
+    reduceMotion
+      ? false
+      : {
+          opacity: 0,
+          x: 30,
+        }
+  }
+  whileInView={
+    reduceMotion
+      ? {}
+      : {
+          opacity: 1,
+          x: 0,
+        }
+  }
+  viewport={{
+    once: true,
+    amount: 0.15,
+  }}
+  transition={{
+    duration: 0.7,
+  }}
+  className="
+    order-4
+    relative
+    z-30
+    lg:order-none
+    lg:pt-10
+  "
+>
+  {/* dashboard heading */}
 
-              lg:order-none
-              lg:pt-10
-            "
-          >
-            {/* dashboard heading */}
+  <motion.div
+    animate={{
+      y: [0, -3, 0],
+    }}
+    transition={{
+      duration: 4.5,
+      repeat: Infinity,
+      ease: "easeInOut",
+    }}
+    className="mb-4 flex items-end justify-between"
+  >
+    <div>
+      <p
+        className="text-[0.65rem] font-bold uppercase tracking-[0.16em] text-[#9c5c30]"
+        style={{
+          fontFamily: "'Manrope', sans-serif",
+        }}
+      >
+        Then → Now
+      </p>
 
-            <div className="mb-4 flex items-end justify-between">
-              <div>
-                <p
-                  className="text-[0.65rem] font-bold uppercase tracking-[0.16em] text-[#9c5c30]"
-                  style={{
-                    fontFamily: "'Manrope', sans-serif",
-                  }}
-                >
-                  Then → Now
-                </p>
+      <h3
+        className="mt-1 text-[2rem] leading-none text-[#382116]"
+        style={{
+          fontFamily: "'Bebas Neue', sans-serif",
+        }}
+      >
+        BREWING THE FUTURE
+      </h3>
+    </div>
 
-                <h3
-                  className="mt-1 text-[2rem] leading-none text-[#382116]"
-                  style={{
-                    fontFamily: "'Bebas Neue', sans-serif",
-                  }}
-                >
-                  BREWING THE FUTURE
-                </h3>
-              </div>
+    <div className="rounded-full border border-[#876247]/30 bg-[#f2dfc6]/80 px-3 py-1">
+      <span
+        className="text-[0.58rem] font-bold uppercase tracking-[0.12em] text-[#73523c]"
+        style={{
+          fontFamily: "'Manrope', sans-serif",
+        }}
+      >
+        Live Story
+      </span>
+    </div>
+  </motion.div>
 
-              <div className="rounded-full border border-[#876247]/30 bg-[#f2dfc6]/80 px-3 py-1">
-                <span
-                  className="text-[0.58rem] font-bold uppercase tracking-[0.12em] text-[#73523c]"
-                  style={{
-                    fontFamily: "'Manrope', sans-serif",
-                  }}
-                >
-                  Live Story
-                </span>
-              </div>
-            </div>
+  {/* ==========================================================
+      BIG GRAPH
+  ========================================================== */}
 
-            {/* BIG GRAPH */}
+  <motion.div
+    animate={{
+      y: [0, -7, 0],
+      rotate: [0, 0.25, 0],
+    }}
+    transition={{
+      duration: 5.8,
+      repeat: Infinity,
+      ease: "easeInOut",
+    }}
+  >
+    <DataCard
+      src={PLACEHOLDERS.growth}
+      alt="Growth overview"
+      delay={0.1}
+      className="h-[190px] w-full sm:h-[220px]"
+    />
+  </motion.div>
 
-            <DataCard
-              src={PLACEHOLDERS.growth}
-              alt="Growth overview"
-              delay={0.1}
-              className="h-[190px] w-full sm:h-[220px]"
-            />
+  {/* ==========================================================
+      MINI DATA CARDS
+  ========================================================== */}
 
-            {/* MINI DATA CARDS */}
+  <div className="mt-3 grid grid-cols-2 gap-3">
+    <motion.div
+      animate={{
+        y: [0, -6, 0],
+        rotate: [0, -0.35, 0],
+      }}
+      transition={{
+        duration: 4.8,
+        repeat: Infinity,
+        ease: "easeInOut",
+        delay: 0.4,
+      }}
+    >
+      <DataCard
+        src={PLACEHOLDERS.orders}
+        alt="Orders overview"
+        delay={0.2}
+        className="h-[130px]"
+      />
+    </motion.div>
 
-            <div className="mt-3 grid grid-cols-2 gap-3">
-              <DataCard
-                src={PLACEHOLDERS.orders}
-                alt="Orders overview"
-                delay={0.2}
-                className="h-[130px]"
-              />
+    <motion.div
+      animate={{
+        y: [0, -8, 0],
+        rotate: [0, 0.4, 0],
+      }}
+      transition={{
+        duration: 5.4,
+        repeat: Infinity,
+        ease: "easeInOut",
+        delay: 0.9,
+      }}
+    >
+      <DataCard
+        src={PLACEHOLDERS.customers}
+        alt="Customer growth"
+        delay={0.3}
+        className="h-[130px]"
+      />
+    </motion.div>
+  </div>
 
-              <DataCard
-                src={PLACEHOLDERS.customers}
-                alt="Customer growth"
-                delay={0.3}
-                className="h-[130px]"
-              />
-            </div>
+  {/* ==========================================================
+      APPLICATION / DIGITAL OPERATIONS
+  ========================================================== */}
 
-            {/* APPLICATION / DIGITAL OPERATIONS */}
+  <motion.div
+    animate={{
+      y: [0, -7, 0],
+      rotate: [0, -0.25, 0],
+    }}
+    transition={{
+      duration: 5.2,
+      repeat: Infinity,
+      ease: "easeInOut",
+      delay: 0.7,
+    }}
+  >
+    <DataCard
+      src={PLACEHOLDERS.applications}
+      alt="Digital operations"
+      delay={0.4}
+      className="mt-3 h-[150px]"
+    />
+  </motion.div>
 
-            <DataCard
-              src={PLACEHOLDERS.applications}
-              alt="Digital operations"
-              delay={0.4}
-              className="mt-3 h-[150px]"
-            />
+  {/* ==========================================================
+      LIVE METRICS
+  ========================================================== */}
 
-            {/* LIVE METRICS */}
+  <div className="mt-3 grid grid-cols-3 gap-2">
+    {/* SINCE */}
 
-            <div className="mt-3 grid grid-cols-3 gap-2">
-              <div className="rounded-[14px] border border-[#876247]/25 bg-[#f5e3cc]/65 p-3">
-                <p
-                  className="text-[0.58rem] uppercase tracking-[0.1em] text-[#85634b]"
-                  style={{
-                    fontFamily: "'Manrope', sans-serif",
-                  }}
-                >
-                  Since
-                </p>
+    <motion.div
+      animate={{
+        y: [0, -4, 0],
+      }}
+      transition={{
+        duration: 4.2,
+        repeat: Infinity,
+        ease: "easeInOut",
+        delay: 0.2,
+      }}
+      className="
+        rounded-[14px]
+        border
+        border-[#876247]/25
+        bg-[#f5e3cc]/65
+        p-3
+      "
+    >
+      <p
+        className="text-[0.58rem] uppercase tracking-[0.1em] text-[#85634b]"
+        style={{
+          fontFamily: "'Manrope', sans-serif",
+        }}
+      >
+        Since
+      </p>
 
-                <p
-                  className="mt-1 text-[1.55rem] leading-none text-[#43291b]"
-                  style={{
-                    fontFamily: "'Bebas Neue', sans-serif",
-                  }}
-                >
-                  1991
-                </p>
-              </div>
+      <p
+        className="mt-1 text-[1.55rem] leading-none text-[#43291b]"
+        style={{
+          fontFamily: "'Bebas Neue', sans-serif",
+        }}
+      >
+        1991
+      </p>
+    </motion.div>
 
-              <div className="rounded-[14px] border border-[#876247]/25 bg-[#f5e3cc]/65 p-3">
-                <p
-                  className="text-[0.58rem] uppercase tracking-[0.1em] text-[#85634b]"
-                  style={{
-                    fontFamily: "'Manrope', sans-serif",
-                  }}
-                >
-                  Today
-                </p>
+    {/* TODAY */}
 
-                <p
-                  className="mt-1 text-[1.55rem] leading-none text-[#43291b]"
-                  style={{
-                    fontFamily: "'Bebas Neue', sans-serif",
-                  }}
-                >
-                  Growing
-                </p>
-              </div>
+    <motion.div
+      animate={{
+        y: [0, -6, 0],
+      }}
+      transition={{
+        duration: 4.8,
+        repeat: Infinity,
+        ease: "easeInOut",
+        delay: 0.6,
+      }}
+      className="
+        rounded-[14px]
+        border
+        border-[#876247]/25
+        bg-[#f5e3cc]/65
+        p-3
+      "
+    >
+      <p
+        className="text-[0.58rem] uppercase tracking-[0.1em] text-[#85634b]"
+        style={{
+          fontFamily: "'Manrope', sans-serif",
+        }}
+      >
+        Today
+      </p>
 
-              <div className="rounded-[14px] border border-[#876247]/25 bg-[#f5e3cc]/65 p-3">
-                <p
-                  className="text-[0.58rem] uppercase tracking-[0.1em] text-[#85634b]"
-                  style={{
-                    fontFamily: "'Manrope', sans-serif",
-                  }}
-                >
-                  Next
-                </p>
+      <p
+        className="mt-1 text-[1.55rem] leading-none text-[#43291b]"
+        style={{
+          fontFamily: "'Bebas Neue', sans-serif",
+        }}
+      >
+        Growing
+      </p>
+    </motion.div>
 
-                <p
-                  className="mt-1 text-[1.55rem] leading-none text-[#43291b]"
-                  style={{
-                    fontFamily: "'Bebas Neue', sans-serif",
-                  }}
-                >
-                  2026+
-                </p>
-              </div>
-            </div>
-          </motion.div>
-        </div>
+    {/* NEXT */}
+
+    <motion.div
+      animate={{
+        y: [0, -5, 0],
+      }}
+      transition={{
+        duration: 4.6,
+        repeat: Infinity,
+        ease: "easeInOut",
+        delay: 1,
+      }}
+      className="
+        rounded-[14px]
+        border
+        border-[#876247]/25
+        bg-[#f5e3cc]/65
+        p-3
+      "
+    >
+      <p
+        className="text-[0.58rem] uppercase tracking-[0.1em] text-[#85634b]"
+        style={{
+          fontFamily: "'Manrope', sans-serif",
+        }}
+      >
+        Next
+      </p>
+
+      <p
+        className="mt-1 text-[1.55rem] leading-none text-[#43291b]"
+        style={{
+          fontFamily: "'Bebas Neue', sans-serif",
+        }}
+      >
+        2026+
+      </p>
+    </motion.div>
+  </div>
+</motion.div>
+</div>
 
         {/* ================================================================
             QUOTE STRIP
