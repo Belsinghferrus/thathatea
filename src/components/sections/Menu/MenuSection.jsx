@@ -18,7 +18,6 @@ import MenuProductCard from "./MenuProductCard";
 
 
 
-
 function MenuProductGrid({ products, viewMode }) {
   if (!products.length) {
     return (
@@ -26,6 +25,7 @@ function MenuProductGrid({ products, viewMode }) {
         <h3 className="text-xl font-semibold text-[#2d1b13]">
           No products found
         </h3>
+
         <p className="mt-2 text-[#6f5d51]">
           Try another category, subcategory, or sort option.
         </p>
@@ -34,10 +34,16 @@ function MenuProductGrid({ products, viewMode }) {
   }
 
   const gridClasses =
-    "grid grid-cols-1 gap-5 sm:grid-cols-2 xl:grid-cols-3 2xl:grid-cols-4";
+    "grid grid-cols-2 gap-3 sm:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 2xl:grid-cols-6";
 
   return (
-    <div className={viewMode === "compact" ? "space-y-3 sm:space-y-4" : gridClasses}>
+    <div
+      className={
+        viewMode === "compact"
+          ? "space-y-3 sm:space-y-4"
+          : gridClasses
+      }
+    >
       {products.map((product) => (
         <MenuProductCard
           key={product.id}
@@ -120,7 +126,7 @@ export default function MenuBrowserSection() {
               viewOptions={MENU_VIEW_OPTIONS}
             />
 
-            <div ref={productGridRef}  className="mt-6">
+            <div ref={productGridRef} className="mt-6">
               <MenuProductGrid
                 products={visibleProducts}
                 viewMode={viewMode}

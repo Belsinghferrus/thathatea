@@ -556,7 +556,7 @@ export default function StoryHeroSection({ reduceMotion = false }) {
                 absolute
                 bottom-[-10px]
                 sm:bottom-[30px]
-                lg:bottom-[20px]
+                lg:bottom-[-10px]
                 left-1/2
                 z-30
                 -translate-x-1/4

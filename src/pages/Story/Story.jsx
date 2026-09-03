@@ -24,6 +24,7 @@ const Story = () => {
             <GrowthMapSection />
             <FoundersNoteSection    />
             <StoryInNumbersSection />
+          
             <Footer />
         </>
     )
