@@ -4,6 +4,7 @@ import Footer from "../../components/layout/Footer";
 import bgimage from "../../assets/images/paper-bg.webp";
 import teaSketch from "../../assets/images/Menu/coffee-sketch.png";
 
+// ─── Updated sections with new content ───
 const sections = [
   {
     id: "initial-franchise-fee",
@@ -25,7 +26,7 @@ const sections = [
 
         <div className="rounded-[16px] border border-[#d9c2aa] bg-[#f4e4d0]/60 px-5 py-4">
           <p className="leading-[1.75] text-[#654838]">
-            This fee covers access to brand licensing, training, operational
+            ⚠️ This fee covers access to brand licensing, training, operational
             support, and administrative expenses incurred by the Franchisor.
           </p>
         </div>
@@ -166,16 +167,10 @@ export default function Refund() {
           backgroundRepeat: "repeat",
         }}
       >
-        {/* ============================================================
-            BACKGROUND WASH
-        ============================================================ */}
-
+        {/* Background wash */}
         <div className="pointer-events-none absolute inset-0 bg-[#f8ead7]/92" />
 
-        {/* ============================================================
-            DECORATIVE TEA SKETCH
-        ============================================================ */}
-
+        {/* Decorative tea sketch */}
         <div
           className="
             pointer-events-none
@@ -196,10 +191,7 @@ export default function Refund() {
           />
         </div>
 
-        {/* ============================================================
-            HERO
-        ============================================================ */}
-
+        {/* ─── HERO ─── */}
         <section className="relative z-10">
           <div
             className="
@@ -220,7 +212,6 @@ export default function Refund() {
             <div className="w-full max-w-[820px]">
               <div className="flex items-center gap-3">
                 <span className="h-px w-9 bg-[#a65b27]" />
-
                 <p
                   className="
                     text-[0.72rem]
@@ -229,9 +220,7 @@ export default function Refund() {
                     tracking-[0.2em]
                     text-[#a65b27]
                   "
-                  style={{
-                    fontFamily: "'Manrope', sans-serif",
-                  }}
+                  style={{ fontFamily: "'Manrope', sans-serif" }}
                 >
                   Thatha Tea
                 </p>
@@ -248,9 +237,7 @@ export default function Refund() {
                   md:text-[6.5rem]
                   lg:text-[8rem]
                 "
-                style={{
-                  fontFamily: "'Bebas Neue', sans-serif",
-                }}
+                style={{ fontFamily: "'Bebas Neue', sans-serif" }}
               >
                 REFUND
                 <br />
@@ -259,7 +246,6 @@ export default function Refund() {
 
               <div className="mt-7 flex items-center gap-3 text-[#8e6a53]">
                 <span className="h-px w-12 bg-current/50" />
-
                 <svg
                   viewBox="0 0 24 24"
                   className="h-4 w-4"
@@ -273,7 +259,6 @@ export default function Refund() {
                     strokeLinejoin="round"
                   />
                 </svg>
-
                 <span className="h-px w-12 bg-current/50" />
               </div>
 
@@ -286,9 +271,7 @@ export default function Refund() {
                   text-[#60483a]
                   sm:text-[1.05rem]
                 "
-                style={{
-                  fontFamily: "'Manrope', sans-serif",
-                }}
+                style={{ fontFamily: "'Manrope', sans-serif" }}
               >
                 This Refund Policy outlines the terms governing refunds and
                 payments associated with the Thatha Tea franchise, including
@@ -305,9 +288,7 @@ export default function Refund() {
                     tracking-[0.12em]
                     text-[#76513a]
                   "
-                  style={{
-                    fontFamily: "'Manrope', sans-serif",
-                  }}
+                  style={{ fontFamily: "'Manrope', sans-serif" }}
                 >
                   Effective Date: 01/01/2026
                 </span>
@@ -316,10 +297,7 @@ export default function Refund() {
           </div>
         </section>
 
-        {/* ============================================================
-            CONTENT
-        ============================================================ */}
-
+        {/* ─── CONTENT ─── */}
         <section className="relative z-10 border-t border-[#d9c1a9]/50">
           <div
             className="
@@ -338,10 +316,7 @@ export default function Refund() {
               lg:py-20
             "
           >
-            {/* ========================================================
-                DESKTOP CONTENT INDEX
-            ======================================================== */}
-
+            {/* Sidebar (desktop) */}
             <aside className="hidden lg:block">
               <div className="sticky top-28">
                 <p
@@ -352,9 +327,7 @@ export default function Refund() {
                     tracking-[0.16em]
                     text-[#a65b27]
                   "
-                  style={{
-                    fontFamily: "'Manrope', sans-serif",
-                  }}
+                  style={{ fontFamily: "'Manrope', sans-serif" }}
                 >
                   In this policy
                 </p>
@@ -376,16 +349,9 @@ export default function Refund() {
                         hover:border-[#b56322]
                       "
                     >
-                      <span
-                        className="
-                          text-[0.64rem]
-                          font-bold
-                          text-[#a65b27]/70
-                        "
-                      >
+                      <span className="text-[0.64rem] font-bold text-[#a65b27]/70">
                         {item.number}
                       </span>
-
                       <span
                         className="
                           text-[0.73rem]
@@ -393,9 +359,7 @@ export default function Refund() {
                           text-[#725745]
                           group-hover:text-[#3a2114]
                         "
-                        style={{
-                          fontFamily: "'Manrope', sans-serif",
-                        }}
+                        style={{ fontFamily: "'Manrope', sans-serif" }}
                       >
                         {item.title}
                       </span>
@@ -405,10 +369,7 @@ export default function Refund() {
               </div>
             </aside>
 
-            {/* ========================================================
-                POLICY CONTENT
-            ======================================================== */}
-
+            {/* Policy sections */}
             <div className="min-w-0">
               <div className="space-y-5">
                 {sections.map((section) => (
@@ -439,9 +400,7 @@ export default function Refund() {
                           tracking-[0.08em]
                           text-[#b56322]
                         "
-                        style={{
-                          fontFamily: "'Manrope', sans-serif",
-                        }}
+                        style={{ fontFamily: "'Manrope', sans-serif" }}
                       >
                         {section.number}
                       </span>
@@ -454,9 +413,7 @@ export default function Refund() {
                             text-[#3a2114]
                             sm:text-[2.35rem]
                           "
-                          style={{
-                            fontFamily: "'Bebas Neue', sans-serif",
-                          }}
+                          style={{ fontFamily: "'Bebas Neue', sans-serif" }}
                         >
                           {section.title}
                         </h2>
@@ -471,17 +428,12 @@ export default function Refund() {
           </div>
         </section>
 
-        {/* ============================================================
-            CLOSING
-        ============================================================ */}
-
+        {/* ─── CLOSING ─── */}
         <section className="relative z-10 border-t border-[#d9c1a9]/50">
           <div className="mx-auto max-w-[1000px] px-5 py-16 text-center sm:px-8 lg:py-20">
             <p
               className="text-[1.5rem] italic leading-[1.5] text-[#60483a] sm:text-[1.8rem]"
-              style={{
-                fontFamily: "'Cormorant Garamond', serif",
-              }}
+              style={{ fontFamily: "'Cormorant Garamond', serif" }}
             >
               “Good tea is built on trust. So are good relationships.”
             </p>
