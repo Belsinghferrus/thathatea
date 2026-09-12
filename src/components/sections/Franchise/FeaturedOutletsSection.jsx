@@ -5,7 +5,6 @@ import indranager from "@/assets/images/outlet/Indra-nager.png";
 import kamanahalli from "@/assets/images/outlet/kamanahalli.png";
 import kithaganur from "@/assets/images/outlet/kithaganur.png";
 import kasturinagar from "@/assets/images/outlet/kasthuri.png";
-// TEMP PLACEHOLDERS — replace with real outlet photos
 const outlets = [
   {
     number: "01",

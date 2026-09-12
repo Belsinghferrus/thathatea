@@ -3,7 +3,6 @@ import { ArrowRight, Store, Users, Coffee, BadgeCheck } from "lucide-react";
 import coffee from "@/assets/images/franchise/coffee1.png";
 
 
-// TEMP PLACEHOLDER — replace with actual assets when provided
 const brewbg =
   "https://placehold.co/1920x400/2b180f/2b180f.png";
 const teaCup = coffee;

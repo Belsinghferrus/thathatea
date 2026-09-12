@@ -1,7 +1,7 @@
 import { motion } from "framer-motion";
 import { Store, MapPin, Users, CupSoda, Award } from "lucide-react";
 
-import confettiBg from "@/assets/images/story/confetti-texture.png";   // optional subtle texture
+import confettiBg from "@/assets/images/story/confetti-texture.png";   
 import mascotCelebrate from "@/assets/images/mascot.png";              // Thatha mascot
 import kettlePng from "@/assets/images/story/oldmantea1png.png";                // left PNG
 import cupPng from "@/assets/images/story/tea.png";                    // right PNG

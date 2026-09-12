@@ -8,9 +8,8 @@ import {
     Apple,
     PlayCircle,
 } from "lucide-react";
-import logo from "@/assets/images/mascot.png"; // adjust path to your logo
+import logo from "@/assets/images/mascot.png"; 
 import footerBottomImg from "@/assets/images/footer-bottom.png"; 
-import tornEdge from "@/assets/images/tornEdge.png";
 const navItems = [
     { label: "HOME", to: "/" },
     { label: "STORY", to: "/story" },
@@ -27,7 +26,6 @@ export default function Footer() {
     return (
         <footer className="relative overflow-hidden overflow-x-hidden bg-[#4D2F1C] py-20 text-[#FBF1E5]">
 
-            {/* background illustration - full width, sits behind everything */}
             <div className="pointer-events-none absolute overflow-x-hidden inset-x-0 bottom-0 z-[10] w-full">
                 <img
                     src={footerBottomImg}
@@ -213,7 +211,7 @@ export default function Footer() {
                     </motion.div>
                 </div>
 
-                {/* divider */}
+         
 
                 {/* bottom bar: copyright + legal links */}
                 <div className="mt-6 flex flex-col items-center justify-between gap-4 sm:flex-row">

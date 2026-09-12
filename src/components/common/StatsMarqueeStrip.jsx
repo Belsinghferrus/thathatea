@@ -13,7 +13,9 @@ const marqueeItems = [...stats, ...stats];
 export default function StatsMarqueeStrip({ reduceMotion = false }) {
   return (
     <section className="relative w-full overflow-hidden bg-[#4b2e22]">
-      {/* background wash */}
+    
+
+      
       <div className="absolute inset-0 bg-[radial-gradient(circle_at_top,rgba(255,214,170,0.08),transparent_42%)]" />
       <div className="absolute inset-0 opacity-[0.05] mix-blend-screen">
         <div

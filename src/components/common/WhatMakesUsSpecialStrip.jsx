@@ -61,6 +61,9 @@ export default function WhatMakesUsSpecialStrip({
         />
       </div>
 
+
+      
+
       <div className="relative z-10 flex min-h-[30vh] flex-col justify-center py-8 sm:py-10 lg:py-12">
         {/* heading */}
         <div className="mb-6 flex items-center justify-center gap-3 px-4 text-center">
@@ -130,5 +133,8 @@ export default function WhatMakesUsSpecialStrip({
         </div>
       </div>
     </section>
+
+
+
   );
 }

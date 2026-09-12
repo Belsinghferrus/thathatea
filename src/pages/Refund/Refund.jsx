@@ -4,7 +4,6 @@ import Footer from "../../components/layout/Footer";
 import bgimage from "../../assets/images/paper-bg.webp";
 import teaSketch from "../../assets/images/Menu/coffee-sketch.png";
 
-// ─── Updated sections with new content ───
 const sections = [
   {
     id: "initial-franchise-fee",

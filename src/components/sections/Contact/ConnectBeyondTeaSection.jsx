@@ -1,9 +1,8 @@
 import { motion } from "framer-motion";
 
-import bottomLandscape from "@/assets/images/contact/tea-bottom.png"; // your wide bottom image
+import bottomLandscape from "@/assets/images/contact/tea-bottom.png";
 import leafRight from "@/assets/images/contact/sketch1.png";
 
-// SVG logos (simplified brand marks)
 function InstagramLogo(props) {
     return (
         <svg viewBox="0 0 24 24" {...props} fill="none">

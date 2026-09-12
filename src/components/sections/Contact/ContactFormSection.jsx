@@ -19,7 +19,7 @@ import leafCorner from "@/assets/images/contact/sketch1.png";
 export default function ContactLetterSection() {
     return (
         <section className="relative overflow-hidden bg-[#FBF1E5] py-14 text-[#4B2A16] sm:py-16 lg:py-20">
-            {/* subtle background wash */}
+          
             <div className="absolute inset-0 bg-[radial-gradient(circle_at_20%_10%,rgba(181,103,49,0.10),transparent_24%),radial-gradient(circle_at_80%_90%,rgba(181,103,49,0.08),transparent_20%)]" />
             <div className="absolute inset-0 opacity-[0.04] mix-blend-screen">
                 <div
@@ -194,7 +194,6 @@ export default function ContactLetterSection() {
     );
 }
 
-/* Field components stay exactly as you liked, just reused */
 
 function LetterField({ icon: Icon, name, placeholder, type = "text" }) {
     return (

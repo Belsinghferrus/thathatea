@@ -17,7 +17,6 @@ import training from "@/assets/images/franchise/taining.jpg";
 import support from "@/assets/images/franchise/support.jpg";
 import marketing from "@/assets/images/franchise/marketing.jpg";
 import growth from "@/assets/images/franchise/growth.jpg";
-// TEMP PLACEHOLDERS — replace with your actual images
 const heroImage = coffeevideo;
 const cardImages = [
     outlet1,

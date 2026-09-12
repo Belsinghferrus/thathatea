@@ -1,7 +1,7 @@
 import { motion } from "framer-motion";
 import { MapPin } from "lucide-react";
 
-import mapPaper from "@/assets/images/contact/map.png";   // your map image
+import mapPaper from "@/assets/images/contact/map.png";  
 import leafSketch from "@/assets/images/story/sketch2.png"; // decorative leaf PNG
 import kettlePng from "@/assets/images/cafe2.png";     // left kettle + cup png
 

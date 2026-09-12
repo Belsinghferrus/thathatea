@@ -23,7 +23,6 @@ export default function ThankYouIntenseSection() {
 
       {/* brown background with paper texture */}
       <div className="relative mt-[48px] min-h-[380px] bg-[#EDCD9F] text-[#F8E4C7] sm:min-h-[420px] lg:min-h-[460px]">
-        {/* <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_15%,rgba(255,214,170,0.12),transparent_34%),radial-gradient(circle_at_8%_80%,rgba(255,214,170,0.08),transparent_24%),radial-gradient(circle_at_92%_78%,rgba(255,214,170,0.08),transparent_24%)]" /> */}
         <div className="absolute inset-0 opacity-[50] mix-blend-screen">
           <div
             className="h-full w-full"

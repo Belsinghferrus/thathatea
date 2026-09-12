@@ -1,6 +1,5 @@
 import { motion } from "framer-motion";
 import { ArrowUpRight, MapPin } from "lucide-react";
-import paperBG from "../../../assets/images/franchise/coffee-bg.jpg";
 import franchiseOutletFront from "../../../assets/images/franchise/outlet-bg.png";
 import FranchiseStatsMarquee from "./FranchiseStatsMarquee";
 

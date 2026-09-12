@@ -2,7 +2,7 @@ import { useState } from "react";
 import { motion } from "framer-motion";
 import { ArrowUpRight, Check } from "lucide-react";
 import paperbg from "@/assets/images/franchise/cafe-bg2.png";
-import franchiseTea from "@/assets/images/franchise/cafe3.png"; // Replace with your transparent PNG
+import franchiseTea from "@/assets/images/franchise/cafe3.png";
 
 const initialForm = {
   name: "",
@@ -79,8 +79,6 @@ export default function FranchiseEditorialEnquirySection() {
       return;
     }
 
-    // Future AppScript/API integration goes here.
-    // The validated enquiry payload is available in `form`.
     setSubmitted(true);
   };
 
