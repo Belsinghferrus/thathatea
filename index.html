@@ -2,24 +2,212 @@
 <html lang="en">
 
 <head>
+  <!-- =========================================================
+         DOCUMENT
+    ========================================================== -->
+
   <meta charset="UTF-8" />
-  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link
-    href="https://fonts.googleapis.com/css2?family=Allura&family=Anton&family=Manrope:wght@400;500;600;700;800&display=swap"
-    rel="stylesheet">
-  <link href="https://fonts.googleapis.com/css2?family=Sacramento&display=swap" rel="stylesheet">
-  <link
-    href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@700;800&family=Dancing+Script:wght@600;700&display=swap"
-    rel="stylesheet">
-  <title>thatha-tea</title>
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+  <!-- =========================================================
+         PRIMARY SEO
+    ========================================================== -->
+
+  <title>Thatha Tea | A Legacy Brewed With Love</title>
+
+  <meta name="description"
+    content="Discover Thatha Tea — a legacy brewed with love. Rooted in tradition since 1991, we serve authentic Indian tea, delicious food and a warm café experience." />
+
+  <meta name="author" content="Thatha Tea" />
+
+  <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
+
+  <meta name="googlebot" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
+
+  <!-- =========================================================
+         CANONICAL
+         
+         Preferred production domain:
+         https://thathatea.com/
+         
+         Make sure the www version redirects to this domain.
+    ========================================================== -->
+
+  <link rel="canonical" href="https://thathatea.com/" />
+
+  <!-- =========================================================
+         BRAND / BROWSER
+    ========================================================== -->
+
+  <meta name="theme-color" content="#f6efe6" />
+
+  <meta name="color-scheme" content="light" />
+
+  <meta name="application-name" content="Thatha Tea" />
+
+  <meta name="apple-mobile-web-app-title" content="Thatha Tea" />
+
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+
+  <meta name="mobile-web-app-capable" content="yes" />
+
+  <meta name="format-detection" content="telephone=yes" />
+
+  <meta name="referrer" content="strict-origin-when-cross-origin" />
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+  <link rel="manifest" href="/site.webmanifest">
+  <link rel="sitemap" type="application/xml" href="/sitemap.xml" />
+
+  <!-- =========================================================
+         GOOGLE FONTS
+         
+         Consolidated into one request.
+         
+         Fonts currently used by the website:
+         - Manrope
+         - Bebas Neue
+         - Cormorant Garamond
+         
+         The other families are retained only if other sections
+         of the website actually use them.
+    ========================================================== -->
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
+  <link rel="stylesheet"
+    href="https://fonts.googleapis.com/css2?family=Allura&family=Anton&family=Baloo+2:wght@700;800&family=Bebas+Neue&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500;1,600&family=Dancing+Script:wght@600;700&family=Manrope:wght@400;500;600;700;800&family=Sacramento&display=swap" />
+
+  <!-- =========================================================
+         OPEN GRAPH
+         
+         Used by:
+         - WhatsApp
+         - Facebook
+         - LinkedIn
+         - Messenger
+         - Other social sharing platforms
+         
+    ========================================================== -->
+
+  <meta property="og:type" content="website" />
+
+  <meta property="og:site_name" content="Thatha Tea" />
+
+  <meta property="og:title" content="Thatha Tea - A Legacy Brewed With Love" />
+
+  <meta property="og:description"
+    content="Rooted in tradition since 1991. Discover the story, tea, food and café experience behind Thatha Tea." />
+
+  <meta property="og:url" content="https://thathatea.com/" />
+
+  <meta property="og:locale" content="en_IN" />
+
+  <meta property="og:image" content="https://thathatea.com/menu-hero.png" />
+
+  <meta property="og:image:secure_url" content="https://thathatea.com/menu-hero.png" />
+
+  <meta property="og:image:type" content="image/png" />
+
+  <meta property="og:image:width" content="1200" />
+
+  <meta property="og:image:height" content="800" />
+
+  <meta property="og:image:alt" content="Thatha Tea - A Legacy Brewed With Love" />
+
+  <!-- =========================================================
+         TWITTER / X
+    ========================================================== -->
+
+  <meta name="twitter:card" content="summary_large_image" />
+
+  <meta name="twitter:title" content="Thatha Tea — A Legacy Brewed With Love" />
+
+  <meta name="twitter:description"
+    content="Rooted in tradition since 1991. Discover the story, tea, food and café experience behind Thatha Tea." />
+
+  <meta name="twitter:image" content="https://thathatea.com/menu-hero.png" />
+
+  <meta name="twitter:image:alt" content="Thatha Tea — A Legacy Brewed With Love" />
+
+  <!-- =========================================================
+         GOOGLE SEARCH CONSOLE
+         
+         DO NOT add a fake value.
+         
+         After creating your Google Search Console property,
+         Google may provide an HTML verification token.
+         
+         If Google gives you one, add:
+         
+         <meta
+           name="google-site-verification"
+           content="YOUR_GOOGLE_VERIFICATION_TOKEN"
+         />
+         
+         For a Domain property verified through DNS, this
+         meta tag is NOT required.
+    ========================================================== -->
+
+  <!-- =========================================================
+         STRUCTURED DATA — ORGANIZATION
+         
+         Helps search engines understand the brand.
+         
+         Keep company URLs/social URLs accurate when adding them.
+    ========================================================== -->
+
+  <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "Organization",
+        "@id": "https://thathatea.com/#organization",
+        "name": "Thatha Tea",
+        "url": "https://thathatea.com/",
+        "logo": "https://thathatea.com/favicon.ico"
+      }
+    </script>
+
+  <!-- =========================================================
+         STRUCTURED DATA — WEBSITE
+    ========================================================== -->
+
+  <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "WebSite",
+        "@id": "https://thathatea.com/#website",
+        "url": "https://thathatea.com/",
+        "name": "Thatha Tea",
+        "description": "Thatha Tea — A Legacy Brewed With Love.",
+        "publisher": {
+          "@id": "https://thathatea.com/#organization"
+        },
+        "inLanguage": "en-IN"
+      }
+    </script>
+
 </head>
 
 <body>
+  <!-- =========================================================
+         APPLICATION ROOT
+    ========================================================== -->
+
   <div id="root"></div>
-  <script type="module" src="/src/main.jsx"></script>
+
+  <!-- =========================================================
+         VITE ENTRY
+    ========================================================== -->
+
+  <script type="module" src="./src/main.jsx"></script>
 </body>
 
 </html>
