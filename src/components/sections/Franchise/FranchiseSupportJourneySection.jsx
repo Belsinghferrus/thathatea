@@ -11,15 +11,17 @@ import {
     ArrowUpRight,
 } from "lucide-react";
 import coffeevideo from "@/assets/images/franchise/cofee-video.mp4";
-import outlet1  from "@/assets/images/outlet/Indra-nager.png";
-import design from "@/assets/images/franchise/design.jpg";
-import training from "@/assets/images/franchise/taining.jpg";
-import support from "@/assets/images/franchise/support.jpg";
-import marketing from "@/assets/images/franchise/marketing.jpg";
-import growth from "@/assets/images/franchise/growth.jpg";
+
+
+import pin from "@/assets/images/franchise/pin.png";
+import design from "@/assets/images/franchise/design.png";
+import training from "@/assets/images/franchise/training.png";
+import support from "@/assets/images/franchise/operation.png";
+import marketing from "@/assets/images/franchise/marketing.png";
+import growth from "@/assets/images/franchise/grow.png";
 const heroImage = coffeevideo;
 const cardImages = [
-    outlet1,
+    pin,
     design,
     training,
     support,
@@ -72,12 +74,12 @@ export default function FranchiseSupportJourneySection() {
     const handleSelect = (index) => {
         setActive(index);
         if (window.innerWidth < 1024) {
-          const el = document.getElementById("franchise-support-detail");
-          if (el) {
-            el.scrollIntoView({ behavior: "smooth", block: "start" });
-          }
+            const el = document.getElementById("franchise-support-detail");
+            if (el) {
+                el.scrollIntoView({ behavior: "smooth", block: "start" });
+            }
         }
-      };
+    };
 
 
     return (
@@ -92,7 +94,7 @@ export default function FranchiseSupportJourneySection() {
                     viewport={{ once: true, amount: 0.25 }}
                     transition={{ duration: 0.55 }}
                     className="relative overflow-hidden rounded-[32px] border border-[#E4D3BB] bg-white shadow-[0_18px_50px_rgba(45,26,16,0.08)] sm:h-[50vh] lg:h-[100vh] " // Adjusted height
-                    >
+                >
                     <div className="absolute inset-0 bg-[linear-gradient(to_bottom,rgba(255,255,255,0.06),rgba(251,246,239,0.18))]" />
 
                     <video
@@ -164,7 +166,7 @@ export default function FranchiseSupportJourneySection() {
                             return (
                                 <motion.button
                                     key={step.title}
-                  onClick={() => handleSelect(index)}
+                                    onClick={() => handleSelect(index)}
                                     whileHover={{ y: -4, scale: 1.01 }}
                                     whileTap={{ scale: 0.98 }}
                                     initial={{ opacity: 0, y: 20 }}
@@ -172,8 +174,8 @@ export default function FranchiseSupportJourneySection() {
                                     viewport={{ once: true, amount: 0.2 }}
                                     transition={{ duration: 0.42, delay: index * 0.05 }}
                                     className={`group relative overflow-hidden rounded-[26px] border text-left shadow-[0_12px_34px_rgba(45,26,16,0.08)] transition-all duration-300 ${isActive
-                                            ? "border-[#B77A2A] bg-white"
-                                            : "border-[#E6D7C2] bg-white/75 hover:border-[#D0B28A]"
+                                        ? "border-[#B77A2A] bg-white"
+                                        : "border-[#E6D7C2] bg-white/75 hover:border-[#D0B28A]"
                                         }`}
                                 >
                                     <div className="relative aspect-[1.35] overflow-hidden">
@@ -198,9 +200,9 @@ export default function FranchiseSupportJourneySection() {
                                         <div className="absolute inset-x-0 bottom-0 p-4 sm:p-5">
                                             <div className="flex items-center justify-between gap-3">
                                                 <div className="flex items-center gap-3">
-                                                    <span className={`flex h-12 w-12 items-center justify-center rounded-full bg-gradient-to-br ${step.accent} text-[#FFF7EF] shadow-[0_10px_24px_rgba(0,0,0,0.22)]`}>
+                                                    {/* <span className={`flex h-12 w-12 items-center justify-center rounded-full bg-gradient-to-br ${step.accent} text-[#FFF7EF] shadow-[0_10px_24px_rgba(0,0,0,0.22)]`}>
                                                         <Icon className="h-6 w-6" strokeWidth={1.75} />
-                                                    </span>
+                                                    </span> */}
                                                     <div>
                                                         <h4
                                                             className="text-[1rem] leading-[1] text-white sm:text-[1.15rem]"
@@ -225,7 +227,7 @@ export default function FranchiseSupportJourneySection() {
                     {/* Expanded active detail */}
                     <AnimatePresence mode="wait">
                         <motion.div
-                         id="franchise-support-detail"
+                            id="franchise-support-detail"
                             key={active}
                             initial={{ opacity: 0, y: 12 }}
                             animate={{ opacity: 1, y: 0 }}

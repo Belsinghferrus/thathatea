@@ -268,7 +268,7 @@ function Hero() {
                 </a>
 
                 <a
-                  href="/our-story"
+                  href="/story"
                   className="inline-flex min-h-[58px] min-w-[214px] items-center justify-center gap-2.5 rounded-2xl border border-[#c9b092] bg-[#fffaf4]/72 px-8 text-[0.92rem] font-extrabold uppercase tracking-[0.055em] text-[#2c1810] backdrop-blur-[2px] transition-[background-color,color,border-color,transform] duration-300 hover:-translate-y-[1px] hover:border-[#2c1810] hover:bg-[#2c1810] hover:text-white"
                   style={{ fontFamily: "'Manrope', sans-serif" }}
                 >
