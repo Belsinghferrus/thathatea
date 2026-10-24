@@ -24,13 +24,9 @@ function AppRouter() {
             <Route path="/menu" element={<Menu />} />
             <Route path="/franchise" element={<Franchise />} />
             <Route path="/contact" element={<Contact />} />
-            
             <Route path="/privacy-policy" element={<Privacy />} />
             <Route path="/Refund-policy" element={<Refund />} />
-
             <Route path="/terms-and-conditions" element={<Terms />} />
-
-
         </Routes>
         </>
        

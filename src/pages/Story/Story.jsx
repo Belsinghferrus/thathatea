@@ -10,6 +10,7 @@ import FoundersNoteSection from '../../components/sections/Story/FoundersNoteSec
 import TeaQuoteStrip20vh from '../../components/sections/Contact/TeaQuoteStrip'
 import StoryInNumbersSection from '../../components/sections/Story/StoryInNumbersSection'
 import Footer from '../../components/layout/Footer'
+import PortfolioSection from '../../components/sections/Story/PortfolioSection'
 
 const Story = () => {
     return (
@@ -24,7 +25,7 @@ const Story = () => {
             <GrowthMapSection />
             <FoundersNoteSection    />
             <StoryInNumbersSection />
-          
+                <PortfolioSection   />
             <Footer />
         </>
     )
