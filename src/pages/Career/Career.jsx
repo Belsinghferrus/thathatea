@@ -1,10 +1,13 @@
 import React from 'react'
+import Navbar from '../../components/layout/Navbar'
+import CareersHeroSection from '../../components/sections/Career/CareerHeroSection'
 
 const Career = () => {
   return (
-    <div>
-      CAREER
-    </div>
+   <>
+   <Navbar />
+   <CareersHeroSection />
+   </>
   )
 }
 

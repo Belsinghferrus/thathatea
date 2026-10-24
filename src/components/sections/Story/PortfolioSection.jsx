@@ -1,7 +1,7 @@
 import { motion } from "framer-motion";
 
 
-import portfolioBg from "@/assets/images/story/Vintage-bg.png"; // Main section background
+import portfolioBg from "@/assets/images/story/vintage-bg.png"; // Main section background
 import cardBg from "@/assets/images/story/papercard.jpg"; // Card background
 import bakeryStamp from "@/assets/images/story/bake-stamp.png";
 import bakeryMainImg from "@/assets/images/story/thatha-bread.png";
