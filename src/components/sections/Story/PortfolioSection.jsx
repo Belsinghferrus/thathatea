@@ -89,7 +89,7 @@ const portfolioData = [
 
 export default function PortfolioSection() {
   return (
-    <section className="relative overflow-x-hidden bg-[#FBF1E5] py-14 text-[#4B2A16] sm:py-18 lg:py-20">
+    <section id="portfolio" className="relative overflow-x-hidden bg-[#FBF1E5] py-14 text-[#4B2A16] sm:py-18 lg:py-20">
       
       {/* SECTION BACKGROUND */}
       <div className="absolute inset-0 pointer-events-none">

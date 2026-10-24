@@ -7,7 +7,7 @@ import kettlePng from "@/assets/images/cafe2.png";     // left kettle + cup png
 
 export default function GrowthMapSection() {
   return (
-    <section className="relative overflow-hidden bg-[#FBF1E5] py-14 text-[#4B2A16] sm:py-18 lg:py-20">
+    <section id="journey" className="relative overflow-hidden bg-[#FBF1E5] py-14 text-[#4B2A16] sm:py-18 lg:py-20">
       {/* subtle paper texture */}
       <div className="absolute inset-0 opacity-[0.08] mix-blend-screen">
         <div

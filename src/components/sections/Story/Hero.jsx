@@ -1,934 +1,175 @@
-import { motion } from "framer-motion";
-import mascot from "@/assets/images/mascot.png";
-import bgimage from "@/assets/images/paper-bg.webp";
+import { useLayoutEffect, useRef } from "react";
+import { ArrowRight, Play, Settings, BarChart2, Users, Leaf } from "lucide-react";
+import { gsap } from "gsap";
 
-const ACCENT = "#b56322";
-const DARK = "#2b1a11";
-const MUTED = "#765844";
+// --- THE 3 IMAGES ---
+import storyBg from "@/assets/images/story/vintage-bg.png";       // 1. Background Sketch
+import storyCafe from "@/assets/images/story/cafe.png";           // 2. Cafe Shopfront
+import storyMascot from "@/assets/images/story/digital-thatha.png"; // 3. Mascot with Monitor & Tablet
 
-import oldmanTea from "@/assets/images/story/oldman-tea.png";
-import stall from "@/assets/images/story/stall11.png";
-import growth from "@/assets/images/story/growth.png";
-import story from "@/assets/images/story/story11.png";
-import order from "@/assets/images/story/orders.png";
-import applications from "@/assets/images/story/application.png";
-import insight from "@/assets/images/story/insight.png";
+const features = [
+  { icon: <Settings className="h-5 w-5" strokeWidth={1.5} />, title: "SMART\nOPERATIONS" },
+  { icon: <BarChart2 className="h-5 w-5" strokeWidth={1.5} />, title: "REAL-TIME\nINSIGHTS" },
+  { icon: <Users className="h-5 w-5" strokeWidth={1.5} />, title: "BETTER\nCUSTOMER EXPERIENCES" },
+  { icon: <Leaf className="h-5 w-5" strokeWidth={1.5} />, title: "A STRONGER\nTOMORROW" },
+];
 
-const PLACEHOLDERS = {
-  kettle: story,
-  stall:
-    "https://placehold.co/700x500/e8d5bb/5a3824?text=TEA+STALL",
-  tea:
-    "https://placehold.co/700x500/e8d5bb/5a3824?text=TEA+CUP",
-  book:
-    "https://placehold.co/700x500/e8d5bb/5a3824?text=VINTAGE+BOOK",
+export default function StoryHeroSection() {
+  const rootRef = useRef(null);
 
-  background: oldmanTea,
+  useLayoutEffect(() => {
+    const ctx = gsap.context(() => {
+      const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+      if (reduceMotion) return;
 
-  growth: growth,
-  timeline:
-    "https://placehold.co/700x300/eee0cb/65442d?text=TIMELINE",
-  orders: order,
-  customers: applications,
-  applications: insight,
-};
+      // Initial states
+      gsap.set(
+        [".hero-kicker", ".hero-title", ".hero-script", ".hero-copy", ".hero-feature", ".hero-btn"],
+        { autoAlpha: 0, y: 24 }
+      );
+      gsap.set(".hero-bg", { autoAlpha: 0 });
+      gsap.set(".hero-cafe", { autoAlpha: 0, scale: 0.98 });
+      gsap.set(".hero-mascot", { autoAlpha: 0, y: 30 });
 
-function HeartDivider() {
-  return (
-    <div className="flex items-center gap-3 text-[#8e6a53]">
-      <span className="h-px w-12 bg-current/50" />
+      // Animation Timeline
+      const tl = gsap.timeline({ defaults: { ease: "cubic-bezier(0.16, 1, 0.3, 1)" } });
 
-      <svg
-        viewBox="0 0 24 24"
-        className="h-4 w-4"
-        fill="none"
-        aria-hidden="true"
-      >
-        <path
-          d="M12 19s-6.5-4.2-6.5-9.1A3.9 3.9 0 0 1 12 7.4a3.9 3.9 0 0 1 6.5 2.5C18.5 14.8 12 19 12 19Z"
-          stroke="currentColor"
-          strokeWidth="1.6"
-          strokeLinejoin="round"
-        />
-      </svg>
+      tl.to(".hero-bg", { autoAlpha: 1, duration: 1.5 }, 0)
+        .to(".hero-cafe", { autoAlpha: 1, scale: 1, duration: 1.2 }, 0.2)
+        .to(".hero-mascot", { autoAlpha: 1, y: 0, duration: 1 }, 0.4)
+        .to(".hero-kicker", { autoAlpha: 1, y: 0, duration: 0.5 }, 0.5)
+        .to(".hero-title", { autoAlpha: 1, y: 0, duration: 0.6 }, 0.6)
+        .to(".hero-script", { autoAlpha: 1, y: 0, duration: 0.6 }, 0.7)
+        .to(".hero-copy", { autoAlpha: 1, y: 0, duration: 0.5 }, 0.8)
+        .to(".hero-feature", { autoAlpha: 1, y: 0, duration: 0.5, stagger: 0.08 }, 0.9)
+        .to(".hero-btn", { autoAlpha: 1, y: 0, duration: 0.5, stagger: 0.1 }, 1.0);
 
-      <span className="h-px w-12 bg-current/50" />
-    </div>
-  );
-}
+      // Mascot continuous floating animation
+      gsap.to(".hero-mascot-float", {
+        y: -8,
+        duration: 4,
+        ease: "sine.inOut",
+        yoyo: true,
+        repeat: -1,
+      });
+    }, rootRef);
 
-/*
-|--------------------------------------------------------------------------
-| Floating Data Image
-|--------------------------------------------------------------------------
-*/
+    return () => ctx.revert();
+  }, []);
 
-function DataCard({
-  src,
-  alt,
-  className = "",
-  delay = 0,
-}) {
-  return (
-    <motion.div
-      initial={{ opacity: 0, y: 18 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true, amount: 0.2 }}
-      transition={{
-        duration: 0.6,
-        delay,
-      }}
-      animate={{
-        y: [0, -6, 0],
-      }}
-      className={`
-        relative overflow-hidden
-        rounded-[18px]
-        border border-[#8f6b50]/30
-        bg-[#f8ead7]/70
-        p-2
-        shadow-[0_15px_35px_rgba(73,45,27,0.12)]
-        backdrop-blur-[3px]
-        ${className}
-      `}
-    >
-      <img
-        src={src}
-        alt={alt}
-        className="h-full w-full rounded-[12px] object-cover"
-      />
-
-      <div className="pointer-events-none absolute inset-0 rounded-[18px] border border-white/30" />
-    </motion.div>
-  );
-}
-
-/*
-|--------------------------------------------------------------------------
-| Story Object
-|--------------------------------------------------------------------------
-*/
-
-/*
-|--------------------------------------------------------------------------
-| Timeline
-|--------------------------------------------------------------------------
-*/
-
-function StoryTimeline() {
-  const milestones = [
-    {
-      year: "1991",
-      title: "THE BEGINNING",
-      active: true,
-    },
-    {
-      year: "2000",
-      title: "THE FIRST GROWTH",
-    },
-    {
-      year: "2010",
-      title: "A GROWING COMMUNITY",
-    },
-    {
-      year: "2020",
-      title: "DIGITAL TRANSFORMATION",
-    },
-    {
-      year: "TODAY",
-      title: "BUILT FOR TOMORROW",
-    },
-  ];
-
-  return (
-    <div className="relative mx-auto mt-10 w-full max-w-[1450px] px-4 sm:px-8 lg:mt-6 lg:px-12">
-      <div className="absolute left-0 right-0 top-[24px] hidden h-px bg-[#876247]/30 lg:block" />
-
-      <div className="relative flex flex-col gap-5 lg:grid lg:grid-cols-5 lg:gap-0">
-        {milestones.map((item, index) => (
-          <div
-            key={item.year}
-            className="relative flex items-center gap-4 lg:flex-col lg:items-center lg:text-center"
-          >
-            {/* timeline point */}
-            <div
-              className={`
-                relative z-10
-                flex h-12 w-12 shrink-0
-                items-center justify-center
-                rounded-full
-                border
-                ${
-                  item.active
-                    ? "border-[#9a511e] bg-[#9a511e] text-[#f9ead5]"
-                    : "border-[#9b785e]/40 bg-[#f3e1c8] text-[#6e503b]"
-                }
-              `}
-            >
-              <span
-                className="text-[0.72rem] font-bold"
-                style={{ fontFamily: "'Manrope', sans-serif" }}
-              >
-                {item.year}
-              </span>
-            </div>
-
-            <div className="lg:mt-4">
-              <p
-                className="text-[0.68rem] font-bold uppercase tracking-[0.12em] text-[#9a5b2b] sm:text-[0.72rem]"
-                style={{ fontFamily: "'Manrope', sans-serif" }}
-              >
-                {item.year}
-              </p>
-
-              <p
-                className="mt-1 text-[0.78rem] font-semibold uppercase tracking-[0.06em] text-[#4b3020]"
-                style={{ fontFamily: "'Bebas Neue', sans-serif" }}
-              >
-                {item.title}
-              </p>
-            </div>
-
-            {index !== milestones.length - 1 && (
-              <div className="absolute left-[24px] top-[48px] h-[22px] w-px bg-[#876247]/30 lg:hidden" />
-            )}
-          </div>
-        ))}
-      </div>
-    </div>
-  );
-}
-
-/*
-|--------------------------------------------------------------------------
-| Main Hero
-|--------------------------------------------------------------------------
-*/
-
-export default function StoryHeroSection({ reduceMotion = false }) {
   return (
     <section
-      className="relative min-h-screen w-full overflow-hidden bg-[#f8ecdc]"
-      style={{
-        backgroundImage: `url(${bgimage})`,
-        backgroundSize: "cover",
-        backgroundPosition: "center",
-        backgroundRepeat: "no-repeat",
-      }}
+      ref={rootRef}
+      className="relative isolate flex min-h-[100svh] w-full flex-col justify-end overflow-hidden bg-[#F7EFE4] pt-28 lg:justify-center lg:pt-20 lg:pb-0"
     >
-      {/* parchment wash */}
-      <div className="absolute inset-0 bg-[#f8ecdc]/90" />
+      {/* ======================================= */}
+      {/* LAYER 1: BACKGROUND SKETCH              */}
+      {/* ======================================= */}
+      <div 
+        className="hero-bg pointer-events-none absolute inset-0 z-0 opacity-40 mix-blend-multiply"
+        style={{
+          backgroundImage: `url(${storyBg})`,
+          backgroundSize: "cover",
+          backgroundPosition: "center",
+        }}
+      />
+      <div className="pointer-events-none absolute inset-0 z-0 bg-[linear-gradient(90deg,#F7EFE4_0%,rgba(247,239,228,0.95)_40%,transparent_100%)]" />
 
-      {/* subtle paper texture */}
-      <div className="pointer-events-none absolute inset-0 opacity-[0.16] mix-blend-multiply">
-        <div
-          className="absolute inset-0"
-          style={{
-            backgroundImage: `
-              radial-gradient(
-                circle at 20% 20%,
-                rgba(90,55,32,0.18) 0,
-                transparent 30%
-              ),
-              radial-gradient(
-                circle at 80% 70%,
-                rgba(90,55,32,0.12) 0,
-                transparent 28%
-              )
-            `,
-          }}
-        />
-      </div>
-
-      <div className="relative z-10 mx-auto w-full max-w-[1700px] px-4 pb-8 pt-8 sm:px-6 sm:pt-12 lg:min-h-screen lg:px-10 lg:pt-14">
-        {/* ================================================================
-            TOP CONTENT
-        ================================================================ */}
-
-        <div className="flex flex-col gap-8 lg:grid lg:grid-cols-[0.85fr_1.45fr_0.95fr] lg:gap-4">
-          {/* ============================================================
-              LEFT — STORY TEXT
-          ============================================================ */}
-
-          <motion.div
-            initial={
-              reduceMotion
-                ? false
-                : {
-                    opacity: 0,
-                    x: -30,
-                  }
-            }
-            whileInView={
-              reduceMotion
-                ? {}
-                : {
-                    opacity: 1,
-                    x: 0,
-                  }
-            }
-            viewport={{
-              once: true,
-              amount: 0.2,
-            }}
-            transition={{
-              duration: 0.7,
-            }}
-            className="
-              order-1
-              relative
-              z-30
-              flex
-              flex-col
-              justify-start
-              pt-2
-
-              lg:order-none
-              lg:pt-16
-
-              max-lg:contents
-            "
-          >
-            <p
-              className="
-                order-1
-                flex
-                items-center
-                gap-2
-                text-[0.75rem]
-                font-bold
-                uppercase
-                tracking-[0.2em]
-                text-[#a25c2c]
-
-                lg:order-none
-              "
-              style={{
-                fontFamily: "'Manrope', sans-serif",
-              }}
-            >
-              <span className="h-px w-7 bg-[#a25c2c]" />
-              Our Story
-            </p>
-
-            <h1
-              className="
-                order-1
-                mt-5
-                text-[3.6rem]
-                leading-[0.87]
-                tracking-[-0.02em]
-                text-[#291810]
-
-                sm:text-[4.8rem]
-                md:text-[5.5rem]
-                lg:order-none
-                lg:text-[5.6rem]
-                xl:text-[6.3rem]
-              "
-              style={{
-                fontFamily: "'Bebas Neue', sans-serif",
-              }}
-            >
-              FROM A
-              <br />
-              DREAM
-              <br />
-              <span style={{ color: ACCENT }}>IN 1991.</span>
-            </h1>
-
-            <div className="order-1 mt-7 lg:order-none">
-              <HeartDivider />
-            </div>
-
-            {/* ==========================================================
-                STORY PARAGRAPH
-                Mobile: AFTER mascot + overlay artwork
-                Desktop: stays in original left position
-            ========================================================== */}
-
-            <p
-              className="
-                order-3
-                mt-7
-                max-w-[390px]
-                text-[0.98rem]
-                leading-[1.8]
-                text-[#50392c]
-
-                sm:text-[1.05rem]
-                lg:order-none
-              "
-              style={{
-                fontFamily: "'Manrope', sans-serif",
-              }}
-            >
-              What began in 1991 with a simple dream and a brass kettle has
-              grown into a tea brand built around people, tradition and
-              technology.
-            </p>
-
-            <p
-              className="
-                order-3
-                mt-4
-                max-w-[390px]
-                text-[0.9rem]
-                leading-[1.75]
-                text-[#806653]
-
-                lg:order-none
-              "
-              style={{
-                fontFamily: "'Manrope', sans-serif",
-              }}
-            >
-              The heart remains old school. The way we operate is anything
-              but.
-            </p>
-
-            <div className="order-3 mt-7 flex flex-wrap gap-3 lg:order-none">
-              <div className="rounded-full border border-[#8b684e]/30 bg-[#f4e3cc]/70 px-4 py-2">
-                <span
-                  className="text-[0.65rem] font-bold uppercase tracking-[0.12em] text-[#684632]"
-                  style={{
-                    fontFamily: "'Manrope', sans-serif",
-                  }}
-                >
-                  Since 1991
-                </span>
-              </div>
-
-              <div className="rounded-full border border-[#8b684e]/30 bg-[#f4e3cc]/70 px-4 py-2">
-                <span
-                  className="text-[0.65rem] font-bold uppercase tracking-[0.12em] text-[#684632]"
-                  style={{
-                    fontFamily: "'Manrope', sans-serif",
-                  }}
-                >
-                  People First
-                </span>
-              </div>
-            </div>
-          </motion.div>
-
-          {/* ============================================================
-              CENTER — MASCOT + HISTORY
-          ============================================================ */}
-
-          <div
-            className="
-              order-2
-              relative
-              min-h-[420px]
-              overflow-visible
-              sm:min-h-[700px]
-
-              lg:order-none
-              lg:min-h-[760px]
-            "
-          >
-            {/* historical illustration behind mascot */}
-
-            <motion.div
-              initial={
-                reduceMotion
-                  ? false
-                  : {
-                      opacity: 0,
-                      scale: 0.96,
-                    }
-              }
-              whileInView={
-                reduceMotion
-                  ? {}
-                  : {
-                      opacity: 0.28,
-                      scale: 1,
-                    }
-              }
-              viewport={{
-                once: true,
-              }}
-              transition={{
-                duration: 1,
-              }}
-              className="absolute inset-x-[-5%] top-[15%] z-0"
-            >
+      <div className="relative z-10 mx-auto flex w-full max-w-[1560px] flex-col-reverse px-5 sm:px-8 lg:grid lg:min-h-[calc(100vh-80px)] lg:grid-cols-[1fr_1.2fr] lg:items-center lg:px-14 xl:px-20">
+        
+        {/* ======================================= */}
+        {/* TEXT CONTENT (LEFT/BOTTOM)              */}
+        {/* ======================================= */}
+        <div className="relative z-30 w-full pb-10 text-center lg:pb-16 lg:text-left">
+          <div className="mx-auto w-full max-w-[540px] lg:mx-0 lg:max-w-[600px]">
             
-            </motion.div>
+            <div className="hero-kicker mb-3 flex items-center justify-center gap-3 lg:justify-start">
+              <span className="h-px w-8 bg-[#A16635]/40" />
+              <p className="font-['Manrope'] text-[0.8rem] font-bold uppercase tracking-[0.2em] text-[#A16635] sm:text-[0.9rem]">
+                Our Story
+              </p>
+            </div>
 
-            {/* small year stamp */}
+            <div className="relative">
+              <h1 className="hero-title font-['Anton'] text-[3.5rem] uppercase leading-[0.9] tracking-wide text-[#3D2413] sm:text-[4.5rem] lg:text-[5.5rem]">
+                POWERED BY<br />
+                <span className="text-[#A16635]">OUR OWN</span>
+              </h1>
+              <h2 className="hero-script mt-1 font-['Allura'] text-[3.5rem] leading-[0.9] text-[#C88A3D] sm:text-[4.5rem] lg:text-[5.5rem]">
+                Technology
+              </h2>
+            </div>
 
-            {/* <div className="absolute left-1/2 top-5 z-20 sm:hidden -translate-x-1/2">
-              <div className="rounded-full border border-[#886348]/30 bg-[#f3dfc5]/80 px-5 py-2 shadow-sm">
-                <span
-                  className="text-[0.65rem] font-bold uppercase tracking-[0.2em] text-[#76513a]"
-                  style={{
-                    fontFamily: "'Manrope', sans-serif",
-                  }}
-                >
-                  EST. 1991
-                </span>
-              </div>
-            </div> */}
+            <p className="hero-copy mx-auto mt-5 max-w-[32rem] font-['Manrope'] text-[1rem] leading-[1.7] text-[#5E4637] sm:text-[1.05rem] lg:mx-0 lg:mt-6 lg:max-w-[26rem]">
+              From farm to cup, our in-house technology keeps everything simple, fast and transparent — so we can brew a better tomorrow.
+            </p>
 
-            {/* ========================================================
-                MASCOT
-            ======================================================== */}
+            <div className="hero-features mt-8 grid grid-cols-2 gap-y-6 sm:grid-cols-4 sm:gap-x-2 lg:mt-10">
+              {features.map((feature, idx) => (
+                <div key={idx} className="hero-feature flex flex-col items-center text-center lg:items-start lg:text-left">
+                  <div className="flex h-12 w-12 items-center justify-center rounded-full border border-[#D1BEA9] bg-[#FCF8F2] text-[#A16635]">
+                    {feature.icon}
+                  </div>
+                  <span className="mt-3 whitespace-pre-line font-['Manrope'] text-[0.65rem] font-bold uppercase tracking-wider text-[#3D2413] sm:text-[0.7rem]">
+                    {feature.title}
+                  </span>
+                </div>
+              ))}
+            </div>
 
-            <motion.div
-              initial={
-                reduceMotion
-                  ? false
-                  : {
-                      opacity: 0,
-                      y: 35,
-                    }
-              }
-              whileInView={
-                reduceMotion
-                  ? {}
-                  : {
-                      opacity: 1,
-                      y: 0,
-                    }
-              }
-              viewport={{
-                once: true,
-                amount: 0.15,
-              }}
-              transition={{
-                duration: 0.8,
-              }}
-              className="
-                absolute
-                bottom-[100px]
-                left-2/3
-                z-20
-                w-[100%]
-                max-w-[710px]
-                -translate-x-1/2
+            <div className="hero-actions mt-10 flex flex-col items-center gap-4 sm:flex-row sm:justify-center lg:mt-12 lg:justify-start">
+              <a
+                href="/story#journey"
+                className="hero-btn inline-flex min-h-[54px] w-full items-center justify-center gap-2 rounded-2xl bg-[#2C1810] px-8 font-['Manrope'] text-[0.85rem] font-bold uppercase tracking-wider text-[#F7EFE4] shadow-[0_10px_20px_rgba(44,24,16,0.15)] transition-all duration-300 hover:-translate-y-1 hover:bg-[#3A2316] sm:w-auto"
+              >
+                Our Journey
+                <ArrowRight className="h-4 w-4" />
+              </a>
+              
+              <a
+                href="/story#portfolio"
+                className="hero-btn inline-flex min-h-[54px] w-full items-center justify-center gap-2 rounded-2xl border border-[#D1BEA9] bg-transparent px-8 font-['Manrope'] text-[0.85rem] font-bold uppercase tracking-wider text-[#3D2413] transition-all duration-300 hover:-translate-y-1 hover:bg-[#EEDFCB] sm:w-auto"
+              >
+               
+                Our Portfolio
+                <ArrowRight className="h-4 w-4" />
+              </a>
+            </div>
 
-                sm:w-[100%]
-
-                lg:bottom-[150px]
-              "
-            >
-              <img
-                src={mascot}
-                alt="Thatha Tea mascot"
-                className="h-auto w-full object-contain"
-              />
-            </motion.div>
-
-            {/* ========================================================
-                HISTORICAL OBJECTS / BOTTOM ARTWORK
-            ======================================================== */}
-
-            <motion.div
-              initial={
-                reduceMotion
-                  ? false
-                  : {
-                      opacity: 0,
-                      y: 25,
-                      scale: 0.96,
-                    }
-              }
-              whileInView={
-                reduceMotion
-                  ? {}
-                  : {
-                      opacity: 1,
-                      y: 0,
-                      scale: 1,
-                    }
-              }
-              viewport={{
-                once: true,
-                amount: 0.15,
-              }}
-              transition={{
-                duration: 0.7,
-              }}
-              className="
-                absolute
-                bottom-[-10px]
-                sm:bottom-[30px]
-                lg:bottom-[-10px]
-                left-1/2
-                z-30
-                -translate-x-1/4
-                lg:-translate-x-1/2
-                w-max
-                overflow-visible
-              "
-            >
-              <img
-                src={PLACEHOLDERS.kettle}
-                alt="Vintage tea heritage"
-                className="
-                  h-auto
-                  w-[155vw]
-                  max-w-none
-                  object-contain
-
-                  sm:w-[155vw]
-
-                  lg:w-[70vw]
-                  xl:w-[62vw]
-                  2xl:w-[72vw]
-                "
-              />
-            </motion.div>
           </div>
-
-      {/* ============================================================
-    RIGHT — DATA / ANALYTICS
-============================================================ */}
-
-<motion.div
-  initial={
-    reduceMotion
-      ? false
-      : {
-          opacity: 0,
-          x: 30,
-        }
-  }
-  whileInView={
-    reduceMotion
-      ? {}
-      : {
-          opacity: 1,
-          x: 0,
-        }
-  }
-  viewport={{
-    once: true,
-    amount: 0.15,
-  }}
-  transition={{
-    duration: 0.7,
-  }}
-  className="
-    order-4
-    relative
-    z-30
-    lg:order-none
-    lg:pt-10
-  "
->
-  {/* dashboard heading */}
-
-  <motion.div
-    animate={{
-      y: [0, -3, 0],
-    }}
-    transition={{
-      duration: 4.5,
-      repeat: Infinity,
-      ease: "easeInOut",
-    }}
-    className="mb-4 flex items-end justify-between"
-  >
-    <div>
-      <p
-        className="text-[0.65rem] font-bold uppercase tracking-[0.16em] text-[#9c5c30]"
-        style={{
-          fontFamily: "'Manrope', sans-serif",
-        }}
-      >
-        Then → Now
-      </p>
-
-      <h3
-        className="mt-1 text-[2rem] leading-none text-[#382116]"
-        style={{
-          fontFamily: "'Bebas Neue', sans-serif",
-        }}
-      >
-        BREWING THE FUTURE
-      </h3>
-    </div>
-
-    <div className="rounded-full border border-[#876247]/30 bg-[#f2dfc6]/80 px-3 py-1">
-      <span
-        className="text-[0.58rem] font-bold uppercase tracking-[0.12em] text-[#73523c]"
-        style={{
-          fontFamily: "'Manrope', sans-serif",
-        }}
-      >
-        Live Story
-      </span>
-    </div>
-  </motion.div>
-
-  {/* ==========================================================
-      BIG GRAPH
-  ========================================================== */}
-
-  <motion.div
-    animate={{
-      y: [0, -7, 0],
-      rotate: [0, 0.25, 0],
-    }}
-    transition={{
-      duration: 5.8,
-      repeat: Infinity,
-      ease: "easeInOut",
-    }}
-  >
-    <DataCard
-      src={PLACEHOLDERS.growth}
-      alt="Growth overview"
-      delay={0.1}
-      className="h-[190px] w-full sm:h-[220px]"
-    />
-  </motion.div>
-
-  {/* ==========================================================
-      MINI DATA CARDS
-  ========================================================== */}
-
-  <div className="mt-3 grid grid-cols-2 gap-3">
-    <motion.div
-      animate={{
-        y: [0, -6, 0],
-        rotate: [0, -0.35, 0],
-      }}
-      transition={{
-        duration: 4.8,
-        repeat: Infinity,
-        ease: "easeInOut",
-        delay: 0.4,
-      }}
-    >
-      <DataCard
-        src={PLACEHOLDERS.orders}
-        alt="Orders overview"
-        delay={0.2}
-        className="h-[130px]"
-      />
-    </motion.div>
-
-    <motion.div
-      animate={{
-        y: [0, -8, 0],
-        rotate: [0, 0.4, 0],
-      }}
-      transition={{
-        duration: 5.4,
-        repeat: Infinity,
-        ease: "easeInOut",
-        delay: 0.9,
-      }}
-    >
-      <DataCard
-        src={PLACEHOLDERS.customers}
-        alt="Customer growth"
-        delay={0.3}
-        className="h-[130px]"
-      />
-    </motion.div>
-  </div>
-
-  {/* ==========================================================
-      APPLICATION / DIGITAL OPERATIONS
-  ========================================================== */}
-
-  <motion.div
-    animate={{
-      y: [0, -7, 0],
-      rotate: [0, -0.25, 0],
-    }}
-    transition={{
-      duration: 5.2,
-      repeat: Infinity,
-      ease: "easeInOut",
-      delay: 0.7,
-    }}
-  >
-    <DataCard
-      src={PLACEHOLDERS.applications}
-      alt="Digital operations"
-      delay={0.4}
-      className="mt-3 h-[150px]"
-    />
-  </motion.div>
-
-  {/* ==========================================================
-      LIVE METRICS
-  ========================================================== */}
-
-  <div className="mt-3 grid grid-cols-3 gap-2">
-    {/* SINCE */}
-
-    <motion.div
-      animate={{
-        y: [0, -4, 0],
-      }}
-      transition={{
-        duration: 4.2,
-        repeat: Infinity,
-        ease: "easeInOut",
-        delay: 0.2,
-      }}
-      className="
-        rounded-[14px]
-        border
-        border-[#876247]/25
-        bg-[#f5e3cc]/65
-        p-3
-      "
-    >
-      <p
-        className="text-[0.58rem] uppercase tracking-[0.1em] text-[#85634b]"
-        style={{
-          fontFamily: "'Manrope', sans-serif",
-        }}
-      >
-        Since
-      </p>
-
-      <p
-        className="mt-1 text-[1.55rem] leading-none text-[#43291b]"
-        style={{
-          fontFamily: "'Bebas Neue', sans-serif",
-        }}
-      >
-        1991
-      </p>
-    </motion.div>
-
-    {/* TODAY */}
-
-    <motion.div
-      animate={{
-        y: [0, -6, 0],
-      }}
-      transition={{
-        duration: 4.8,
-        repeat: Infinity,
-        ease: "easeInOut",
-        delay: 0.6,
-      }}
-      className="
-        rounded-[14px]
-        border
-        border-[#876247]/25
-        bg-[#f5e3cc]/65
-        p-3
-      "
-    >
-      <p
-        className="text-[0.58rem] uppercase tracking-[0.1em] text-[#85634b]"
-        style={{
-          fontFamily: "'Manrope', sans-serif",
-        }}
-      >
-        Today
-      </p>
-
-      <p
-        className="mt-1 text-[1.55rem] leading-none text-[#43291b]"
-        style={{
-          fontFamily: "'Bebas Neue', sans-serif",
-        }}
-      >
-        Growing
-      </p>
-    </motion.div>
-
-    {/* NEXT */}
-
-    <motion.div
-      animate={{
-        y: [0, -5, 0],
-      }}
-      transition={{
-        duration: 4.6,
-        repeat: Infinity,
-        ease: "easeInOut",
-        delay: 1,
-      }}
-      className="
-        rounded-[14px]
-        border
-        border-[#876247]/25
-        bg-[#f5e3cc]/65
-        p-3
-      "
-    >
-      <p
-        className="text-[0.58rem] uppercase tracking-[0.1em] text-[#85634b]"
-        style={{
-          fontFamily: "'Manrope', sans-serif",
-        }}
-      >
-        Next
-      </p>
-
-      <p
-        className="mt-1 text-[1.55rem] leading-none text-[#43291b]"
-        style={{
-          fontFamily: "'Bebas Neue', sans-serif",
-        }}
-      >
-        2026+
-      </p>
-    </motion.div>
-  </div>
-</motion.div>
-</div>
-
-        {/* ================================================================
-            QUOTE STRIP
-        ================================================================ */}
-
-        <motion.div
-          initial={
-            reduceMotion
-              ? false
-              : {
-                  opacity: 0,
-                  y: 15,
-                }
-          }
-          whileInView={
-            reduceMotion
-              ? {}
-              : {
-                  opacity: 1,
-                  y: 0,
-                }
-          }
-          viewport={{
-            once: true,
-          }}
-          transition={{
-            duration: 0.6,
-          }}
-          className="order-5 mx-auto mt-8 max-w-[850px] text-center lg:order-none lg:mt-2"
-        >
-          <p
-            className="text-[1.15rem] italic leading-[1.5] text-[#604432] sm:text-[1.35rem]"
-            style={{
-              fontFamily: "'Cormorant Garamond', serif",
-            }}
-          >
-            “The recipe stayed the same. The way we built the future did not.”
-          </p>
-        </motion.div>
-
-        {/* ================================================================
-            STATIC TIMELINE — HIDDEN ON MOBILE
-        ================================================================ */}
-
-        <div className="hidden lg:block">
-          <StoryTimeline />
         </div>
+
+        {/* ======================================= */}
+        {/* IMAGE STACK (RIGHT/TOP)                 */}
+        {/* ======================================= */}
+        {/* Added mt-16 here to push the image down on mobile */}
+        <div className="relative z-20 mt-16 flex w-full items-end justify-center pb-4 lg:absolute lg:bottom-0 lg:right-0 lg:mt-0 lg:h-full lg:w-[60%] lg:justify-end lg:pb-0 lg:pt-0">
+          
+          <div className="relative grid w-full place-items-center lg:block lg:h-full lg:w-full lg:max-w-none">
+            
+            {/* LAYER 2: CAFE (Reduced Size) */}
+            <div className="hero-cafe col-start-1 row-start-1 w-[110%] max-w-[480px] sm:w-[100%] sm:max-w-[550px] lg:absolute lg:bottom-0 lg:right-0 lg:w-[90%] lg:max-w-[750px] opacity-40">
+              <img
+                src={storyCafe}
+                alt="Thatha Tea Cafe"
+                className="h-auto w-full object-contain object-bottom"
+                loading="eager"
+              />
+            </div>
+
+            {/* LAYER 3: MASCOT (Increased Size) */}
+            <div className="hero-mascot hero-mascot-float relative top-20 col-start-1 row-start-1 z-10 w-full max-w-[540px] sm:top-20 sm:max-w-[620px] lg:absolute lg:bottom-0 lg:right-[5%] lg:top-0 lg:max-w-none lg:h-full">             
+               <img
+                src={storyMascot}
+                alt="Thatha Mascot with Monitor"
+                className="h-auto w-full object-contain object-bottom lg:h-full lg:w-auto lg:max-h-[100vh]"
+                loading="eager"
+              />
+            </div>
+
+          </div>
+        </div>
+
       </div>
     </section>
   );

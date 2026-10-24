@@ -161,7 +161,7 @@ export default function CareersHeroSection() {
             {/* Actions */}
             <div className="hero-actions mt-10 flex flex-col items-center gap-4 sm:flex-row sm:justify-center lg:mt-14 lg:justify-start">
               <a
-                href="/careers"
+                href="/career#explore"
                 className="hero-btn inline-flex min-h-[54px] w-full items-center justify-center gap-2 rounded-2xl bg-[#2C1810] px-8 font-['Manrope'] text-[0.85rem] font-bold uppercase tracking-wider text-[#F7EFE4] shadow-[0_10px_20px_rgba(44,24,16,0.15)] transition-all duration-300 hover:-translate-y-1 hover:bg-[#3A2316] sm:w-auto"
               >
                 Explore Careers
