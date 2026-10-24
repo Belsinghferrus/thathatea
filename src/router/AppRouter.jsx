@@ -11,6 +11,7 @@ import Intro from "@/components/sections/Intro/Intro";
 import Privacy from "@/pages/Privacy/Privacy"
 import Terms from "@/pages/Terms/Terms.jsx"
 import Refund from "@/pages/Refund/Refund.jsx"
+import Career from "../pages/Career/Career";
 
 function AppRouter() {
     return (
@@ -23,6 +24,7 @@ function AppRouter() {
             <Route path="/story" element={<Story />} />
             <Route path="/menu" element={<Menu />} />
             <Route path="/franchise" element={<Franchise />} />
+            <Route path="/career" element={<Career />} />
             <Route path="/contact" element={<Contact />} />
             <Route path="/privacy-policy" element={<Privacy />} />
             <Route path="/Refund-policy" element={<Refund />} />
