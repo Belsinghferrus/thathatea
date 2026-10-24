@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 import { Send, Loader2, CheckCircle2 } from "lucide-react";
-import vintagebg from "@/assets/images/career/vintage-bg.webp"; 
+import vintagebg from "@/assets/images/career/vintagebg.webp"; 
 export default function CareersApplicationForm({ selectedRole }) {
   const [formData, setFormData] = useState({
     name: "",

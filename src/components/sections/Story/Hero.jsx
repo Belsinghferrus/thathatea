@@ -3,7 +3,7 @@ import { ArrowRight, Play, Settings, BarChart2, Users, Leaf } from "lucide-react
 import { gsap } from "gsap";
 
 // --- THE 3 IMAGES ---
-import storyBg from "@/assets/images/story/vintage-bg.png";       // 1. Background Sketch
+import storyBg from "@/assets/images/story/vintagebg.png";       // 1. Background Sketch
 import storyCafe from "@/assets/images/story/cafe.png";           // 2. Cafe Shopfront
 import storyMascot from "@/assets/images/story/digital-thatha.png"; // 3. Mascot with Monitor & Tablet
 
