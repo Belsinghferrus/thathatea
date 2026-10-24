@@ -3,7 +3,6 @@ import { ArrowRight, Play } from "lucide-react";
 import { gsap } from "gsap";
 
 // --- IMAGE IMPORTS ---
-// Replace these paths with your actual layered PNGs
 import careerBg from "@/assets/images/career/career-bg.png";       // The faded street/city sketch
 import careerCafe from "@/assets/images/career/career-cafe.png";   // The wooden shopfront/cafe
 import careerMascot from "@/assets/images/career/mascot.png"; // The Thatha character pouring tea
@@ -100,7 +99,7 @@ export default function CareersHeroSection() {
         style={{
           backgroundImage: `url(${careerBg})`,
           backgroundSize: "contain",
-          backgroundPosition: "center left", // Keeps the city sketch visible on the left
+          backgroundPosition: "center left",
           backgroundRepeat: "no-repeat",
         }}
       />
