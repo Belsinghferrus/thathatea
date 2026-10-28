@@ -77,7 +77,7 @@ export default function StoryInnovationSection() {
           className="mx-auto flex max-w-3xl flex-col items-center text-center"
         >
           <p className="font-['Allura'] text-[2rem] leading-none text-[#A16635] sm:text-[2.5rem]">
-            Our Technology
+            Our Story
           </p>
           <h2 
             className="mt-2 text-[3rem] leading-[0.9] text-[#3D2413] sm:text-[4rem] lg:text-[4.5rem]"
