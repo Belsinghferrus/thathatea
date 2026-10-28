@@ -1,114 +1,126 @@
-import leftLeafPng from "@/assets/images/story/tea.png";
-import rightSpicePng from "@/assets/images/story/tea.png";
-import centerSealPng from "@/assets/images/story/tea-hero.png";
+import { motion } from "framer-motion";
+import storybreaktea from "../../../assets/images/story/storybreaktea.png";
 
-export default function StorySectionBreak({
-  label = "Steeped in Time",
-  subtitle = "Every cup carries a story worth remembering.",
-}) {
+// --- CUSTOM SVG ICONS (Thinner strokes to match reference) ---
+const IconTarget = () => (
+  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.2" strokeLinecap="round" strokeLinejoin="round" className="h-6 w-6 md:h-7 md:w-7">
+    <circle cx="12" cy="12" r="9" />
+    <path d="M12 8v8M8 12h8" />
+  </svg>
+);
+
+const IconDevices = () => (
+  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.2" strokeLinecap="round" strokeLinejoin="round" className="h-6 w-6 md:h-7 md:w-7">
+    <rect x="2" y="4" width="16" height="12" rx="1.5" />
+    <path d="M6 20h8M10 16v4" />
+    <rect x="16" y="8" width="6" height="10" rx="1" fill="#2A1A10" stroke="currentColor" />
+  </svg>
+);
+
+const IconShield = () => (
+  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.2" strokeLinecap="round" strokeLinejoin="round" className="h-6 w-6 md:h-7 md:w-7">
+    <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
+    <path d="M9 12l2 2 4-4" />
+  </svg>
+);
+
+const IconGrowth = () => (
+  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.2" strokeLinecap="round" strokeLinejoin="round" className="h-6 w-6 md:h-7 md:w-7">
+    <path d="M3 21h18M4 21v-6h4v6M10 21v-10h4v10M16 21v-14h4v14" />
+    <path d="M4 11l6-6 6 6" />
+  </svg>
+);
+
+const features = [
+  { icon: <IconTarget />, title: "Simple & Fast" },
+  { icon: <IconDevices />, title: "Any Device", subtitle: "(Mobile / Tablet / Desktop)" },
+  { icon: <IconShield />, title: "Secure & Reliable" },
+  { icon: <IconGrowth />, title: "Built for Growth" },
+];
+
+export default function StorySectionBreakDark() {
   return (
-    <div className="relative isolate overflow-hidden bg-[#4a2b1f]">
-      <div className="absolute inset-0 bg-[radial-gradient(circle_at_top,rgba(255,214,170,0.08),transparent_45%)]" />
-      <div className="absolute inset-0 opacity-[0.08] mix-blend-screen">
-        <div
-          className="h-full w-full"
-          style={{
-            backgroundImage:
-              "radial-gradient(circle at 1px 1px, rgba(255,240,225,0.18) 1px, transparent 0)",
-            backgroundSize: "24px 24px",
-          }}
+    <section className="relative flex min-h-[30vh] w-full items-center overflow-hidden bg-[#2A1A10] py-12 lg:min-h-[380px] lg:py-0">
+      
+      {/* ======================================= */}
+      {/* TEA IMAGE (LEFT) - Faded into background */}
+      {/* ======================================= */}
+      <div className="absolute bottom-0 top-30 left-0 z-0 h-full w-full md:w-[60%] lg:w-[50%] pointer-events-none">
+        <img
+          src={storybreaktea} 
+          alt="Tea"
+          className="h-full w-full object-cover object-center "
         />
+        {/* Gradient to blend the right edge of the image into the dark background */}
+        <div className="absolute inset-0 bg-gradient-to-r from-transparent via-[#2A1A10]/60 to-[#2A1A10]" />
       </div>
 
-      <div className="relative mx-auto max-w-[1500px] px-4 py-12 sm:px-6 sm:py-14 lg:px-10 lg:py-16">
-        {/* Decorative PNGs */}
-        <img
-          src={leftLeafPng}
-          alt=""
-          aria-hidden="true"
-          className="pointer-events-none absolute left-[-10px] top-1/2 hidden w-[120px] -translate-y-1/2 rotate-[-12deg] opacity-80 sm:block lg:left-[18px] lg:w-[250px]"
-        />
+      {/* ======================================= */}
+      {/* LEAF IMAGE (RIGHT)                      */}
+      {/* ======================================= */}
+     
 
-        <img
-          src={rightSpicePng}
-          alt=""
-          aria-hidden="true"
-          className="pointer-events-none absolute right-[-10px] top-1/2 hidden w-[118px] -translate-y-1/2 rotate-[14deg] opacity-75 sm:block lg:right-[12px] lg:w-[250px]"
-        />
-
-        <div className="relative flex items-center justify-center">
-          {/* Left line */}
-          <div className="flex flex-1 items-center justify-end">
-            <div className="h-px w-[16%] min-w-[20px] bg-[#d7b08a]/35" />
-            <div className="mx-2 h-[6px] w-[6px] rounded-full bg-[#d79b5b]/75" />
-            <div className="h-px w-[34%] min-w-[56px] bg-gradient-to-r from-[#d7b08a]/45 to-[#f0c38b]/10" />
-          </div>
-
-          {/* Center seal */}
-          <div className="relative mx-4 shrink-0">
-            <div className="relative flex h-[108px] w-[108px] items-center justify-center rounded-full border border-[#c89b72]/45 bg-[#5a3425] shadow-[0_18px_40px_rgba(15,8,4,0.28)] sm:h-[118px] sm:w-[118px]">
-              <div className="absolute inset-[8px] rounded-full border border-[#e1b98e]/20" />
-
-              <img
-                src={centerSealPng}
-                alt=""
-                aria-hidden="true"
-                className="absolute inset-0 h-full w-full object-contain opacity-20"
-              />
-
-              <div className="relative z-10 px-3 text-center">
-                <p
-                  className="text-[0.68rem] font-bold uppercase tracking-[0.24em] text-[#d8ab7b] sm:text-[0.72rem]"
-                  style={{ fontFamily: "'Manrope', sans-serif" }}
-                >
-                  Tea Break
-                </p>
-                <p
-                  className="mt-1 text-[1.08rem] leading-none text-[#fff2e4] sm:text-[1.18rem]"
-                  style={{ fontFamily: "'Cardamom Script', cursive" }}
-                >
-                  {label}
-                </p>
-              </div>
-            </div>
-          </div>
-
-          {/* Right line */}
-          <div className="flex flex-1 items-center justify-start">
-            <div className="h-px w-[34%] min-w-[56px] bg-gradient-to-l from-[#d7b08a]/45 to-[#f0c38b]/10" />
-            <div className="mx-2 h-[6px] w-[6px] rounded-full bg-[#d79b5b]/75" />
-            <div className="h-px w-[16%] min-w-[20px] bg-[#d7b08a]/35" />
-          </div>
-        </div>
-
-        {/* Text */}
-        <div className="mt-5 text-center">
-          <p
-            className="mx-auto max-w-[620px] text-[0.98rem] leading-[1.9] text-[#f5e6d8] sm:text-[1.05rem]"
-            style={{ fontFamily: "'Manrope', sans-serif" }}
-          >
-            {subtitle}
+      {/* ======================================= */}
+      {/* MAIN CONTENT                            */}
+      {/* ======================================= */}
+      <div className="relative z-10 mx-auto flex w-full max-w-[1500px] justify-end px-5 sm:px-8 lg:px-12">
+        
+        <motion.div 
+          initial={{ opacity: 0, x: 30 }}
+          whileInView={{ opacity: 1, x: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6 }}
+          className="flex w-full flex-col items-center text-center md:w-[60%] md:items-start md:text-left lg:w-[52%]"
+        >
+          {/* Kicker */}
+          <p className="font-['Manrope'] text-[0.75rem] font-bold uppercase tracking-[0.18em] text-[#C88A3D] sm:text-[0.85rem]">
+            Built for Tea Shops & Bakery Outlets
           </p>
-        </div>
 
-        {/* Steam flourish */}
-        <div className="pointer-events-none mt-4 flex justify-center">
-          <svg
-            viewBox="0 0 120 28"
-            aria-hidden="true"
-            className="h-6 w-[120px] opacity-70"
-            fill="none"
+          {/* Title */}
+          <h2 
+            className="mt-3 text-[2.2rem] leading-[1.1] text-[#F7EFE4] sm:text-[2.8rem] lg:text-[3.2rem]"
+            style={{ fontFamily: "'Cormorant Garamond', serif", fontWeight: 600 }}
           >
-            <path
-              d="M8 18C18 8 28 24 38 14C46 6 56 22 68 12C80 2 90 20 112 10"
-              stroke="#d7b08a"
-              strokeWidth="1.5"
-              strokeLinecap="round"
-              strokeDasharray="2 6"
-            />
-          </svg>
-        </div>
+            A platform that<br className="hidden sm:block" />
+            understands your business.
+          </h2>
+
+          {/* Description */}
+          <p className="mt-4 max-w-xl font-['Manrope'] text-[0.95rem] leading-[1.7] text-[#F7EFE4]/70 sm:text-[1.05rem]">
+            Whether you run a single tea shop or a growing chain, Thatha Notes is designed to make your daily operations simple, organised and profitable.
+          </p>
+
+          {/* 4 Features Row (Strictly one line, no wrapping) */}
+          <div className="mt-10 flex w-full flex-nowrap items-center justify-between border-t border-[#F7EFE4]/15 pt-6">
+            {features.map((feature, idx) => (
+              <div 
+                key={idx} 
+                className={`flex flex-1 items-center gap-2 sm:gap-3 ${
+                  idx !== 0 ? "border-l border-[#F7EFE4]/15 pl-2 sm:pl-4" : ""
+                }`}
+              >
+                {/* Icon */}
+                <span className="shrink-0 text-[#F7EFE4]/90">{feature.icon}</span>
+                
+                {/* Text */}
+                <div className="text-left">
+                  <p className="font-['Manrope'] text-[0.65rem] font-bold text-[#F7EFE4] sm:text-[0.8rem] md:text-[0.85rem]">
+                    {feature.title}
+                  </p>
+                  {feature.subtitle && (
+                    <p className="hidden font-['Manrope'] text-[0.6rem] text-[#F7EFE4]/50 sm:block mt-0.5">
+                      {feature.subtitle}
+                    </p>
+                  )}
+                </div>
+              </div>
+            ))}
+          </div>
+
+        </motion.div>
+
       </div>
-    </div>
+    </section>
   );
 }

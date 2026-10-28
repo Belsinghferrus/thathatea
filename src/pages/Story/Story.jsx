@@ -12,6 +12,7 @@ import StoryInNumbersSection from '../../components/sections/Story/StoryInNumber
 import Footer from '../../components/layout/Footer'
 import PortfolioSection from '../../components/sections/Story/PortfolioSection'
 import StoryInnovationSection from '../../components/sections/Story/StoryInnovationSection'
+import ThathaNotesFeatures from '../../components/sections/Story/ThathaNotesFeatures'
 
 const Story = () => {
     return (
@@ -21,9 +22,12 @@ const Story = () => {
             {/* <WhatMakesUsSpecialStrip />
             <StoryTimelineSection />
             <MissionVisionSection /> */}
-            {/* <StorySectionBreak /> */}
+           
             <TeaQuoteStrip20vh />
-            <StoryInnovationSection />
+           
+            <ThathaNotesFeatures />
+             <StorySectionBreak />
+             <StoryInnovationSection />
             <GrowthMapSection />
             <FoundersNoteSection    />
             <StoryInNumbersSection />
