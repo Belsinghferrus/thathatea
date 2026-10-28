@@ -77,7 +77,7 @@ const featuresData = [
     icon: <Store className="h-6 w-6" />,
     image: map,
     bgImage: tornBg5,
-    decorText: "Track\nEvery Outlet",
+    decorText: null,
     decorPos: "bottom-right"
   },
   {
@@ -87,7 +87,7 @@ const featuresData = [
     icon: <Headphones className="h-6 w-6" />,
     image: help,
     bgImage: tornBg6,
-    decorText: "We're\nWith You\nAlways",
+    decorText: null,
     decorPos: "bottom-left"
   },
 ];

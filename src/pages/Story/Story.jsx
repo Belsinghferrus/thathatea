@@ -23,17 +23,17 @@ const Story = () => {
             {/* <WhatMakesUsSpecialStrip />
             <StoryTimelineSection />
             <MissionVisionSection /> */}
-           
+
             <TeaQuoteStrip20vh />
-           
+
             <ThathaNotesFeatures />
-             <StorySectionBreak />
-             <StoryInnovationSection />
-             {/* <WhyItMattersSection /> */}
+            <StorySectionBreak />
+            <StoryInnovationSection />
+            {/* <WhyItMattersSection /> */}
             <GrowthMapSection />
-            <FoundersNoteSection    />
+            <FoundersNoteSection />
             <StoryInNumbersSection />
-                <PortfolioSection   />
+            <PortfolioSection />
             <Footer />
         </>
     )
