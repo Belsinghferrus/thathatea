@@ -80,10 +80,10 @@ export default function StorySectionBreakDark() {
           {/* Title */}
           <h2 
             className="mt-3 text-[2.2rem] leading-[1.1] text-[#F7EFE4] sm:text-[2.8rem] lg:text-[3.2rem]"
-            style={{ fontFamily: "'Cormorant Garamond', serif", fontWeight: 600 }}
+            style={{ fontFamily: "'Anton', sans-serif" }}
           >
             A platform that<br className="hidden sm:block" />
-            understands your business.
+             understands your business.
           </h2>
 
           {/* Description */}

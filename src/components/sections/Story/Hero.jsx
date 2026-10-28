@@ -4,8 +4,8 @@ import { gsap } from "gsap";
 
 // --- THE 3 IMAGES ---
 import storyBg from "@/assets/images/story/vintagebg.png";       // 1. Background Sketch
-import storyCafe from "@/assets/images/story/cafe.png";           // 2. Cafe Shopfront
-import storyMascot from "@/assets/images/story/digital-thatha.png"; // 3. Mascot with Monitor & Tablet
+import storyCafe from "@/assets/images/story/notes-bg.png";           // 2. Cafe Shopfront
+import storyMascot from "@/assets/images/story/thathaNotesFg.png"; // 3. Mascot with Monitor & Tablet
 
 const features = [
   { icon: <Settings className="h-5 w-5" strokeWidth={1.5} />, title: "SMART\nOPERATIONS" },
@@ -101,7 +101,7 @@ export default function StoryHeroSection() {
             </div>
 
             <p className="hero-copy mx-auto mt-5 max-w-[32rem] font-['Manrope'] text-[1rem] leading-[1.7] text-[#5E4637] sm:text-[1.05rem] lg:mx-0 lg:mt-6 lg:max-w-[26rem]">
-              From farm to cup, our in-house technology keeps everything simple, fast and transparent — so we can brew a better tomorrow.
+              Our in-house software, Thatha Notes makes ordering simple and help you track, grow and manage your outlet everyday
             </p>
 
             <div className="hero-features mt-8 grid grid-cols-2 gap-y-6 sm:grid-cols-4 sm:gap-x-2 lg:mt-10">
@@ -149,16 +149,16 @@ export default function StoryHeroSection() {
             
             {/* LAYER 2: CAFE (Reduced Size) */}
             <div className="hero-cafe col-start-1 row-start-1 w-[110%] max-w-[480px] sm:w-[100%] sm:max-w-[550px] lg:absolute lg:bottom-0 lg:right-0 lg:w-[90%] lg:max-w-[750px] opacity-40">
-              <img
+              {/* <img
                 src={storyCafe}
                 alt="Thatha Tea Cafe"
                 className="h-auto w-full object-contain object-bottom"
                 loading="eager"
-              />
+              /> */}
             </div>
 
             {/* LAYER 3: MASCOT (Increased Size) */}
-            <div className="hero-mascot hero-mascot-float relative top-20 col-start-1 row-start-1 z-10 w-full max-w-[540px] sm:top-20 sm:max-w-[620px] lg:absolute lg:bottom-0 lg:right-[5%] lg:top-0 lg:max-w-none lg:h-full">             
+            <div className="hero-mascot hero-mascot-float relative top-0 col-start-1 row-start-1 z-10 w-full max-w-[540px] sm:top-20 sm:max-w-[620px] lg:absolute lg:bottom-0 lg:right-[5%] lg:top-0 lg:max-w-none lg:h-full">             
                <img
                 src={storyMascot}
                 alt="Thatha Mascot with Monitor"

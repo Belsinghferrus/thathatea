@@ -13,6 +13,7 @@ import Footer from '../../components/layout/Footer'
 import PortfolioSection from '../../components/sections/Story/PortfolioSection'
 import StoryInnovationSection from '../../components/sections/Story/StoryInnovationSection'
 import ThathaNotesFeatures from '../../components/sections/Story/ThathaNotesFeatures'
+import WhyItMattersSection from '../../components/sections/Story/WhyItMattersSection'
 
 const Story = () => {
     return (
@@ -28,6 +29,7 @@ const Story = () => {
             <ThathaNotesFeatures />
              <StorySectionBreak />
              <StoryInnovationSection />
+             {/* <WhyItMattersSection /> */}
             <GrowthMapSection />
             <FoundersNoteSection    />
             <StoryInNumbersSection />
