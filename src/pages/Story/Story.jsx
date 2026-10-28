@@ -11,6 +11,7 @@ import TeaQuoteStrip20vh from '../../components/sections/Contact/TeaQuoteStrip'
 import StoryInNumbersSection from '../../components/sections/Story/StoryInNumbersSection'
 import Footer from '../../components/layout/Footer'
 import PortfolioSection from '../../components/sections/Story/PortfolioSection'
+import StoryInnovationSection from '../../components/sections/Story/StoryInnovationSection'
 
 const Story = () => {
     return (
@@ -22,6 +23,7 @@ const Story = () => {
             <MissionVisionSection /> */}
             {/* <StorySectionBreak /> */}
             <TeaQuoteStrip20vh />
+            <StoryInnovationSection />
             <GrowthMapSection />
             <FoundersNoteSection    />
             <StoryInNumbersSection />
